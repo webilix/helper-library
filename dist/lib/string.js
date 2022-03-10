@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.STRING = void 0;
 exports.STRING = {
-    random: (length, type = 'alphanumeric') => {
+    getRandom: (length, type = 'alphanumeric') => {
         let chars;
         switch (type) {
             case 'numeric':

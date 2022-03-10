@@ -1,5 +1,5 @@
 export const STRING = {
-    random: (length: number, type: 'numeric' | 'alphabetic' | 'alphanumeric' = 'alphanumeric'): string => {
+    getRandom: (length: number, type: 'numeric' | 'alphabetic' | 'alphanumeric' = 'alphanumeric'): string => {
         let chars: string;
         switch (type) {
             case 'numeric':

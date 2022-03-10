@@ -50,7 +50,7 @@ Helper.NUMBER.
 Helper.STRING.
 ```
 
--   random
+-   getRandom
 -   escapeHTML
 -   getFileName
 

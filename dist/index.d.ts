@@ -9,7 +9,7 @@ export declare const Helper: {
         format: (num: number, locale?: "FA" | "EN") => string;
     };
     STRING: {
-        random: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
+        getRandom: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
         escapeHTML: (str: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;
     };
