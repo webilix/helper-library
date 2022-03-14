@@ -42,6 +42,7 @@ Helper.NUMBER.
 ```
 
 -   toFA
+-   toEN
 -   format
 
 ## String Helpers

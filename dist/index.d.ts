@@ -6,6 +6,7 @@ export declare const Helper: {
     };
     NUMBER: {
         toFA: (num: string | number) => string;
+        toEN: (num: string | number) => string;
         format: (num: number, locale?: "FA" | "EN") => string;
     };
     STRING: {

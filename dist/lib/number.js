@@ -9,6 +9,13 @@ exports.NUMBER = {
         });
         return fa;
     },
+    toEN: (num) => {
+        let en = typeof num === 'string' ? num : num.toString();
+        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index) => {
+            en = en.replace(new RegExp(n, 'g'), index.toString());
+        });
+        return en;
+    },
     format: (num, locale = 'FA') => {
         const minus = num < 0;
         const [n, p] = Math.abs(num).toString().split('.');

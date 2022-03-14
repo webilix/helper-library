@@ -5,6 +5,10 @@ test('NUMBER: toFA', () => {
     expect(number_1.NUMBER.toFA(1234567890)).toBe('۱۲۳۴۵۶۷۸۹۰');
     expect(number_1.NUMBER.toFA('string: 111')).toBe('string: ۱۱۱');
 });
+test('NUMBER: toEN', () => {
+    expect(number_1.NUMBER.toEN('۰۱۲۳۴۵۶۷۸۹')).toBe('0123456789');
+    expect(number_1.NUMBER.toEN('string: ۱۱۱')).toBe('string: 111');
+});
 test('NUMBER: format', () => {
     expect(number_1.NUMBER.format(1234567890)).toBe('۱,۲۳۴,۵۶۷,۸۹۰');
     expect(number_1.NUMBER.format(1234567890, 'EN')).toBe('1,234,567,890');

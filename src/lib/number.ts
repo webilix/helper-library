@@ -8,6 +8,15 @@ export const NUMBER = {
         return fa;
     },
 
+    toEN: (num: number | string): string => {
+        let en: string = typeof num === 'string' ? num : num.toString();
+        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index: number) => {
+            en = en.replace(new RegExp(n, 'g'), index.toString());
+        });
+
+        return en;
+    },
+
     format: (num: number, locale: 'FA' | 'EN' = 'FA'): string => {
         const minus: boolean = num < 0;
         const [n, p] = Math.abs(num).toString().split('.');
