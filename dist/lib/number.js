@@ -20,7 +20,7 @@ exports.NUMBER = {
         const minus = num < 0;
         const [n, p] = Math.abs(num).toString().split('.');
         const parts = n.padStart(Math.ceil(n.length / 3) * 3, '0').match(/.{1,3}/g) || [];
-        const format = parts.map((n) => (+n).toString()).join(',');
+        const format = parts.map((n, index) => (+n).toString().padStart(index === 0 ? 1 : 3, '0')).join(',');
         return (`${minus ? '-' : ''}` +
             (locale === 'FA' ? exports.NUMBER.toFA(format) : format) +
             (p ? '.' + (locale === 'FA' ? exports.NUMBER.toFA(p) : p) : ''));

@@ -22,7 +22,7 @@ export const NUMBER = {
         const [n, p] = Math.abs(num).toString().split('.');
 
         const parts: string[] = n.padStart(Math.ceil(n.length / 3) * 3, '0').match(/.{1,3}/g) || [];
-        const format: string = parts.map((n) => (+n).toString()).join(',');
+        const format: string = parts.map((n, index) => (+n).toString().padStart(index === 0 ? 1 : 3, '0')).join(',');
 
         return (
             `${minus ? '-' : ''}` +
