@@ -13,6 +13,12 @@ test('DATE: jalaliPeriod', () => {
     expect(date_1.DATE.jalaliPeriod(from, from)).toBe('۱۱ دی ۱۳۷۸');
     expect(date_1.DATE.jalaliPeriod(from, to)).toBe('۱۱ - ۱۲ دی ۱۳۷۸');
 });
+test('DATE: getSeconds', () => {
+    const from = new Date('2000-01-01');
+    const to = new Date('2000-01-02');
+    expect(date_1.DATE.getSeconds(from, from)).toBe(0);
+    expect(date_1.DATE.getSeconds(from, to)).toBe(86400);
+});
 test('DATE: getDuration', () => {
     const from = new Date('2000-01-01');
     const to = new Date('2000-01-02');

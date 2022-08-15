@@ -43,6 +43,7 @@ export const DATE = {
         return jFrom + jTo;
     },
 
-    getDuration: (from: Date, to: Date): string =>
-        TIME.getDuration(Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000)),
+    getSeconds: (from: Date, to: Date): number => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
+
+    getDuration: (from: Date, to: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
 };

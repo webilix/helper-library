@@ -33,6 +33,7 @@ Helper.DATE.
 
 -   toString
 -   jalaliPeriod
+-   getSeconds
 -   getDuration
 
 ## Number Helpers

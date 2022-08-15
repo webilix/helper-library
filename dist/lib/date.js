@@ -37,6 +37,7 @@ exports.DATE = {
         jTo = jalali.toTitle(new Date(gTo + 'T00:00:00'), { format: 'd N Y' });
         return jFrom + jTo;
     },
-    getDuration: (from, to) => time_1.TIME.getDuration(Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000)),
+    getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
+    getDuration: (from, to) => time_1.TIME.getDuration(exports.DATE.getSeconds(from, to)),
 };
 //# sourceMappingURL=date.js.map
