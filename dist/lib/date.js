@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DATE = void 0;
-const jalali_date_time_1 = require("jalali-date-time");
-const validator_library_1 = require("validator-library");
+const jalali_date_time_1 = require("@webilix/jalali-date-time");
+const validator_library_1 = require("@webilix/validator-library");
 const time_1 = require("./time");
 exports.DATE = {
     toString: (date) => {

@@ -1,5 +1,5 @@
-import { JalaliDateTime } from 'jalali-date-time';
-import { Validator } from 'validator-library';
+import { JalaliDateTime } from '@webilix/jalali-date-time';
+import { Validator } from '@webilix/validator-library';
 
 import { TIME } from './time';
 

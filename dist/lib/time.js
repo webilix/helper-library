@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TIME = void 0;
-const validator_library_1 = require("validator-library");
+const validator_library_1 = require("@webilix/validator-library");
 exports.TIME = {
     toString: (date) => {
         if (!validator_library_1.Validator.VALUE.isDate(date))

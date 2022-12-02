@@ -1,4 +1,4 @@
-import { Validator } from 'validator-library';
+import { Validator } from '@webilix/validator-library';
 
 export const TIME = {
     toString: (date: Date): string => {

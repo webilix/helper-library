@@ -1,4 +1,4 @@
-# helper-library
+# @webilix/helper-library
 
 JavaScript/TypeScript programming helper library.
 
@@ -15,13 +15,13 @@ JavaScript/TypeScript programming helper library.
 ## Installation
 
 ```bash
-npm install --save helper-library
+npm install --save @webilix/helper-library
 ```
 
 ## Usage
 
 ```typescript
-import { Helper } from 'helper-library';
+import { Helper } from '@webilix/helper-library';
 Helper.NUMBER.format(100000);
 ```
 
