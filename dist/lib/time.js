@@ -3,14 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TIME = void 0;
 const validator_library_1 = require("@webilix/validator-library");
 exports.TIME = {
-    toString: (date) => {
-        if (!validator_library_1.Validator.VALUE.isDate(date))
-            return '';
-        const h = date.getHours().toString().padStart(2, '0');
-        const m = date.getMinutes().toString().padStart(2, '0');
-        const s = date.getSeconds().toString().padStart(2, '0');
-        return `${h}:${m}:${s}`;
-    },
     getDuration: (second) => {
         if (!validator_library_1.Validator.VALUE.isNumber(second) || second <= 0)
             return '00:00:00';
@@ -21,6 +13,14 @@ exports.TIME = {
         return (`${hour.toString().padStart(2, '0')}:` +
             `${minute.toString().padStart(2, '0')}:` +
             `${second.toString().padStart(2, '0')}`);
+    },
+    toString: (date) => {
+        if (!validator_library_1.Validator.VALUE.isDate(date))
+            return '';
+        const h = date.getHours().toString().padStart(2, '0');
+        const m = date.getMinutes().toString().padStart(2, '0');
+        const s = date.getSeconds().toString().padStart(2, '0');
+        return `${h}:${m}:${s}`;
     },
 };
 //# sourceMappingURL=time.js.map

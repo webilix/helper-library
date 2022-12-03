@@ -4,15 +4,9 @@ import { Validator } from '@webilix/validator-library';
 import { TIME } from './time';
 
 export const DATE = {
-    toString: (date: Date): string => {
-        if (!Validator.VALUE.isDate(date)) return '';
+    getDuration: (from: Date, to: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
 
-        const y: string = date.getFullYear().toString();
-        const m: string = (date.getMonth() + 1).toString().padStart(2, '0');
-        const d: string = date.getDate().toString().padStart(2, '0');
-
-        return `${y}-${m}-${d}`;
-    },
+    getSeconds: (from: Date, to: Date): number => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
 
     jalaliPeriod: (from: Date, to: Date, timezone: string = 'Asia/Tehran'): string => {
         const jalali = JalaliDateTime({ timezone });
@@ -43,7 +37,13 @@ export const DATE = {
         return jFrom + jTo;
     },
 
-    getSeconds: (from: Date, to: Date): number => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
+    toString: (date: Date): string => {
+        if (!Validator.VALUE.isDate(date)) return '';
 
-    getDuration: (from: Date, to: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
+        const y: string = date.getFullYear().toString();
+        const m: string = (date.getMonth() + 1).toString().padStart(2, '0');
+        const d: string = date.getDate().toString().padStart(2, '0');
+
+        return `${y}-${m}-${d}`;
+    },
 };

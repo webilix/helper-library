@@ -31,10 +31,10 @@ Helper.NUMBER.format(100000);
 Helper.DATE.
 ```
 
--   toString
--   jalaliPeriod
--   getSeconds
 -   getDuration
+-   getSeconds
+-   jalaliPeriod
+-   toString
 
 ## Number Helpers
 
@@ -42,9 +42,9 @@ Helper.DATE.
 Helper.NUMBER.
 ```
 
--   toFA
--   toEN
 -   format
+-   toEN
+-   toFA
 
 ## String Helpers
 
@@ -52,9 +52,11 @@ Helper.NUMBER.
 Helper.STRING.
 ```
 
--   getRandom
 -   escapeHTML
+-   getBankCardView
 -   getFileName
+-   getMobileView
+-   getRandom
 
 ## Time Helpers
 
@@ -62,8 +64,8 @@ Helper.STRING.
 Helper.TIME.
 ```
 
--   toString
 -   getDuration
+-   toString
 
 ## Tests
 

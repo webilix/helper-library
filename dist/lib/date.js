@@ -5,14 +5,8 @@ const jalali_date_time_1 = require("@webilix/jalali-date-time");
 const validator_library_1 = require("@webilix/validator-library");
 const time_1 = require("./time");
 exports.DATE = {
-    toString: (date) => {
-        if (!validator_library_1.Validator.VALUE.isDate(date))
-            return '';
-        const y = date.getFullYear().toString();
-        const m = (date.getMonth() + 1).toString().padStart(2, '0');
-        const d = date.getDate().toString().padStart(2, '0');
-        return `${y}-${m}-${d}`;
-    },
+    getDuration: (from, to) => time_1.TIME.getDuration(exports.DATE.getSeconds(from, to)),
+    getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
     jalaliPeriod: (from, to, timezone = 'Asia/Tehran') => {
         const jalali = (0, jalali_date_time_1.JalaliDateTime)({ timezone });
         if (from.getTime() > to.getTime()) {
@@ -37,7 +31,13 @@ exports.DATE = {
         jTo = jalali.toTitle(new Date(gTo + 'T00:00:00'), { format: 'd N Y' });
         return jFrom + jTo;
     },
-    getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
-    getDuration: (from, to) => time_1.TIME.getDuration(exports.DATE.getSeconds(from, to)),
+    toString: (date) => {
+        if (!validator_library_1.Validator.VALUE.isDate(date))
+            return '';
+        const y = date.getFullYear().toString();
+        const m = (date.getMonth() + 1).toString().padStart(2, '0');
+        const d = date.getDate().toString().padStart(2, '0');
+        return `${y}-${m}-${d}`;
+    },
 };
 //# sourceMappingURL=date.js.map

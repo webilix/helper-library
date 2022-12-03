@@ -1,23 +1,25 @@
 export declare const Helper: {
     DATE: {
-        toString: (date: Date) => string;
-        jalaliPeriod: (from: Date, to: Date, timezone?: string) => string;
-        getSeconds: (from: Date, to: Date) => number;
         getDuration: (from: Date, to: Date) => string;
+        getSeconds: (from: Date, to: Date) => number;
+        jalaliPeriod: (from: Date, to: Date, timezone?: string) => string;
+        toString: (date: Date) => string;
     };
     NUMBER: {
-        toFA: (num: string | number) => string;
-        toEN: (num: string | number) => string;
         format: (num: number, locale?: "FA" | "EN") => string;
+        toEN: (num: string | number) => string;
+        toFA: (num: string | number) => string;
     };
     STRING: {
-        getRandom: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
         escapeHTML: (str: string) => string;
+        getBankCardView: (bankCard: string, join?: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;
+        getMobileView: (mobile: string, join?: string) => string;
+        getRandom: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
     };
     TIME: {
-        toString: (date: Date) => string;
         getDuration: (second: number) => string;
+        toString: (date: Date) => string;
     };
 };
 //# sourceMappingURL=index.d.ts.map

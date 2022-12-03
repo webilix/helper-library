@@ -2,20 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NUMBER = void 0;
 exports.NUMBER = {
-    toFA: (num) => {
-        let fa = typeof num === 'string' ? num : num.toString();
-        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index) => {
-            fa = fa.replace(new RegExp(index.toString(), 'g'), n);
-        });
-        return fa;
-    },
-    toEN: (num) => {
-        let en = typeof num === 'string' ? num : num.toString();
-        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index) => {
-            en = en.replace(new RegExp(n, 'g'), index.toString());
-        });
-        return en;
-    },
     format: (num, locale = 'FA') => {
         const minus = num < 0;
         const [n, p] = Math.abs(num).toString().split('.');
@@ -24,6 +10,20 @@ exports.NUMBER = {
         return (`${minus ? '-' : ''}` +
             (locale === 'FA' ? exports.NUMBER.toFA(format) : format) +
             (p ? '.' + (locale === 'FA' ? exports.NUMBER.toFA(p) : p) : ''));
+    },
+    toEN: (num) => {
+        let en = typeof num === 'string' ? num : num.toString();
+        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index) => {
+            en = en.replace(new RegExp(n, 'g'), index.toString());
+        });
+        return en;
+    },
+    toFA: (num) => {
+        let fa = typeof num === 'string' ? num : num.toString();
+        '۰۱۲۳۴۵۶۷۸۹'.split('').forEach((n, index) => {
+            fa = fa.replace(new RegExp(index.toString(), 'g'), n);
+        });
+        return fa;
     },
 };
 //# sourceMappingURL=number.js.map
