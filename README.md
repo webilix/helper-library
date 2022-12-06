@@ -57,6 +57,7 @@ Helper.STRING.
 -   getFileName
 -   getMobileView
 -   getRandom
+-   hasPersian
 
 ## Time Helpers
 

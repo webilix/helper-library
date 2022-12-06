@@ -48,5 +48,12 @@ exports.STRING = {
         }
         return [...Array(length)].map(() => chars[(Math.random() * chars.length) | 0]).join('');
     },
+    hasPersian: (text) => {
+        const chars = 'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('');
+        for (let i = 0; i < text.length; i++)
+            if (chars.includes(text.substring(i, i + 1)))
+                return true;
+        return false;
+    },
 };
 //# sourceMappingURL=string.js.map

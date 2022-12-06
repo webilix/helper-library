@@ -27,4 +27,12 @@ test('STRING: getRandom', () => {
     expect(string_1.STRING.getRandom(12, 'alphabetic').length).toBe(12);
     expect(string_1.STRING.getRandom(12, 'alphanumeric').length).toBe(12);
 });
+test('STRING: hasPersian', () => {
+    'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char) => {
+        expect(string_1.STRING.hasPersian(char)).toBe(true);
+    });
+    expect(string_1.STRING.hasPersian('English')).toBe(false);
+    expect(string_1.STRING.hasPersian('~!@#$%^&*()_+{}[]=-0987654321`')).toBe(false);
+    expect(string_1.STRING.hasPersian('<a href="google.com">GOOGLE</a>')).toBe(false);
+});
 //# sourceMappingURL=string.test.js.map

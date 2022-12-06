@@ -30,3 +30,13 @@ test('STRING: getRandom', () => {
     expect(STRING.getRandom(12, 'alphabetic').length).toBe(12);
     expect(STRING.getRandom(12, 'alphanumeric').length).toBe(12);
 });
+
+test('STRING: hasPersian', () => {
+    'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char: string) => {
+        expect(STRING.hasPersian(char)).toBe(true);
+    });
+
+    expect(STRING.hasPersian('English')).toBe(false);
+    expect(STRING.hasPersian('~!@#$%^&*()_+{}[]=-0987654321`')).toBe(false);
+    expect(STRING.hasPersian('<a href="google.com">GOOGLE</a>')).toBe(false);
+});
