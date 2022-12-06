@@ -32,7 +32,7 @@ test('STRING: getRandom', () => {
 });
 
 test('STRING: hasPersian', () => {
-    'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char: string) => {
+    '۰۱۲۳۴۵۶۷۸۹آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char: string) => {
         expect(STRING.hasPersian(char)).toBe(true);
     });
 

@@ -28,7 +28,7 @@ test('STRING: getRandom', () => {
     expect(string_1.STRING.getRandom(12, 'alphanumeric').length).toBe(12);
 });
 test('STRING: hasPersian', () => {
-    'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char) => {
+    '۰۱۲۳۴۵۶۷۸۹آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('').forEach((char) => {
         expect(string_1.STRING.hasPersian(char)).toBe(true);
     });
     expect(string_1.STRING.hasPersian('English')).toBe(false);

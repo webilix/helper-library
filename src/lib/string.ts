@@ -57,7 +57,7 @@ export const STRING = {
     },
 
     hasPersian: (text: string): boolean => {
-        const chars: string[] = 'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ'.split('');
+        const chars: string[] = ('۰۱۲۳۴۵۶۷۸۹' + 'آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی' + 'ئ').split('');
         for (let i = 0; i < text.length; i++) if (chars.includes(text.substring(i, i + 1))) return true;
 
         return false;
