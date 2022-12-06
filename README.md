@@ -5,11 +5,11 @@ JavaScript/TypeScript programming helper library.
 ## Table of contents
 
 -   [Installation](#installation)
--   [Usage](#usage-typescript)
--   [Date Helpers](#date-validators)
--   [Number Helpers](#number-validators)
--   [String Helpers](#string-validators)
--   [Time Helpers](#time-validators)
+-   [Usage](#usage)
+-   [Date Helpers](#date-helpers)
+-   [Number Helpers](#number-helpers)
+-   [String Helpers](#string-helpers)
+-   [Time Helpers](#time-helpers)
 -   [Tests](#tests)
 
 ## Installation
@@ -52,6 +52,7 @@ Helper.NUMBER.
 Helper.STRING.
 ```
 
+-   changeNumbers
 -   escapeHTML
 -   getBankCardView
 -   getFileName

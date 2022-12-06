@@ -1,5 +1,12 @@
 import { STRING } from '../lib/string';
 
+test('STRING: changeNumbers', () => {
+    expect(STRING.changeNumbers('0123456789', 'EN')).toBe('0123456789');
+    expect(STRING.changeNumbers('0123456789', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');
+    expect(STRING.changeNumbers('۰۱۲۳۴۵۶۷۸۹', 'EN')).toBe('0123456789');
+    expect(STRING.changeNumbers('۰۱۲۳۴۵۶۷۸۹', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');
+});
+
 test('STRING: escapeHTML', () => {
     expect(STRING.escapeHTML(`'' <> <> && ""`)).toBe('&#039;&#039; &lt;&gt; &lt;&gt; &amp;&amp; &quot;&quot;');
 });

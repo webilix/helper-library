@@ -1,6 +1,16 @@
 import { Validator } from '@webilix/validator-library';
 
 export const STRING = {
+    changeNumbers: (str: string, changeTo: 'EN' | 'FA' = 'FA'): string => {
+        const fa: string[] = '۰۱۲۳۴۵۶۷۸۹'.split('');
+        const en: string[] = '0123456789'.split('');
+
+        const from: string[] = changeTo === 'FA' ? en : fa;
+        const to: string[] = changeTo === 'FA' ? fa : en;
+        from.forEach((c: string, i: number) => (str = str.replace(new RegExp(c, 'g'), to[i])));
+        return str;
+    },
+
     escapeHTML: (str: string): string => {
         return str
             .replace(/&/g, '&amp;')

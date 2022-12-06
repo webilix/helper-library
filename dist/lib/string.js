@@ -3,6 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.STRING = void 0;
 const validator_library_1 = require("@webilix/validator-library");
 exports.STRING = {
+    changeNumbers: (str, changeTo = 'FA') => {
+        const fa = '۰۱۲۳۴۵۶۷۸۹'.split('');
+        const en = '0123456789'.split('');
+        const from = changeTo === 'FA' ? en : fa;
+        const to = changeTo === 'FA' ? fa : en;
+        from.forEach((c, i) => (str = str.replace(new RegExp(c, 'g'), to[i])));
+        return str;
+    },
     escapeHTML: (str) => {
         return str
             .replace(/&/g, '&amp;')

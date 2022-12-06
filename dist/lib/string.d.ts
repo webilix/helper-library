@@ -1,4 +1,5 @@
 export declare const STRING: {
+    changeNumbers: (str: string, changeTo?: 'EN' | 'FA') => string;
     escapeHTML: (str: string) => string;
     getBankCardView: (bankCard: string, join?: string) => string;
     getFileName: (name: string, ext: string, seperator?: string) => string;

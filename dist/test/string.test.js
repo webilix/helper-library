@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const string_1 = require("../lib/string");
+test('STRING: changeNumbers', () => {
+    expect(string_1.STRING.changeNumbers('0123456789', 'EN')).toBe('0123456789');
+    expect(string_1.STRING.changeNumbers('0123456789', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');
+    expect(string_1.STRING.changeNumbers('۰۱۲۳۴۵۶۷۸۹', 'EN')).toBe('0123456789');
+    expect(string_1.STRING.changeNumbers('۰۱۲۳۴۵۶۷۸۹', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');
+});
 test('STRING: escapeHTML', () => {
     expect(string_1.STRING.escapeHTML(`'' <> <> && ""`)).toBe('&#039;&#039; &lt;&gt; &lt;&gt; &amp;&amp; &quot;&quot;');
 });

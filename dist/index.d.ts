@@ -11,6 +11,7 @@ export declare const Helper: {
         toFA: (num: string | number) => string;
     };
     STRING: {
+        changeNumbers: (str: string, changeTo?: "FA" | "EN") => string;
         escapeHTML: (str: string) => string;
         getBankCardView: (bankCard: string, join?: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;
