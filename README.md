@@ -45,6 +45,7 @@ Helper.NUMBER.
 -   format
 -   toEN
 -   toFA
+-   toFileSize
 
 ## String Helpers
 

@@ -1,3 +1,5 @@
+import { Validator } from '@webilix/validator-library';
+
 export const NUMBER = {
     format: (num: number, locale: 'FA' | 'EN' = 'FA'): string => {
         const minus: boolean = num < 0;
@@ -29,5 +31,29 @@ export const NUMBER = {
         });
 
         return fa;
+    },
+
+    toFileSize: (size: number, english: boolean = false): string => {
+        if (!Validator.VALUE.isNumber(size) || size < 0) return '';
+
+        const titles: [string, string][] = [
+            ['B', 'بایت'],
+            ['KB', 'کیلوبایت'],
+            ['MB', 'مگابایت'],
+            ['GB', 'گیگابایت'],
+            ['TB', 'ترابایت'],
+        ];
+
+        let index: number = 0;
+        while (index < 4 && size >= 1000) {
+            index++;
+            size /= 1024;
+        }
+
+        const value: string = NUMBER.format(
+            size % 1 === 0 ? +size.toString() : +size.toFixed(2),
+            english ? 'EN' : 'FA',
+        ).replace(/,/g, english ? ',' : '،');
+        return `${value} ${titles[index][english ? 0 : 1]}`;
     },
 };

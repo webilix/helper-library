@@ -9,6 +9,7 @@ export declare const Helper: {
         format: (num: number, locale?: "FA" | "EN") => string;
         toEN: (num: string | number) => string;
         toFA: (num: string | number) => string;
+        toFileSize: (size: number, english?: boolean) => string;
     };
     STRING: {
         changeNumbers: (str: string, changeTo?: "FA" | "EN") => string;

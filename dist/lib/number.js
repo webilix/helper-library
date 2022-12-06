@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NUMBER = void 0;
+const validator_library_1 = require("@webilix/validator-library");
 exports.NUMBER = {
     format: (num, locale = 'FA') => {
         const minus = num < 0;
@@ -24,6 +25,24 @@ exports.NUMBER = {
             fa = fa.replace(new RegExp(index.toString(), 'g'), n);
         });
         return fa;
+    },
+    toFileSize: (size, english = false) => {
+        if (!validator_library_1.Validator.VALUE.isNumber(size) || size < 0)
+            return '';
+        const titles = [
+            ['B', 'بایت'],
+            ['KB', 'کیلوبایت'],
+            ['MB', 'مگابایت'],
+            ['GB', 'گیگابایت'],
+            ['TB', 'ترابایت'],
+        ];
+        let index = 0;
+        while (index < 4 && size >= 1000) {
+            index++;
+            size /= 1024;
+        }
+        const value = exports.NUMBER.format(size % 1 === 0 ? +size.toString() : +size.toFixed(2), english ? 'EN' : 'FA').replace(/,/g, english ? ',' : '،');
+        return `${value} ${titles[index][english ? 0 : 1]}`;
     },
 };
 //# sourceMappingURL=number.js.map
