@@ -6,5 +6,6 @@ export declare const STRING: {
     getMobileView: (mobile: string, join?: string) => string;
     getRandom: (length: number, type?: 'numeric' | 'alphabetic' | 'alphanumeric') => string;
     hasPersian: (text: string) => boolean;
+    toFileSize: (size: string) => number;
 };
 //# sourceMappingURL=string.d.ts.map

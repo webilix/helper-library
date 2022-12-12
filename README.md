@@ -60,6 +60,7 @@ Helper.STRING.
 -   getMobileView
 -   getRandom
 -   hasPersian
+-   toFileSize
 
 ## Time Helpers
 

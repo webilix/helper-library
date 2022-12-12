@@ -19,6 +19,7 @@ export declare const Helper: {
         getMobileView: (mobile: string, join?: string) => string;
         getRandom: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
         hasPersian: (text: string) => boolean;
+        toFileSize: (size: string) => number;
     };
     TIME: {
         getDuration: (second: number) => string;

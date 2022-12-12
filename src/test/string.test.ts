@@ -47,3 +47,29 @@ test('STRING: hasPersian', () => {
     expect(STRING.hasPersian('~!@#$%^&*()_+{}[]=-0987654321`')).toBe(false);
     expect(STRING.hasPersian('<a href="google.com">GOOGLE</a>')).toBe(false);
 });
+
+test('STRING: toFileSize', () => {
+    expect(STRING.toFileSize('+1B')).toBe(1);
+    [0, 1, 1.1, 1.11, 1.111].forEach((factor: number) => {
+        expect(STRING.toFileSize(`${factor}B`)).toBe(factor * 1024 ** 0);
+        expect(STRING.toFileSize(`${factor}KB`)).toBe(factor * 1024 ** 1);
+        expect(STRING.toFileSize(`${factor}MB`)).toBe(factor * 1024 ** 2);
+        expect(STRING.toFileSize(`${factor}GB`)).toBe(factor * 1024 ** 3);
+        expect(STRING.toFileSize(`${factor}TB`)).toBe(factor * 1024 ** 4);
+        expect(STRING.toFileSize(`${factor}b`)).toBe(factor * 1024 ** 0);
+        expect(STRING.toFileSize(`${factor}kb`)).toBe(factor * 1024 ** 1);
+        expect(STRING.toFileSize(`${factor}mb`)).toBe(factor * 1024 ** 2);
+        expect(STRING.toFileSize(`${factor}gb`)).toBe(factor * 1024 ** 3);
+        expect(STRING.toFileSize(`${factor}tb`)).toBe(factor * 1024 ** 4);
+    });
+
+    expect(STRING.toFileSize('')).toBe(0);
+    expect(STRING.toFileSize('B')).toBe(0);
+    expect(STRING.toFileSize('K')).toBe(0);
+    expect(STRING.toFileSize('M')).toBe(0);
+    expect(STRING.toFileSize('G')).toBe(0);
+    expect(STRING.toFileSize('T')).toBe(0);
+    expect(STRING.toFileSize('.KB')).toBe(0);
+    expect(STRING.toFileSize('1.KB')).toBe(0);
+    expect(STRING.toFileSize('-1KB')).toBe(0);
+});

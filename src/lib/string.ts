@@ -72,4 +72,22 @@ export const STRING = {
 
         return false;
     },
+
+    toFileSize: (size: string): number => {
+        if (Validator.VALUE.isEmpty(size) || !Validator.VALUE.isString(size)) return 0;
+
+        size = size.toUpperCase();
+        const units: string[] = ['B', 'KB', 'MB', 'GB', 'TB'];
+        for (let u = units.length - 1; u >= 0; u--) {
+            const unit: string = units[u];
+            if (size.substring(size.length - unit.length) === unit) {
+                const value: string = size.substring(0, size.length - unit.length);
+                return value === '' || value.substring(value.length - 1) === '.' || isNaN(+value) || +value < 0
+                    ? 0
+                    : +value * 1024 ** u;
+            }
+        }
+
+        return 0;
+    },
 };

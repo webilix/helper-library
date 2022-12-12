@@ -63,5 +63,21 @@ exports.STRING = {
                 return true;
         return false;
     },
+    toFileSize: (size) => {
+        if (validator_library_1.Validator.VALUE.isEmpty(size) || !validator_library_1.Validator.VALUE.isString(size))
+            return 0;
+        size = size.toUpperCase();
+        const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+        for (let u = units.length - 1; u >= 0; u--) {
+            const unit = units[u];
+            if (size.substring(size.length - unit.length) === unit) {
+                const value = size.substring(0, size.length - unit.length);
+                return value === '' || value.substring(value.length - 1) === '.' || isNaN(+value) || +value < 0
+                    ? 0
+                    : +value * Math.pow(1024, u);
+            }
+        }
+        return 0;
+    },
 };
 //# sourceMappingURL=string.js.map
