@@ -6,6 +6,7 @@ JavaScript/TypeScript programming helper library.
 
 -   [Installation](#installation)
 -   [Usage](#usage)
+-   [Bank Helpers](#bank-helpers)
 -   [Date Helpers](#date-helpers)
 -   [Number Helpers](#number-helpers)
 -   [String Helpers](#string-helpers)
@@ -22,8 +23,24 @@ npm install --save @webilix/helper-library
 
 ```typescript
 import { Helper } from '@webilix/helper-library';
+
 Helper.NUMBER.format(100000);
+// ۱۰۰,۰۰۰
+
+Helper.NUMBER.format(100000, 'EN');
+// 100,000
 ```
+
+## Bank Helpers
+
+#### Iran bank cards numbers functionalities
+
+```javascript
+Helper.BANK.
+```
+
+-   findCard
+-   getList
 
 ## Date Helpers
 

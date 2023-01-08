@@ -1,4 +1,8 @@
 export declare const Helper: {
+    BANK: {
+        findCard: (card: string) => import("./lib/bank").IBank | null;
+        getList: () => import("./lib/bank").IBank[];
+    };
     DATE: {
         getDuration: (from: Date, to: Date) => string;
         getSeconds: (from: Date, to: Date) => number;
@@ -6,13 +10,13 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
     NUMBER: {
-        format: (num: number, locale?: "FA" | "EN") => string;
+        format: (num: number, locale?: "EN" | "FA") => string;
         toEN: (num: string | number) => string;
         toFA: (num: string | number) => string;
         toFileSize: (size: number, english?: boolean) => string;
     };
     STRING: {
-        changeNumbers: (str: string, changeTo?: "FA" | "EN") => string;
+        changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
         escapeHTML: (str: string) => string;
         getBankCardView: (bankCard: string, join?: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;
@@ -26,4 +30,5 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
 };
+export { IBank } from './lib/bank';
 //# sourceMappingURL=index.d.ts.map
