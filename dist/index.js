@@ -1,11 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Helper = void 0;
-const bank_1 = require("./lib/bank");
-const date_1 = require("./lib/date");
-const number_1 = require("./lib/number");
-const plate_1 = require("./lib/plate");
-const string_1 = require("./lib/string");
-const time_1 = require("./lib/time");
-exports.Helper = { BANK: bank_1.BANK, DATE: date_1.DATE, NUMBER: number_1.NUMBER, PLATE: plate_1.PLATE, STRING: string_1.STRING, TIME: time_1.TIME };
+const is_1 = require("./lib/is");
+const bank_1 = require("./lib/helpers/bank");
+const date_1 = require("./lib/helpers/date");
+const number_1 = require("./lib/helpers/number");
+const plate_1 = require("./lib/helpers/plate");
+const string_1 = require("./lib/helpers/string");
+const time_1 = require("./lib/helpers/time");
+exports.Helper = {
+    IS: is_1.IS,
+    BANK: bank_1.BANK,
+    DATE: date_1.DATE,
+    NUMBER: number_1.NUMBER,
+    PLATE: plate_1.PLATE,
+    STRING: string_1.STRING,
+    TIME: time_1.TIME,
+};
 //# sourceMappingURL=index.js.map

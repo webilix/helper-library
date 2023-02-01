@@ -1,7 +1,41 @@
 export declare const Helper: {
+    IS: {
+        ARRAY: {
+            in: (values: any[], arr: any[]) => boolean;
+            unique: (arr: any[]) => boolean;
+        };
+        STRING: {
+            bankCard: (value: any) => boolean;
+            date: (value: any) => boolean;
+            domain: (value: any) => boolean;
+            email: (value: any) => boolean;
+            hexColor: (value: any) => boolean;
+            ip4: (value: any) => boolean;
+            jsonDate: (value: any) => boolean;
+            mobile: (value: any) => boolean;
+            nationalCode: (value: any) => boolean;
+            numeric: (value: any) => boolean;
+            objectId: (value: any) => boolean;
+            time: (value: any) => boolean;
+            url: (value: any) => boolean;
+        };
+        array: (value: any) => boolean;
+        boolean: (value: any) => boolean;
+        date: (value: any) => boolean;
+        empty: (value: any) => boolean;
+        null: (value: any) => boolean;
+        number: (value: any) => boolean;
+        object: (value: any) => boolean;
+        plate: {
+            (value: string[]): boolean;
+            (value: string): boolean;
+            (value: string, join: string): boolean;
+        };
+        string: (value: any) => boolean;
+    };
     BANK: {
-        findCard: (card: string) => import("./lib/bank").IBank | null;
-        getList: () => import("./lib/bank").IBank[];
+        findCard: (card: string) => import("./lib/helpers/bank").IBank | null;
+        getList: () => import("./lib/helpers/bank").IBank[];
     };
     DATE: {
         getDuration: (from: Date, to: Date) => string;
@@ -22,11 +56,6 @@ export declare const Helper: {
             (plate: string): (string | null)[];
             (plate: string, join: string): (string | null)[];
         };
-        isValid: {
-            (plate: string[]): boolean;
-            (plate: string): boolean;
-            (plate: string, join: string): boolean;
-        };
         toString: (plate: string[], join?: string) => string | null;
     };
     STRING: {
@@ -44,5 +73,5 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
 };
-export { IBank } from './lib/bank';
+export { IBank } from './lib/helpers/bank';
 //# sourceMappingURL=index.d.ts.map

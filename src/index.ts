@@ -1,10 +1,21 @@
-import { BANK } from './lib/bank';
-import { DATE } from './lib/date';
-import { NUMBER } from './lib/number';
-import { PLATE } from './lib/plate';
-import { STRING } from './lib/string';
-import { TIME } from './lib/time';
+import { IS } from './lib/is';
 
-export const Helper = { BANK, DATE, NUMBER, PLATE, STRING, TIME };
+import { BANK } from './lib/helpers/bank';
+import { DATE } from './lib/helpers/date';
+import { NUMBER } from './lib/helpers/number';
+import { PLATE } from './lib/helpers/plate';
+import { STRING } from './lib/helpers/string';
+import { TIME } from './lib/helpers/time';
 
-export { IBank } from './lib/bank';
+export const Helper = {
+    IS,
+
+    BANK,
+    DATE,
+    NUMBER,
+    PLATE,
+    STRING,
+    TIME,
+};
+
+export { IBank } from './lib/helpers/bank';
