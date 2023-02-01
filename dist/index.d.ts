@@ -2,7 +2,7 @@ export declare const Helper: {
     IS: {
         ARRAY: {
             in: (values: any[], arr: any[]) => boolean;
-            unique: (arr: any[]) => boolean;
+            unique: (arr: any[], value?: ((v: any) => any) | undefined) => boolean;
         };
         STRING: {
             bankCard: (value: any) => boolean;
@@ -44,7 +44,7 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
     NUMBER: {
-        format: (num: number, locale?: "EN" | "FA") => string;
+        format: (num: number, locale?: "FA" | "EN") => string;
         toEN: (num: string | number) => string;
         toFA: (num: string | number) => string;
         toFileSize: (size: number, english?: boolean) => string;
@@ -59,7 +59,7 @@ export declare const Helper: {
         toString: (plate: string[], join?: string) => string | null;
     };
     STRING: {
-        changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
+        changeNumbers: (str: string, changeTo?: "FA" | "EN") => string;
         escapeHTML: (str: string) => string;
         getBankCardView: (bankCard: string, join?: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;

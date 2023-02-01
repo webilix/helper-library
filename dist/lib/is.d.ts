@@ -4,7 +4,7 @@ declare function isPlate(value: string, join: string): boolean;
 export declare const IS: {
     ARRAY: {
         in: (values: any[], arr: any[]) => boolean;
-        unique: (arr: any[]) => boolean;
+        unique: (arr: any[], value?: ((v: any) => any) | undefined) => boolean;
     };
     STRING: {
         bankCard: (value: any) => boolean;

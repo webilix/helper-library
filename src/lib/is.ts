@@ -29,8 +29,10 @@ export const IS = {
             return true;
         },
 
-        unique: (arr: any[]): boolean =>
-            arr.filter((v: any, index: number, self: string[]) => self.indexOf(v) === index).length === arr.length,
+        unique: (arr: any[], value?: (v: any) => any): boolean =>
+            arr
+                .map((v: any) => (value ? value(v) : v))
+                .filter((v: any, index: number, self: string[]) => self.indexOf(v) === index).length === arr.length,
     },
     //#region
 

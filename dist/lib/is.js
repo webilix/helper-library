@@ -30,7 +30,9 @@ exports.IS = {
                     return false;
             return true;
         },
-        unique: (arr) => arr.filter((v, index, self) => self.indexOf(v) === index).length === arr.length,
+        unique: (arr, value) => arr
+            .map((v) => (value ? value(v) : v))
+            .filter((v, index, self) => self.indexOf(v) === index).length === arr.length,
     },
     //#region
     //#region STRING

@@ -13,14 +13,17 @@ test(`IS: ARRAY.in`, () => {
 });
 
 test(`IS: ARRAY.unique`, () => {
-    const tests: { arr: any[]; result: boolean }[] = [
+    const tests: { arr: any[]; result: boolean; value?: (v: any) => any }[] = [
         { arr: [], result: true },
         { arr: [1, 2, 3], result: true },
         { arr: [1, 2, 1], result: false },
+
+        { arr: [[1], [2], [3]], result: true, value: (v: number[]) => v[0] },
+        { arr: [[1], [2], [1]], result: false, value: (v: number[]) => v[0] },
     ];
 
     tests.forEach((test) => {
-        expect(IS.ARRAY.unique(test.arr)).toBe(test.result);
+        expect(IS.ARRAY.unique(test.arr, test.value)).toBe(test.result);
     });
 });
 

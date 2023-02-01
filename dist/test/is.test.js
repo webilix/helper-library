@@ -16,9 +16,11 @@ test(`IS: ARRAY.unique`, () => {
         { arr: [], result: true },
         { arr: [1, 2, 3], result: true },
         { arr: [1, 2, 1], result: false },
+        { arr: [[1], [2], [3]], result: true, value: (v) => v[0] },
+        { arr: [[1], [2], [1]], result: false, value: (v) => v[0] },
     ];
     tests.forEach((test) => {
-        expect(is_1.IS.ARRAY.unique(test.arr)).toBe(test.result);
+        expect(is_1.IS.ARRAY.unique(test.arr, test.value)).toBe(test.result);
     });
 });
 test(`IS: STRING.bankCard`, () => {
