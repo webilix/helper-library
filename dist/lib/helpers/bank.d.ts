@@ -1,7 +1,4 @@
-export interface IBank {
-    id: string;
-    title: string;
-}
+import { IBank } from '../shared';
 export declare const BANK: {
     findCard: (card: string) => IBank | null;
     getList: () => IBank[];

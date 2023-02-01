@@ -1,0 +1,1 @@
+{"version":3,"file":"domain.d.ts","sourceRoot":"","sources":["../../../src/lib/regexp/domain.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,MAAM;qBACC,OAAO,UAAiB,MAAM,KAAG,MAAM;mBAExC,MAAM,KAAG,OAAO;iBAElB,MAAM,KAAG,MAAM,EAAE;oBAEd,MAAM,gBAAe,MAAM,KAAQ,MAAM;CAC5D,CAAC"}

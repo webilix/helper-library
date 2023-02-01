@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IS = void 0;
-const regex_library_1 = require("@webilix/regex-library");
+const re_1 = require("./re");
 const shared_1 = require("./shared");
 function isPlate(value, join = '-') {
     const plate = Array.isArray(value) ? value : value.split(join);
@@ -54,13 +54,13 @@ exports.IS = {
             });
             return check % 10 === 0;
         },
-        date: (value) => exports.IS.string(value) && regex_library_1.RegX.DATE.get().test(value),
-        domain: (value) => exports.IS.string(value) && regex_library_1.RegX.DOMAIN.get().test(value),
-        email: (value) => exports.IS.string(value) && regex_library_1.RegX.EMAIL.get().test(value.toLowerCase()),
-        hexColor: (value) => exports.IS.string(value) && regex_library_1.RegX.HEX_COLOR.get().test(value),
-        ip4: (value) => exports.IS.string(value) && regex_library_1.RegX.IP4.get().test(value),
-        jsonDate: (value) => exports.IS.string(value) && regex_library_1.RegX.JSON_DATE.get().test(value),
-        mobile: (value) => exports.IS.string(value) && regex_library_1.RegX.MOBILE.get().test(value),
+        date: (value) => exports.IS.string(value) && re_1.RE.DATE.get().test(value),
+        domain: (value) => exports.IS.string(value) && re_1.RE.DOMAIN.get().test(value),
+        email: (value) => exports.IS.string(value) && re_1.RE.EMAIL.get().test(value.toLowerCase()),
+        hexColor: (value) => exports.IS.string(value) && re_1.RE.HEX_COLOR.get().test(value),
+        ip4: (value) => exports.IS.string(value) && re_1.RE.IP4.get().test(value),
+        jsonDate: (value) => exports.IS.string(value) && re_1.RE.JSON_DATE.get().test(value),
+        mobile: (value) => exports.IS.string(value) && re_1.RE.MOBILE.get().test(value),
         nationalCode: (value) => {
             if (!exports.IS.string(value))
                 return false;
@@ -81,7 +81,7 @@ exports.IS = {
             check = check < 2 ? check : 11 - check;
             return check === +numbers[9];
         },
-        numeric: (value) => exports.IS.string(value) && regex_library_1.RegX.NUMERIC.get().test(value),
+        numeric: (value) => exports.IS.string(value) && re_1.RE.NUMERIC.get().test(value),
         objectId: (value) => {
             if (!exports.IS.string(value))
                 return false;
@@ -93,8 +93,8 @@ exports.IS = {
                 return /^[0-9a-fA-F]{24}$/.test(value);
             return false;
         },
-        time: (value) => exports.IS.string(value) && regex_library_1.RegX.TIME.get().test(value),
-        url: (value) => exports.IS.string(value) && regex_library_1.RegX.URL.get(true).test(value),
+        time: (value) => exports.IS.string(value) && re_1.RE.TIME.get().test(value),
+        url: (value) => exports.IS.string(value) && re_1.RE.URL.get(true).test(value),
     },
     //#endregion
     //#region VALUE

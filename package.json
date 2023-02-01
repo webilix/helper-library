@@ -28,7 +28,6 @@
         "typescript": "^4.9.3"
     },
     "dependencies": {
-        "@webilix/jalali-date-time": "^1.0.0",
-        "@webilix/regex-library": "^1.1.0"
+        "@webilix/jalali-date-time": "^1.0.0"
     }
 }

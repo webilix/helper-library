@@ -1,5 +1,4 @@
-import { RegX } from '@webilix/regex-library';
-
+import { RE } from './re';
 import { plateLetters } from './shared';
 
 function isPlate(value: string[]): boolean;
@@ -57,19 +56,19 @@ export const IS = {
             return check % 10 === 0;
         },
 
-        date: (value: any): boolean => IS.string(value) && RegX.DATE.get().test(value),
+        date: (value: any): boolean => IS.string(value) && RE.DATE.get().test(value),
 
-        domain: (value: any): boolean => IS.string(value) && RegX.DOMAIN.get().test(value),
+        domain: (value: any): boolean => IS.string(value) && RE.DOMAIN.get().test(value),
 
-        email: (value: any): boolean => IS.string(value) && RegX.EMAIL.get().test(value.toLowerCase()),
+        email: (value: any): boolean => IS.string(value) && RE.EMAIL.get().test(value.toLowerCase()),
 
-        hexColor: (value: any): boolean => IS.string(value) && RegX.HEX_COLOR.get().test(value),
+        hexColor: (value: any): boolean => IS.string(value) && RE.HEX_COLOR.get().test(value),
 
-        ip4: (value: any): boolean => IS.string(value) && RegX.IP4.get().test(value),
+        ip4: (value: any): boolean => IS.string(value) && RE.IP4.get().test(value),
 
-        jsonDate: (value: any): boolean => IS.string(value) && RegX.JSON_DATE.get().test(value),
+        jsonDate: (value: any): boolean => IS.string(value) && RE.JSON_DATE.get().test(value),
 
-        mobile: (value: any): boolean => IS.string(value) && RegX.MOBILE.get().test(value),
+        mobile: (value: any): boolean => IS.string(value) && RE.MOBILE.get().test(value),
 
         nationalCode: (value: any): boolean => {
             if (!IS.string(value)) return false;
@@ -93,7 +92,7 @@ export const IS = {
             return check === +numbers[9];
         },
 
-        numeric: (value: any): boolean => IS.string(value) && RegX.NUMERIC.get().test(value),
+        numeric: (value: any): boolean => IS.string(value) && RE.NUMERIC.get().test(value),
 
         objectId: (value: any): boolean => {
             if (!IS.string(value)) return false;
@@ -106,9 +105,9 @@ export const IS = {
             return false;
         },
 
-        time: (value: any): boolean => IS.string(value) && RegX.TIME.get().test(value),
+        time: (value: any): boolean => IS.string(value) && RE.TIME.get().test(value),
 
-        url: (value: any): boolean => IS.string(value) && RegX.URL.get(true).test(value),
+        url: (value: any): boolean => IS.string(value) && RE.URL.get(true).test(value),
     },
     //#endregion
 

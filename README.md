@@ -8,13 +8,16 @@ JavaScript/TypeScript helper library.
 -   [Usage](#usage)
 -   [Tests](#tests)
 
+### Regular Expressions
+
+-   [Regular Expression Types](#regular-expression-types)
+-   [Regular Expression Methods](#regular-expressions-methods)
+
 ### Validators
 
 -   [IS Helpers](#is-helpers)
-
-    -   [IS ARRAY Helpers](#is-array-helpers)
-    -   [IS STRING Helpers](#is-string-helpers)
-    -   [IS VALUE Helpers](#is-value-helpers)
+-   [IS ARRAY Helpers](#is-array-helpers)
+-   [IS STRING Helpers](#is-string-helpers)
 
 ### Helpers
 
@@ -57,12 +60,67 @@ npm test
 
 <br>
 
-## IS Helpers
+## Regular Expressions
 
-Value and data validator methods
+<br>
 
--   ### IS ARRAY Helpers
-<div style="margin-left: 2rem;">
+### Regular Expression Types
+
+```javascript
+Helper.RE.
+```
+
+-   DATE
+-   DOMAIN
+-   EMAIL
+-   HEX_COLOR
+-   IP4
+-   JSON_DATE
+-   MOBILE
+-   NUMERIC
+-   PASSWORD
+-   TIME
+-   URL
+-   USERNAME
+
+### Regular Expression Methods
+
+```javascript
+Helper.RE.{TYPE}.
+```
+
+-   get
+-   find
+-   replace
+-   verify
+
+<br>
+
+---
+
+<br>
+
+## Validators
+
+<br>
+
+### IS Helpers
+
+```javascript
+Helper.IS.
+```
+
+-   array
+-   boolean
+-   date
+-   empty
+-   null
+-   number
+-   object
+-   plate
+-   string
+
+### IS ARRAY Helpers
 
 ```javascript
 Helper.IS.ARRAY.
@@ -71,10 +129,7 @@ Helper.IS.ARRAY.
 -   in
 -   unique
 
-</div>
-
--   ### IS STRING Helpers
-<div style="margin-left: 2rem;">
+### IS STRING Helpers
 
 ```javascript
 Helper.IS.STRING.
@@ -94,34 +149,17 @@ Helper.IS.STRING.
 -   time
 -   url
 
-</div>
-
--   ### IS VALUE Helpers
-<div style="margin-left: 2rem;">
-
-```javascript
-Helper.IS.
-```
-
--   array
--   boolean
--   date
--   empty
--   null
--   number
--   object
--   plate
--   string
-
-</div>
-
 <br>
 
 ---
 
 <br>
 
-## Bank Helpers
+## Helpers
+
+<br>
+
+### Bank Helpers
 
 #### Iran bank cards numbers functionalities
 
@@ -132,7 +170,7 @@ Helper.BANK.
 -   findCard
 -   getList
 
-## Date Helpers
+### Date Helpers
 
 ```javascript
 Helper.DATE.
@@ -143,7 +181,7 @@ Helper.DATE.
 -   jalaliPeriod
 -   toString
 
-## Number Helpers
+### Number Helpers
 
 ```javascript
 Helper.NUMBER.
@@ -154,7 +192,7 @@ Helper.NUMBER.
 -   toFA
 -   toFileSize
 
-## Plate Helpers
+### Plate Helpers
 
 ```javascript
 Helper.PLATE.
@@ -162,10 +200,9 @@ Helper.PLATE.
 
 -   letters
 -   getPlate
--   isValid
 -   toString
 
-## String Helpers
+### String Helpers
 
 ```javascript
 Helper.STRING.
@@ -180,7 +217,7 @@ Helper.STRING.
 -   hasPersian
 -   toFileSize
 
-## Time Helpers
+### Time Helpers
 
 ```javascript
 Helper.TIME.

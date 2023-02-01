@@ -1,0 +1,1 @@
+{"version":3,"file":"url.d.ts","sourceRoot":"","sources":["../../../src/lib/regexp/url.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,GAAG;iBACA,OAAO,aAAoB,OAAO,UAAiB,MAAM,KAAG,MAAM;mBAG/D,MAAM,SAAQ,OAAO,KAAW,OAAO;iBAEzC,MAAM,SAAQ,OAAO,KAAW,MAAM,EAAE;oBAErC,MAAM,gBAAe,MAAM,SAAa,OAAO,KAAW,MAAM;CAEnF,CAAC"}

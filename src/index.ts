@@ -1,4 +1,5 @@
 import { IS } from './lib/is';
+import { RE } from './lib/re';
 
 import { BANK } from './lib/helpers/bank';
 import { DATE } from './lib/helpers/date';
@@ -9,6 +10,7 @@ import { TIME } from './lib/helpers/time';
 
 export const Helper = {
     IS,
+    RE,
 
     BANK,
     DATE,
@@ -18,4 +20,4 @@ export const Helper = {
     TIME,
 };
 
-export { IBank } from './lib/helpers/bank';
+export { IBank } from './lib/shared';

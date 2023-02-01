@@ -1,0 +1,1 @@
+{"version":3,"file":"date.d.ts","sourceRoot":"","sources":["../../../src/lib/regexp/date.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,IAAI;qBACG,OAAO,UAAiB,MAAM,KAAG,MAAM;mBAExC,MAAM,KAAG,OAAO;iBAElB,MAAM,KAAG,MAAM,EAAE;oBAEd,MAAM,gBAAe,MAAM,KAAQ,MAAM;CAC5D,CAAC"}
