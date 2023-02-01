@@ -15,6 +15,20 @@ export declare const Helper: {
         toFA: (num: string | number) => string;
         toFileSize: (size: number, english?: boolean) => string;
     };
+    PLATE: {
+        letters: string[];
+        getPlate: {
+            (plate: string[]): (string | null)[];
+            (plate: string): (string | null)[];
+            (plate: string, join: string): (string | null)[];
+        };
+        isValid: {
+            (plate: string[]): boolean;
+            (plate: string): boolean;
+            (plate: string, join: string): boolean;
+        };
+        toString: (plate: string[], join?: string) => string | null;
+    };
     STRING: {
         changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
         escapeHTML: (str: string) => string;

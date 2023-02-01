@@ -9,6 +9,7 @@ JavaScript/TypeScript programming helper library.
 -   [Bank Helpers](#bank-helpers)
 -   [Date Helpers](#date-helpers)
 -   [Number Helpers](#number-helpers)
+-   [Plate Helpers](#plate-helpers)
 -   [String Helpers](#string-helpers)
 -   [Time Helpers](#time-helpers)
 -   [Tests](#tests)
@@ -63,6 +64,17 @@ Helper.NUMBER.
 -   toEN
 -   toFA
 -   toFileSize
+
+## Plate Helpers
+
+```javascript
+Helper.PLATE.
+```
+
+-   letters
+-   getPlate
+-   isValid
+-   toString
 
 ## String Helpers
 
