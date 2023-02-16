@@ -94,6 +94,41 @@ export const COLOR = {
             ? 'RGB'
             : null,
 
+    getGradient: (from: string, to: string, count: number, format?: ColorFormats): string[] => {
+        if (!IS.STRING.color(from)) throw TypeError('From: argument must be a color');
+        if (!IS.STRING.color(to)) throw TypeError('To: argument must be a color');
+
+        const [r1, g1, b1] = parseRGB(COLOR.toRGB(from) || '');
+        const [r2, g2, b2] = parseRGB(COLOR.toRGB(to) || '');
+
+        const rChange: number = (r2 - r1) / (count - 1);
+        const gChange: number = (g2 - g1) / (count - 1);
+        const bChange: number = (b2 - b1) / (count - 1);
+
+        format = (format || COLOR.getFormat(from)) as ColorFormats;
+        return [...Array(count).keys()].map((index: number) => {
+            const r: string = Math.floor(r1 + index * rChange)
+                .toString(16)
+                .padStart(2, '0');
+            const g: string = Math.floor(g1 + index * gChange)
+                .toString(16)
+                .padStart(2, '0');
+            const b: string = Math.floor(b1 + index * bChange)
+                .toString(16)
+                .padStart(2, '0');
+
+            const rgb = `#${r}${g}${b}`;
+            switch (format as ColorFormats) {
+                case 'HEX':
+                    return COLOR.toHEX(rgb) || rgb;
+                case 'HSL':
+                    return COLOR.toHSL(rgb) || rgb;
+                case 'RGB':
+                    return COLOR.toRGB(rgb) || rgb;
+            }
+        });
+    },
+
     toHEX: (color: string): string | null => {
         const format: ColorFormats | null = COLOR.getFormat(color);
         if (format === null) return null;

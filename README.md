@@ -183,6 +183,7 @@ Helper.COLOR.
 ```
 
 -   getFormat
+-   getGradient
 -   toHEX
 -   toHSL
 -   toRGB
