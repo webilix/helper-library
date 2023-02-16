@@ -5,5 +5,6 @@ export declare const PASSWORD: {
         upper?: boolean;
         special?: boolean;
     }) => string;
+    getStrength: (password: string) => number;
 };
 //# sourceMappingURL=password.d.ts.map

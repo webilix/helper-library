@@ -219,6 +219,7 @@ Helper.PASSWORD.
 ```
 
 -   generate
+-   getStrength
 
 ### Plate Helpers
 

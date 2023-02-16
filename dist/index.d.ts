@@ -147,6 +147,7 @@ export declare const Helper: {
             upper?: boolean | undefined;
             special?: boolean | undefined;
         } | undefined) => string;
+        getStrength: (password: string) => number;
     };
     PLATE: {
         letters: string[];
