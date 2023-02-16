@@ -58,6 +58,12 @@ export declare const Helper: {
             find: (text: string) => string[];
             replace: (text: string, replaceWith?: string) => string;
         };
+        HSL_COLOR: {
+            get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
+            verify: (text: string) => boolean;
+            find: (text: string) => string[];
+            replace: (text: string, replaceWith?: string) => string;
+        };
         IP4: {
             get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
             verify: (text: string) => boolean;

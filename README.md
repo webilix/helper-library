@@ -74,6 +74,7 @@ Helper.RE.
 -   DOMAIN
 -   EMAIL
 -   HEX_COLOR
+-   HSL_COLOR
 -   IP4
 -   JSON_DATE
 -   MOBILE

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.bankList = void 0;
+exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.bankList = void 0;
 //#region BANK HELPER
 exports.bankList = [
     { id: 'EN', title: 'بانک اقتصاد نوین', card: '627412' },
@@ -101,5 +101,10 @@ exports.regexpIP4 = `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.` +
     `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.` +
     `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`;
 exports.regexpHexColor = `#([0-9a-fA-F]{3}){1,2}`;
+exports.regexpHSLColor = `hsl\\(` +
+    `[ ]{0,}(0|360|35\\d|3[0-4]\\d|[12]\\d\\d|0?\\d?\\d)[ ]{0,},` +
+    `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,},` +
+    `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,}` +
+    `\\)`;
 //#endregion
 //# sourceMappingURL=shared.js.map

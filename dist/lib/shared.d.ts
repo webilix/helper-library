@@ -24,4 +24,5 @@ export declare const regexpDomain: string;
 export declare const regexpUrl: (full?: boolean) => string;
 export declare const regexpIP4: string;
 export declare const regexpHexColor: string;
+export declare const regexpHSLColor: string;
 //# sourceMappingURL=shared.d.ts.map

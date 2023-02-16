@@ -5,6 +5,7 @@ const date_1 = require("./regexp/date");
 const domain_1 = require("./regexp/domain");
 const email_1 = require("./regexp/email");
 const hex_color_1 = require("./regexp/hex-color");
+const hsl_color_1 = require("./regexp/hsl-color");
 const ip4_1 = require("./regexp/ip4");
 const json_date_1 = require("./regexp/json-date");
 const mobile_1 = require("./regexp/mobile");
@@ -18,6 +19,7 @@ exports.RE = {
     DOMAIN: domain_1.DOMAIN,
     EMAIL: email_1.EMAIL,
     HEX_COLOR: hex_color_1.HEX_COLOR,
+    HSL_COLOR: hsl_color_1.HSL_COLOR,
     IP4: ip4_1.IP4,
     JSON_DATE: json_date_1.JSON_DATE,
     MOBILE: mobile_1.MOBILE,

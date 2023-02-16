@@ -128,4 +128,11 @@ export const regexpIP4: string =
     `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`;
 
 export const regexpHexColor: string = `#([0-9a-fA-F]{3}){1,2}`;
+
+export const regexpHSLColor: string =
+    `hsl\\(` +
+    `[ ]{0,}(0|360|35\\d|3[0-4]\\d|[12]\\d\\d|0?\\d?\\d)[ ]{0,},` +
+    `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,},` +
+    `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,}` +
+    `\\)`;
 //#endregion
