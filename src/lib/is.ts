@@ -56,6 +56,10 @@ export const IS = {
             return check % 10 === 0;
         },
 
+        color: (value: any): boolean =>
+            IS.string(value) &&
+            (RE.HEX_COLOR.get().test(value) || RE.HSL_COLOR.get().test(value) || RE.RGB_COLOR.get().test(value)),
+
         date: (value: any): boolean => IS.string(value) && RE.DATE.get().test(value),
 
         domain: (value: any): boolean => IS.string(value) && RE.DOMAIN.get().test(value),

@@ -138,6 +138,7 @@ Helper.IS.STRING.
 ```
 
 -   bankCard
+-   color
 -   date
 -   domain
 -   email

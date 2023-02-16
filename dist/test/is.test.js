@@ -34,6 +34,17 @@ test(`IS: STRING.bankCard`, () => {
         expect(is_1.IS.STRING.bankCard(test.value)).toBe(test.result);
     });
 });
+test(`IS: STRING.color`, () => {
+    const tests = [
+        { value: '', result: false },
+        { value: '#000', result: true },
+        { value: 'hsl(0,0%,0%)', result: true },
+        { value: 'rgb(0,0,0)', result: true },
+    ];
+    tests.forEach((test) => {
+        expect(is_1.IS.STRING.color(test.value)).toBe(test.result);
+    });
+});
 test(`IS: STRING.date`, () => {
     const tests = [
         { value: '', result: false },

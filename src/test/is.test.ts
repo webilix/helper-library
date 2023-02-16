@@ -40,6 +40,19 @@ test(`IS: STRING.bankCard`, () => {
     });
 });
 
+test(`IS: STRING.color`, () => {
+    const tests: { value: string; result: boolean }[] = [
+        { value: '', result: false },
+        { value: '#000', result: true },
+        { value: 'hsl(0,0%,0%)', result: true },
+        { value: 'rgb(0,0,0)', result: true },
+    ];
+
+    tests.forEach((test) => {
+        expect(IS.STRING.color(test.value)).toBe(test.result);
+    });
+});
+
 test(`IS: STRING.date`, () => {
     const tests: { value: string; result: boolean }[] = [
         { value: '', result: false },
