@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.rgbToHsl = exports.hslToHex = exports.parseRGB = exports.parseHSL = exports.parseHex = exports.bankList = void 0;
+exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.PasswordChars = exports.rgbToHsl = exports.hslToHex = exports.parseRGB = exports.parseHSL = exports.parseHex = exports.bankList = void 0;
 //#region BANK HELPER
 exports.bankList = [
     { id: 'EN', title: 'بانک اقتصاد نوین', card: '627412' },
@@ -112,6 +112,14 @@ const rgbToHsl = (r, g, b) => {
     return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
 };
 exports.rgbToHsl = rgbToHsl;
+//#endregion
+//#region PASSWORD HELPER
+exports.PasswordChars = {
+    number: '0123456789',
+    lower: 'abcdefghijklmnopqrstuvwxyz',
+    upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    special: '!@#$%^&*()-_=+[]{}\'";:/?\\|.>,<',
+};
 //#endregion
 //#region PLATE HELPER
 exports.plateLetters = 'ابپتثجدزژسشصطعفقکگلمنوهی'.split('');

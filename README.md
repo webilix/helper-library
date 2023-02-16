@@ -25,6 +25,7 @@ JavaScript/TypeScript helper library.
 -   [Color Helpers](#color-helpers)
 -   [Date Helpers](#date-helpers)
 -   [Number Helpers](#number-helpers)
+-   [Password Helpers](#password-helpers)
 -   [Plate Helpers](#plate-helpers)
 -   [String Helpers](#string-helpers)
 -   [Time Helpers](#time-helpers)
@@ -210,6 +211,14 @@ Helper.NUMBER.
 -   toEN
 -   toFA
 -   toFileSize
+
+### Password Helpers
+
+```javascript
+Helper.PASSWORD.
+```
+
+-   generate
 
 ### Plate Helpers
 

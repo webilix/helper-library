@@ -126,7 +126,15 @@ export const rgbToHsl = (r: number, g: number, b: number): string => {
 
     return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
 };
+//#endregion
 
+//#region PASSWORD HELPER
+export const PasswordChars: { number: string; lower: string; upper: string; special: string } = {
+    number: '0123456789',
+    lower: 'abcdefghijklmnopqrstuvwxyz',
+    upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    special: '!@#$%^&*()-_=+[]{}\'";:/?\\|.>,<',
+};
 //#endregion
 
 //#region PLATE HELPER

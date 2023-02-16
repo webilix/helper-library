@@ -7,6 +7,7 @@ const bank_1 = require("./lib/helpers/bank");
 const color_1 = require("./lib/helpers/color");
 const date_1 = require("./lib/helpers/date");
 const number_1 = require("./lib/helpers/number");
+const password_1 = require("./lib/helpers/password");
 const plate_1 = require("./lib/helpers/plate");
 const string_1 = require("./lib/helpers/string");
 const time_1 = require("./lib/helpers/time");
@@ -17,6 +18,7 @@ exports.Helper = {
     COLOR: color_1.COLOR,
     DATE: date_1.DATE,
     NUMBER: number_1.NUMBER,
+    PASSWORD: password_1.PASSWORD,
     PLATE: plate_1.PLATE,
     STRING: string_1.STRING,
     TIME: time_1.TIME,
