@@ -3,5 +3,6 @@ export declare const COLOR: {
     getFormat: (color: string) => ColorFormats | null;
     toHEX: (color: string) => string | null;
     toHSL: (color: string) => string | null;
+    toRGB: (color: string) => string | null;
 };
 //# sourceMappingURL=color.d.ts.map

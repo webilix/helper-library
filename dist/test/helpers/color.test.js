@@ -25,4 +25,13 @@ test('COLOR: toHSL', () => {
     expect(color_1.COLOR.toHSL(hsl)).toBe(hsl);
     expect(color_1.COLOR.toHSL(rgb)).toBe(hsl);
 });
+test('COLOR: toRGB', () => {
+    const hex = '#7c8b74';
+    const hsl = 'hsl(99, 9%, 50%)';
+    const rgb = 'rgb(124, 139, 116)';
+    expect(color_1.COLOR.toRGB('')).toBe(null);
+    expect(color_1.COLOR.toRGB(hex)).toBe(rgb);
+    expect(color_1.COLOR.toRGB(hsl)).toBe(rgb);
+    expect(color_1.COLOR.toRGB(rgb)).toBe(rgb);
+});
 //# sourceMappingURL=color.test.js.map

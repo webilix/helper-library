@@ -28,3 +28,14 @@ test('COLOR: toHSL', () => {
     expect(COLOR.toHSL(hsl)).toBe(hsl);
     expect(COLOR.toHSL(rgb)).toBe(hsl);
 });
+
+test('COLOR: toRGB', () => {
+    const hex = '#7c8b74';
+    const hsl = 'hsl(99, 9%, 50%)';
+    const rgb = 'rgb(124, 139, 116)';
+
+    expect(COLOR.toRGB('')).toBe(null);
+    expect(COLOR.toRGB(hex)).toBe(rgb);
+    expect(COLOR.toRGB(hsl)).toBe(rgb);
+    expect(COLOR.toRGB(rgb)).toBe(rgb);
+});

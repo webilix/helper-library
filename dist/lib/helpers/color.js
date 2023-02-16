@@ -108,5 +108,20 @@ exports.COLOR = {
                 return rgbToHsl(r, g, b);
         }
     },
+    toRGB: (color) => {
+        const format = exports.COLOR.getFormat(color);
+        if (format === null)
+            return null;
+        switch (format) {
+            case 'HEX':
+                const hex = parseHex(color);
+                return 'rgb(' + hex.map((c) => c.toString()).join(', ') + ')';
+            case 'HSL':
+                const [h, s, l] = parseHSL(color);
+                return exports.COLOR.toRGB(hslToHex(h, s, l));
+            case 'RGB':
+                return color;
+        }
+    },
 };
 //# sourceMappingURL=color.js.map

@@ -185,6 +185,7 @@ Helper.COLOR.
 -   getFormat
 -   toHEX
 -   toHSL
+-   toRGB
 
 ### Date Helpers
 

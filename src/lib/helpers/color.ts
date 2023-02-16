@@ -125,4 +125,20 @@ export const COLOR = {
                 return rgbToHsl(r, g, b);
         }
     },
+
+    toRGB: (color: string): string | null => {
+        const format: ColorFormats | null = COLOR.getFormat(color);
+        if (format === null) return null;
+
+        switch (format) {
+            case 'HEX':
+                const hex = parseHex(color);
+                return 'rgb(' + hex.map((c) => c.toString()).join(', ') + ')';
+            case 'HSL':
+                const [h, s, l] = parseHSL(color);
+                return COLOR.toRGB(hslToHex(h, s, l));
+            case 'RGB':
+                return color;
+        }
+    },
 };
