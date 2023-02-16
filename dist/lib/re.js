@@ -11,6 +11,7 @@ const json_date_1 = require("./regexp/json-date");
 const mobile_1 = require("./regexp/mobile");
 const numeric_1 = require("./regexp/numeric");
 const password_1 = require("./regexp/password");
+const rgb_color_1 = require("./regexp/rgb-color");
 const time_1 = require("./regexp/time");
 const url_1 = require("./regexp/url");
 const username_1 = require("./regexp/username");
@@ -25,6 +26,7 @@ exports.RE = {
     MOBILE: mobile_1.MOBILE,
     NUMERIC: numeric_1.NUMERIC,
     PASSWORD: password_1.PASSWORD,
+    RGB_COLOR: rgb_color_1.RGB_COLOR,
     TIME: time_1.TIME,
     URL: url_1.URL,
     USERNAME: username_1.USERNAME,

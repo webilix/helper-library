@@ -92,6 +92,12 @@ export declare const Helper: {
             get: (length?: number, forceLowerCase?: boolean, forceUpperCase?: boolean, forceNumber?: boolean, fullLine?: boolean, flags?: string | undefined) => RegExp;
             verify: (text: string, length?: number, forceLowerCase?: boolean, forceUpperCase?: boolean, forceNumber?: boolean) => boolean;
         };
+        RGB_COLOR: {
+            get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
+            verify: (text: string) => boolean;
+            find: (text: string) => string[];
+            replace: (text: string, replaceWith?: string) => string;
+        };
         TIME: {
             get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
             verify: (text: string) => boolean;
@@ -120,7 +126,7 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
     NUMBER: {
-        format: (num: number, locale?: "EN" | "FA") => string;
+        format: (num: number, locale?: "FA" | "EN") => string;
         toEN: (num: string | number) => string;
         toFA: (num: string | number) => string;
         toFileSize: (size: number, english?: boolean) => string;
@@ -135,7 +141,7 @@ export declare const Helper: {
         toString: (plate: string[], join?: string) => string | null;
     };
     STRING: {
-        changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
+        changeNumbers: (str: string, changeTo?: "FA" | "EN") => string;
         escapeHTML: (str: string) => string;
         getBankCardView: (bankCard: string, join?: string) => string;
         getFileName: (name: string, ext: string, seperator?: string) => string;

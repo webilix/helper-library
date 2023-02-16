@@ -8,6 +8,7 @@ import { JSON_DATE } from './regexp/json-date';
 import { MOBILE } from './regexp/mobile';
 import { NUMERIC } from './regexp/numeric';
 import { PASSWORD } from './regexp/password';
+import { RGB_COLOR } from './regexp/rgb-color';
 import { TIME } from './regexp/time';
 import { URL } from './regexp/url';
 import { USERNAME } from './regexp/username';
@@ -23,6 +24,7 @@ export const RE = {
     MOBILE,
     NUMERIC,
     PASSWORD,
+    RGB_COLOR,
     TIME,
     URL,
     USERNAME,

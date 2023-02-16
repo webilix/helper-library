@@ -1,0 +1,1 @@
+{"version":3,"file":"rgb-color.d.ts","sourceRoot":"","sources":["../../../src/lib/regexp/rgb-color.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,SAAS;qBACF,OAAO,UAAiB,MAAM,KAAG,MAAM;mBAExC,MAAM,KAAG,OAAO;iBAElB,MAAM,KAAG,MAAM,EAAE;oBAEd,MAAM,gBAAe,MAAM,KAAQ,MAAM;CAC5D,CAAC"}

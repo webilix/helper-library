@@ -80,6 +80,7 @@ Helper.RE.
 -   MOBILE
 -   NUMERIC
 -   PASSWORD
+-   RGB_COLOR
 -   TIME
 -   URL
 -   USERNAME

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.bankList = void 0;
+exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.bankList = void 0;
 //#region BANK HELPER
 exports.bankList = [
     { id: 'EN', title: 'بانک اقتصاد نوین', card: '627412' },
@@ -105,6 +105,11 @@ exports.regexpHSLColor = `hsl\\(` +
     `[ ]{0,}(0|360|35\\d|3[0-4]\\d|[12]\\d\\d|0?\\d?\\d)[ ]{0,},` +
     `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,},` +
     `[ ]{0,}(0|100|\\d{1,2})%[ ]{0,}` +
+    `\\)`;
+exports.regexpRGBColor = `rgb\\(` +
+    `[ ]{0,}(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)[ ]{0,},` +
+    `[ ]{0,}(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)[ ]{0,},` +
+    `[ ]{0,}(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)[ ]{0,}` +
     `\\)`;
 //#endregion
 //# sourceMappingURL=shared.js.map

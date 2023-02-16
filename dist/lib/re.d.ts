@@ -57,6 +57,12 @@ export declare const RE: {
         get: (length?: number, forceLowerCase?: boolean, forceUpperCase?: boolean, forceNumber?: boolean, fullLine?: boolean, flags?: string | undefined) => RegExp;
         verify: (text: string, length?: number, forceLowerCase?: boolean, forceUpperCase?: boolean, forceNumber?: boolean) => boolean;
     };
+    RGB_COLOR: {
+        get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
+        verify: (text: string) => boolean;
+        find: (text: string) => string[];
+        replace: (text: string, replaceWith?: string) => string;
+    };
     TIME: {
         get: (fullLine?: boolean, flags?: string | undefined) => RegExp;
         verify: (text: string) => boolean;
