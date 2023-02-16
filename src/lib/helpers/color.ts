@@ -97,6 +97,7 @@ export const COLOR = {
     getGradient: (from: string, to: string, count: number, format?: ColorFormats): string[] => {
         if (!IS.STRING.color(from)) throw TypeError('From: argument must be a color');
         if (!IS.STRING.color(to)) throw TypeError('To: argument must be a color');
+        if (count <= 2) throw new Error('Count must be bigger than 2');
 
         const [r1, g1, b1] = parseRGB(COLOR.toRGB(from) || '');
         const [r2, g2, b2] = parseRGB(COLOR.toRGB(to) || '');
@@ -127,6 +128,18 @@ export const COLOR = {
                     return COLOR.toRGB(rgb) || rgb;
             }
         });
+    },
+
+    getShade: (color: string, count: number, format?: ColorFormats): string[] => {
+        if (!IS.STRING.color(color)) throw TypeError('Color: argument must be a color');
+        if (count <= 4) throw new Error('Count must be bigger than 4');
+
+        count = Math.ceil(count / 2);
+        format = (format || COLOR.getFormat(color)) as ColorFormats;
+        return [
+            ...COLOR.getGradient('#000', color, count, format),
+            ...COLOR.getGradient(color, '#FFF', count, format).slice(1),
+        ];
     },
 
     toHEX: (color: string): string | null => {

@@ -184,6 +184,7 @@ Helper.COLOR.
 
 -   getFormat
 -   getGradient
+-   getShade
 -   toHEX
 -   toHSL
 -   toRGB
