@@ -7,6 +7,7 @@ export interface IBank {
     id: string;
     title: string;
 }
+export type ColorFormats = 'HEX' | 'HSL' | 'RGB';
 export declare const plateLetters: string[];
 export declare const reGet: (pattern: string, fullLine?: boolean, flags?: string) => RegExp;
 export declare const reVerify: (pattern: string, text: string, flags?: string) => boolean;

@@ -43,6 +43,10 @@ export interface IBank {
 }
 //#endregion
 
+//#region COLOR HELPER
+export type ColorFormats = 'HEX' | 'HSL' | 'RGB';
+//#endregion
+
 //#region PLATE HELPER
 export const plateLetters: string[] = 'ابپتثجدزژسشصطعفقکگلمنوهی'.split('');
 //#endregion

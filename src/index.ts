@@ -2,6 +2,7 @@ import { IS } from './lib/is';
 import { RE } from './lib/re';
 
 import { BANK } from './lib/helpers/bank';
+import { COLOR } from './lib/helpers/color';
 import { DATE } from './lib/helpers/date';
 import { NUMBER } from './lib/helpers/number';
 import { PLATE } from './lib/helpers/plate';
@@ -13,6 +14,7 @@ export const Helper = {
     RE,
 
     BANK,
+    COLOR,
     DATE,
     NUMBER,
     PLATE,
@@ -20,4 +22,4 @@ export const Helper = {
     TIME,
 };
 
-export { IBank } from './lib/shared';
+export { IBank, ColorFormats } from './lib/shared';

@@ -120,6 +120,9 @@ export declare const Helper: {
         findCard: (card: string) => import("./lib/shared").IBank | null;
         getList: () => import("./lib/shared").IBank[];
     };
+    COLOR: {
+        getFormat: (color: string) => import("./lib/shared").ColorFormats | null;
+    };
     DATE: {
         getDuration: (from: Date, to: Date) => string;
         getSeconds: (from: Date, to: Date) => number;
@@ -156,5 +159,5 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
 };
-export { IBank } from './lib/shared';
+export { IBank, ColorFormats } from './lib/shared';
 //# sourceMappingURL=index.d.ts.map

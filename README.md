@@ -22,6 +22,7 @@ JavaScript/TypeScript helper library.
 ### Helpers
 
 -   [Bank Helpers](#bank-helpers)
+-   [Color Helpers](#color-helpers)
 -   [Date Helpers](#date-helpers)
 -   [Number Helpers](#number-helpers)
 -   [Plate Helpers](#plate-helpers)
@@ -172,6 +173,16 @@ Helper.BANK.
 
 -   findCard
 -   getList
+
+### Color Helpers
+
+#### Supported formats: HEX, HSL, RGB
+
+```javascript
+Helper.COLOR.
+```
+
+-   getFormat
 
 ### Date Helpers
 
