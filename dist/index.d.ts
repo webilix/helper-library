@@ -123,6 +123,7 @@ export declare const Helper: {
     COLOR: {
         getFormat: (color: string) => import("./lib/shared").ColorFormats | null;
         toHEX: (color: string) => string | null;
+        toHSL: (color: string) => string | null;
     };
     DATE: {
         getDuration: (from: Date, to: Date) => string;

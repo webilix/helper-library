@@ -3,13 +3,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.COLOR = void 0;
 const is_1 = require("../is");
 const re_1 = require("../re");
-const getHSL = (color) => color
+const parseHex = (color) => {
+    const r = color.length === 4
+        ? parseInt(color.substring(1, 2) + color.substring(1, 2), 16)
+        : parseInt(color.substring(1, 3), 16);
+    const g = color.length === 4
+        ? parseInt(color.substring(2, 3) + color.substring(2, 3), 16)
+        : parseInt(color.substring(3, 5), 16);
+    const b = color.length === 4
+        ? parseInt(color.substring(3, 4) + color.substring(3, 4), 16)
+        : parseInt(color.substring(5, 7), 16);
+    return [r, g, b];
+};
+const parseHSL = (color) => color
+    .trim()
+    .replace(/ /g, '')
     .replace('hsl(', '')
     .replace(')', '')
     .replace(/%/g, '')
     .split(',')
     .map((v) => +v);
-const getRGB = (color) => color
+const parseRGB = (color) => color
+    .trim()
+    .replace(/ /g, '')
     .replace('rgb(', '')
     .replace(')', '')
     .split(',')
@@ -26,6 +42,32 @@ const hslToHex = (h, s, l) => {
     };
     return `#${convert(0)}${convert(8)}${convert(4)}`;
 };
+const rgbToHsl = (r, g, b) => {
+    (r /= 255), (g /= 255), (b /= 255);
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h = (max + min) / 2;
+    let s = (max + min) / 2;
+    let l = (max + min) / 2;
+    if (max == min)
+        h = s = 0;
+    else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            case b:
+                h = (r - g) / d + 4;
+                break;
+        }
+        h /= 6;
+    }
+    return `hsl(${Math.floor(h * 360)}, ${Math.floor(s * 100)}%, ${Math.floor(l * 100)}%)`;
+};
 exports.COLOR = {
     getFormat: (color) => !is_1.IS.STRING.color(color)
         ? null
@@ -40,16 +82,30 @@ exports.COLOR = {
         const format = exports.COLOR.getFormat(color);
         if (format === null)
             return null;
-        color = color.trim().replace(/ /g, '');
         switch (format) {
             case 'HEX':
                 return color;
             case 'HSL':
-                const [h, s, l] = getHSL(color);
+                const [h, s, l] = parseHSL(color);
                 return hslToHex(h, s, l);
             case 'RGB':
-                const rgb = getRGB(color);
+                const rgb = parseRGB(color);
                 return '#' + rgb.map((c) => c.toString(16).padStart(2, '0')).join('');
+        }
+    },
+    toHSL: (color) => {
+        const format = exports.COLOR.getFormat(color);
+        if (format === null)
+            return null;
+        switch (format) {
+            case 'HEX':
+                const [h, e, x] = parseHex(color);
+                return rgbToHsl(h, e, x);
+            case 'HSL':
+                return color;
+            case 'RGB':
+                const [r, g, b] = parseRGB(color);
+                return rgbToHsl(r, g, b);
         }
     },
 };

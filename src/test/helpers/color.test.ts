@@ -8,12 +8,23 @@ test('COLOR: getFormat', () => {
 });
 
 test('COLOR: toHEX', () => {
-    const hex: string = '#7b8c73';
-    const hsl: string = 'hsl(100, 10%, 50%)';
-    const rgb: string = 'rgb(123, 140, 115)';
+    const hex = '#7c8b74';
+    const hsl = 'hsl(99, 9%, 50%)';
+    const rgb = 'rgb(124, 139, 116)';
 
     expect(COLOR.toHEX('')).toBe(null);
     expect(COLOR.toHEX(hex)).toBe(hex);
     expect(COLOR.toHEX(hsl)).toBe(hex);
     expect(COLOR.toHEX(rgb)).toBe(hex);
+});
+
+test('COLOR: toHSL', () => {
+    const hex = '#7c8b74';
+    const hsl = 'hsl(99, 9%, 50%)';
+    const rgb = 'rgb(124, 139, 116)';
+
+    expect(COLOR.toHSL('')).toBe(null);
+    expect(COLOR.toHSL(hex)).toBe(hsl);
+    expect(COLOR.toHSL(hsl)).toBe(hsl);
+    expect(COLOR.toHSL(rgb)).toBe(hsl);
 });

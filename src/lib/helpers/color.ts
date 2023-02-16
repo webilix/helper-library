@@ -3,16 +3,37 @@ import { ColorFormats } from '../shared';
 import { IS } from '../is';
 import { RE } from '../re';
 
-const getHSL = (color: string): number[] =>
+const parseHex = (color: string): number[] => {
+    const r =
+        color.length === 4
+            ? parseInt(color.substring(1, 2) + color.substring(1, 2), 16)
+            : parseInt(color.substring(1, 3), 16);
+    const g =
+        color.length === 4
+            ? parseInt(color.substring(2, 3) + color.substring(2, 3), 16)
+            : parseInt(color.substring(3, 5), 16);
+    const b =
+        color.length === 4
+            ? parseInt(color.substring(3, 4) + color.substring(3, 4), 16)
+            : parseInt(color.substring(5, 7), 16);
+
+    return [r, g, b];
+};
+
+const parseHSL = (color: string): number[] =>
     color
+        .trim()
+        .replace(/ /g, '')
         .replace('hsl(', '')
         .replace(')', '')
         .replace(/%/g, '')
         .split(',')
         .map((v) => +v);
 
-const getRGB = (color: string): number[] =>
+const parseRGB = (color: string): number[] =>
     color
+        .trim()
+        .replace(/ /g, '')
         .replace('rgb(', '')
         .replace(')', '')
         .split(',')
@@ -32,6 +53,35 @@ const hslToHex = (h: number, s: number, l: number): string => {
     return `#${convert(0)}${convert(8)}${convert(4)}`;
 };
 
+const rgbToHsl = (r: number, g: number, b: number): string => {
+    (r /= 255), (g /= 255), (b /= 255);
+    const max: number = Math.max(r, g, b),
+        min = Math.min(r, g, b);
+    let h = (max + min) / 2;
+    let s = (max + min) / 2;
+    let l = (max + min) / 2;
+
+    if (max == min) h = s = 0;
+    else {
+        const d: number = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            case b:
+                h = (r - g) / d + 4;
+                break;
+        }
+        h /= 6;
+    }
+
+    return `hsl(${Math.floor(h * 360)}, ${Math.floor(s * 100)}%, ${Math.floor(l * 100)}%)`;
+};
+
 export const COLOR = {
     getFormat: (color: string): ColorFormats | null =>
         !IS.STRING.color(color)
@@ -48,16 +98,31 @@ export const COLOR = {
         const format: ColorFormats | null = COLOR.getFormat(color);
         if (format === null) return null;
 
-        color = color.trim().replace(/ /g, '');
         switch (format) {
             case 'HEX':
                 return color;
             case 'HSL':
-                const [h, s, l] = getHSL(color);
+                const [h, s, l] = parseHSL(color);
                 return hslToHex(h, s, l);
             case 'RGB':
-                const rgb = getRGB(color);
+                const rgb = parseRGB(color);
                 return '#' + rgb.map((c) => c.toString(16).padStart(2, '0')).join('');
+        }
+    },
+
+    toHSL: (color: string): string | null => {
+        const format: ColorFormats | null = COLOR.getFormat(color);
+        if (format === null) return null;
+
+        switch (format) {
+            case 'HEX':
+                const [h, e, x] = parseHex(color);
+                return rgbToHsl(h, e, x);
+            case 'HSL':
+                return color;
+            case 'RGB':
+                const [r, g, b] = parseRGB(color);
+                return rgbToHsl(r, g, b);
         }
     },
 };
