@@ -183,6 +183,7 @@ Helper.COLOR.
 ```
 
 -   getFormat
+-   toHEX
 
 ### Date Helpers
 
