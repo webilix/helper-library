@@ -149,6 +149,7 @@ Helper.IS.STRING.
 -   jsonDate
 -   mobile
 -   nationalCode
+-   number
 -   numeric
 -   objectId
 -   time

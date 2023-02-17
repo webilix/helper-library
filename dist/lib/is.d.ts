@@ -17,6 +17,7 @@ export declare const IS: {
         jsonDate: (value: any) => boolean;
         mobile: (value: any) => boolean;
         nationalCode: (value: any) => boolean;
+        number: (value: any) => boolean;
         numeric: (value: any) => boolean;
         objectId: (value: any) => boolean;
         time: (value: any) => boolean;

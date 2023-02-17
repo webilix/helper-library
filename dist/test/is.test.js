@@ -178,6 +178,24 @@ test(`IS: STRING.nationalCode`, () => {
         expect(is_1.IS.STRING.nationalCode(test.value)).toBe(test.result);
     });
 });
+test(`IS: STRING.number`, () => {
+    const tests = [
+        { value: '', result: false },
+        { value: 'a', result: false },
+        { value: '11a', result: false },
+        { value: '1a1', result: false },
+        { value: 'a11', result: false },
+        { value: '+1', result: true },
+        { value: '-1', result: true },
+        { value: '1.1', result: true },
+        { value: '1E-5', result: true },
+        { value: '1E+5', result: true },
+        { value: '1234567890', result: true },
+    ];
+    tests.forEach((test) => {
+        expect(is_1.IS.STRING.number(test.value)).toBe(test.result);
+    });
+});
 test(`IS: STRING.numeric`, () => {
     const tests = [
         { value: '', result: false },

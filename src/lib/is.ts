@@ -96,6 +96,8 @@ export const IS = {
             return check === +numbers[9];
         },
 
+        number: (value: any): boolean => !IS.empty(value) && IS.string(value) && IS.number(+value),
+
         numeric: (value: any): boolean => IS.string(value) && RE.NUMERIC.get().test(value),
 
         objectId: (value: any): boolean => {

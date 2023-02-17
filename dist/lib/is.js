@@ -83,6 +83,7 @@ exports.IS = {
             check = check < 2 ? check : 11 - check;
             return check === +numbers[9];
         },
+        number: (value) => !exports.IS.empty(value) && exports.IS.string(value) && exports.IS.number(+value),
         numeric: (value) => exports.IS.string(value) && re_1.RE.NUMERIC.get().test(value),
         objectId: (value) => {
             if (!exports.IS.string(value))
