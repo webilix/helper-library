@@ -5,7 +5,7 @@ function isPlate(value: string[]): boolean;
 function isPlate(value: string): boolean;
 function isPlate(value: string, join: string): boolean;
 function isPlate(value: any, join: string = '-'): boolean {
-    const plate: string[] = Array.isArray(value) ? value : value.split(join);
+    const plate: string[] = Array.isArray(value) ? value : IS.string(value) ? value.split(join) : [];
 
     if (plate.length !== 4) return false;
     // LEFT

@@ -4,7 +4,7 @@ exports.IS = void 0;
 const re_1 = require("./re");
 const shared_1 = require("./shared");
 function isPlate(value, join = '-') {
-    const plate = Array.isArray(value) ? value : value.split(join);
+    const plate = Array.isArray(value) ? value : exports.IS.string(value) ? value.split(join) : [];
     if (plate.length !== 4)
         return false;
     // LEFT

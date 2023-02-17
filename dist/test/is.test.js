@@ -368,6 +368,9 @@ test('IS: plate', () => {
     expect(is_1.IS.plate(['12', 'ا', '345', '67'])).toBe(true);
     expect(is_1.IS.plate('12-ا-345-67')).toBe(true);
     expect(is_1.IS.plate('12.ا.345.67', '.')).toBe(true);
+    const value = null;
+    expect(is_1.IS.plate(value)).toBe(false);
+    expect(is_1.IS.plate('')).toBe(false);
     expect(is_1.IS.plate([])).toBe(false);
     expect(is_1.IS.plate(['12'])).toBe(false);
     expect(is_1.IS.plate(['12', '345'])).toBe(false);

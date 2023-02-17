@@ -415,6 +415,10 @@ test('IS: plate', () => {
     expect(IS.plate('12-ا-345-67')).toBe(true);
     expect(IS.plate('12.ا.345.67', '.')).toBe(true);
 
+    const value: any = null;
+    expect(IS.plate(value)).toBe(false);
+
+    expect(IS.plate('')).toBe(false);
     expect(IS.plate([])).toBe(false);
     expect(IS.plate(['12'])).toBe(false);
     expect(IS.plate(['12', '345'])).toBe(false);
