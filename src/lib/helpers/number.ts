@@ -1,7 +1,7 @@
 import { IS } from '../is';
 
 export const NUMBER = {
-    format: (num: number, locale: 'FA' | 'EN' = 'FA'): string => {
+    format: (num: number, locale: 'EN' | 'FA' = 'FA'): string => {
         const minus: boolean = num < 0;
         const [n, p] = Math.abs(num).toString().split('.');
 
