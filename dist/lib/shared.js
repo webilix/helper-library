@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.PasswordChars = exports.rgbToHsl = exports.hslToHex = exports.parseRGB = exports.parseHSL = exports.parseHex = exports.bankList = void 0;
+exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = exports.plateLetters = exports.PasswordChars = exports.NumberTitles = exports.rgbToHsl = exports.hslToHex = exports.parseRGB = exports.parseHSL = exports.parseHex = exports.bankList = void 0;
 //#region BANK HELPER
 exports.bankList = [
     { id: 'EN', title: 'بانک اقتصاد نوین', card: '627412' },
@@ -112,6 +112,36 @@ const rgbToHsl = (r, g, b) => {
     return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
 };
 exports.rgbToHsl = rgbToHsl;
+//#endregion
+//#region NUMBER HELPER
+exports.NumberTitles = [
+    [
+        '',
+        'یک',
+        'دو',
+        'سه',
+        'چهار',
+        'پنچ',
+        'شش',
+        'هفت',
+        'هشت',
+        'نه',
+        'ده',
+        'یازده',
+        'دوازده',
+        'سیزده',
+        'چهارده',
+        'پانزده',
+        'شانزده',
+        'هفده',
+        'هجده',
+        'نوزده',
+    ],
+    ['', 'بیست', 'سی', 'چهل', 'پنجاه', 'شصت', 'هفتاد', 'هشتاد', 'نود'],
+    ['', 'صد', 'دویست', 'سیصد', 'چهارصد', 'پانصد', 'ششصد', 'هفتصد', 'هشتصد', 'نهصد'],
+    ['', 'هزار', 'میلیون', 'میلیارد', 'تریلیون', 'کادریلیون'],
+    ['', 'دهم', 'صدم', 'هزارم'],
+];
 //#endregion
 //#region PASSWORD HELPER
 exports.PasswordChars = {

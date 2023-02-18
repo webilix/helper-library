@@ -137,6 +137,7 @@ export declare const Helper: {
     };
     NUMBER: {
         format: (num: number, locale?: "EN" | "FA") => string;
+        getTitle: (num: number) => string;
         toEN: (num: string | number) => string;
         toFA: (num: string | number) => string;
         toFileSize: (size: number, english?: boolean) => string;

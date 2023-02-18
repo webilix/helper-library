@@ -7,6 +7,28 @@ test('NUMBER: format', () => {
     expect(NUMBER.format(-1234567.89, 'EN')).toBe('-1,234,567.89');
 });
 
+test('NUMBER: getTitle', () => {
+    expect(NUMBER.getTitle(123456789)).toBe('صد و بیست و سه میلیون و چهارصد و پنجاه و شش هزار و هفتصد و هشتاد و نه');
+    expect(NUMBER.getTitle(0)).toBe('صفر');
+    expect(NUMBER.getTitle(1)).toBe('یک');
+    expect(NUMBER.getTitle(0.1)).toBe('یک دهم');
+    expect(NUMBER.getTitle(0.1001)).toBe('یک دهم');
+    expect(NUMBER.getTitle(0.01)).toBe('یک صدم');
+    expect(NUMBER.getTitle(0.0101)).toBe('یک صدم');
+    expect(NUMBER.getTitle(0.001)).toBe('یک هزارم');
+    expect(NUMBER.getTitle(0.0011)).toBe('یک هزارم');
+    expect(NUMBER.getTitle(1_000)).toBe('یک هزار');
+    expect(NUMBER.getTitle(1_000_000)).toBe('یک میلیون');
+    expect(NUMBER.getTitle(1_000_000_000)).toBe('یک میلیارد');
+    expect(NUMBER.getTitle(1_000_000_000_000)).toBe('یک تریلیون');
+    expect(NUMBER.getTitle(1_200_000_000_000)).toBe('یک تریلیون و دویست میلیارد');
+    expect(NUMBER.getTitle(1_200_300_000_000)).toBe('یک تریلیون و دویست میلیارد و سیصد میلیون');
+    expect(NUMBER.getTitle(1_200_300_400_000)).toBe('یک تریلیون و دویست میلیارد و سیصد میلیون و چهارصد هزار');
+    expect(NUMBER.getTitle(1_200_300_400_500)).toBe('یک تریلیون و دویست میلیارد و سیصد میلیون و چهارصد هزار و پانصد');
+    expect(NUMBER.getTitle(1_020_030_040_050)).toBe('یک تریلیون و بیست میلیارد و سی میلیون و چهل هزار و پنجاه');
+    expect(NUMBER.getTitle(1_002_003_004_005)).toBe('یک تریلیون و دو میلیارد و سه میلیون و چهار هزار و پنچ');
+});
+
 test('NUMBER: toEN', () => {
     expect(NUMBER.toEN('۰۱۲۳۴۵۶۷۸۹')).toBe('0123456789');
     expect(NUMBER.toEN('string: ۱۱۱')).toBe('string: 111');

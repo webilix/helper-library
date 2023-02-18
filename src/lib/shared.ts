@@ -128,6 +128,37 @@ export const rgbToHsl = (r: number, g: number, b: number): string => {
 };
 //#endregion
 
+//#region NUMBER HELPER
+export const NumberTitles: string[][] = [
+    [
+        '',
+        'یک',
+        'دو',
+        'سه',
+        'چهار',
+        'پنچ',
+        'شش',
+        'هفت',
+        'هشت',
+        'نه',
+        'ده',
+        'یازده',
+        'دوازده',
+        'سیزده',
+        'چهارده',
+        'پانزده',
+        'شانزده',
+        'هفده',
+        'هجده',
+        'نوزده',
+    ],
+    ['', 'بیست', 'سی', 'چهل', 'پنجاه', 'شصت', 'هفتاد', 'هشتاد', 'نود'],
+    ['', 'صد', 'دویست', 'سیصد', 'چهارصد', 'پانصد', 'ششصد', 'هفتصد', 'هشتصد', 'نهصد'],
+    ['', 'هزار', 'میلیون', 'میلیارد', 'تریلیون', 'کادریلیون'],
+    ['', 'دهم', 'صدم', 'هزارم'],
+];
+//#endregion
+
 //#region PASSWORD HELPER
 export const PasswordChars: { number: string; lower: string; upper: string; special: string } = {
     number: '0123456789',

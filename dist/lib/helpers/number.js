@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NUMBER = void 0;
 const is_1 = require("../is");
+const shared_1 = require("../shared");
 exports.NUMBER = {
     format: (num, locale = 'FA') => {
         const minus = num < 0;
@@ -11,6 +12,44 @@ exports.NUMBER = {
         return (`${minus ? '-' : ''}` +
             (locale === 'FA' ? exports.NUMBER.toFA(format) : format) +
             (p ? '.' + (locale === 'FA' ? exports.NUMBER.toFA(p) : p) : ''));
+    },
+    getTitle: (num) => {
+        if (!is_1.IS.number(num))
+            return '';
+        if (num === 0)
+            return 'صفر';
+        const join = (arr, join) => arr.filter((a) => a !== '').join(join);
+        const title = (num, index) => {
+            const twoDigit = (num) => {
+                if (num === 0)
+                    return '';
+                if (num < 20)
+                    return shared_1.NumberTitles[0][num];
+                return join([shared_1.NumberTitles[1][Math.floor(num / 10) - 1], shared_1.NumberTitles[0][num % 10]], ' و ');
+            };
+            const title = num < 20 ? twoDigit(num) : join([shared_1.NumberTitles[2][Math.floor(num / 100)], twoDigit(num % 100)], ' و ');
+            const unit = shared_1.NumberTitles[3][index] || '';
+            return title ? `${title} ${unit}`.trim() : '';
+        };
+        let [int, dec] = num
+            .toString()
+            .split('.')
+            .map((v, index) => (index === 0 ? v : v.substring(0, 3)));
+        // INTEGER
+        if (int.length > 18)
+            return '';
+        const parts = [];
+        while (int.length !== 0) {
+            parts.push(int.substring(int.length - 3));
+            int = int.substring(0, int.length - 3);
+        }
+        const integer = join(parts.map((p, index) => title(+p, index)).reverse(), ' و ');
+        // DECIMAL
+        dec = dec || '';
+        while (dec.substring(dec.length - 1) === '0')
+            dec = dec.substring(0, dec.length - 1);
+        const decimal = !dec ? '' : title(+dec, 0) + ' ' + shared_1.NumberTitles[4][dec.length];
+        return join([integer, integer && decimal ? 'ممیز' : '', decimal], ' ');
     },
     toEN: (num) => {
         let en = typeof num === 'string' ? num : num.toString();

@@ -209,6 +209,7 @@ Helper.NUMBER.
 ```
 
 -   format
+-   getTitle
 -   toEN
 -   toFA
 -   toFileSize
