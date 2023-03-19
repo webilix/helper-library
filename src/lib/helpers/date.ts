@@ -5,6 +5,15 @@ import { IS } from '../is';
 import { TIME } from './time';
 
 export const DATE = {
+    getDays: (from: Date, to?: Date, timezone: string = 'Asia/Tehran'): number => {
+        const jalali = JalaliDateTime({ timezone });
+
+        from = jalali.periodDay(1, from).from;
+        to = jalali.periodDay(1, to).from;
+        const seconds: number = Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000);
+        return Math.floor(seconds / (24 * 3600)) + 1;
+    },
+
     getDuration: (from: Date, to: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
 
     getSeconds: (from: Date, to: Date): number => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),

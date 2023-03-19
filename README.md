@@ -197,6 +197,7 @@ Helper.COLOR.
 Helper.DATE.
 ```
 
+-   getDays
 -   getDuration
 -   getSeconds
 -   jalaliPeriod

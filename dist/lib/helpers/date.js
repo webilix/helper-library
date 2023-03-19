@@ -5,6 +5,13 @@ const jalali_date_time_1 = require("@webilix/jalali-date-time");
 const is_1 = require("../is");
 const time_1 = require("./time");
 exports.DATE = {
+    getDays: (from, to, timezone = 'Asia/Tehran') => {
+        const jalali = (0, jalali_date_time_1.JalaliDateTime)({ timezone });
+        from = jalali.periodDay(1, from).from;
+        to = jalali.periodDay(1, to).from;
+        const seconds = Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000);
+        return Math.floor(seconds / (24 * 3600)) + 1;
+    },
     getDuration: (from, to) => time_1.TIME.getDuration(exports.DATE.getSeconds(from, to)),
     getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
     jalaliPeriod: (from, to, timezone = 'Asia/Tehran') => {

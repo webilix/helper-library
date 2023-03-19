@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const date_1 = require("../../lib/helpers/date");
+test('DATE: getDays', () => {
+    const from = new Date('2000-01-01');
+    const to = new Date('2000-01-02');
+    expect(date_1.DATE.getDays(from, from)).toBe(1);
+    expect(date_1.DATE.getDays(from, to)).toBe(2);
+});
 test('DATE: getDuration', () => {
     const from = new Date('2000-01-01');
     const to = new Date('2000-01-02');

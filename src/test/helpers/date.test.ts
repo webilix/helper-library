@@ -1,5 +1,13 @@
 import { DATE } from '../../lib/helpers/date';
 
+test('DATE: getDays', () => {
+    const from: Date = new Date('2000-01-01');
+    const to: Date = new Date('2000-01-02');
+
+    expect(DATE.getDays(from, from)).toBe(1);
+    expect(DATE.getDays(from, to)).toBe(2);
+});
+
 test('DATE: getDuration', () => {
     const from: Date = new Date('2000-01-01');
     const to: Date = new Date('2000-01-02');
