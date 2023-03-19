@@ -131,9 +131,9 @@ export declare const Helper: {
     };
     DATE: {
         getDays: (from: Date, to?: Date | undefined, timezone?: string) => number;
-        getDuration: (from: Date, to: Date) => string;
-        getSeconds: (from: Date, to: Date) => number;
-        jalaliPeriod: (from: Date, to: Date, timezone?: string) => string;
+        getDuration: (from: Date, to?: Date | undefined) => string;
+        getSeconds: (from: Date, to?: Date | undefined) => number;
+        jalaliPeriod: (from: Date, to?: Date | undefined, timezone?: string) => string;
         toString: (date: Date) => string;
     };
     NUMBER: {

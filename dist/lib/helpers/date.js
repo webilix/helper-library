@@ -13,9 +13,10 @@ exports.DATE = {
         return Math.floor(seconds / (24 * 3600)) + 1;
     },
     getDuration: (from, to) => time_1.TIME.getDuration(exports.DATE.getSeconds(from, to)),
-    getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
+    getSeconds: (from, to) => Math.floor(Math.abs(from.getTime() - (to || new Date()).getTime()) / 1000),
     jalaliPeriod: (from, to, timezone = 'Asia/Tehran') => {
         const jalali = (0, jalali_date_time_1.JalaliDateTime)({ timezone });
+        to = to || new Date();
         if (from.getTime() > to.getTime()) {
             const temp = from;
             from = to;

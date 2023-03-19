@@ -14,13 +14,15 @@ export const DATE = {
         return Math.floor(seconds / (24 * 3600)) + 1;
     },
 
-    getDuration: (from: Date, to: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
+    getDuration: (from: Date, to?: Date): string => TIME.getDuration(DATE.getSeconds(from, to)),
 
-    getSeconds: (from: Date, to: Date): number => Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000),
+    getSeconds: (from: Date, to?: Date): number =>
+        Math.floor(Math.abs(from.getTime() - (to || new Date()).getTime()) / 1000),
 
-    jalaliPeriod: (from: Date, to: Date, timezone: string = 'Asia/Tehran'): string => {
+    jalaliPeriod: (from: Date, to?: Date, timezone: string = 'Asia/Tehran'): string => {
         const jalali = JalaliDateTime({ timezone });
 
+        to = to || new Date();
         if (from.getTime() > to.getTime()) {
             const temp: Date = from;
             from = to;
