@@ -5,16 +5,19 @@
 
     "files.exclude": {
         "**/.git": true,
+        "**/dist": true,
         "**/node_modules": true
     },
 
     "search.exclude": {
         "**/.git": true,
+        "**/dist": true,
         "**/node_modules": true
     },
 
     "files.watcherExclude": {
         "**/.git": true,
+        "**/dist": true,
         "**/node_modules": true
     }
 }

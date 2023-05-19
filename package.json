@@ -29,6 +29,6 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "@webilix/jalali-date-time": "^1.2.1"
+        "@webilix/jalali-date-time": "^1.2.2"
     }
 }
