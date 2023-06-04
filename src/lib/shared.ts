@@ -128,6 +128,15 @@ export const rgbToHsl = (r: number, g: number, b: number): string => {
 };
 //#endregion
 
+//#region GEO HELPER
+export interface IGeoLocation {
+    accuracy: number;
+    latitude: number;
+    longitude: number;
+    timestamp: number;
+}
+//#endregion
+
 //#region NUMBER HELPER
 export const NumberTitles: string[][] = [
     [

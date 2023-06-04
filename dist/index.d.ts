@@ -136,6 +136,16 @@ export declare const Helper: {
         jalaliPeriod: (from: Date, to?: Date | undefined, timezone?: string) => string;
         toString: (date: Date) => string;
     };
+    GEO: {
+        location: () => Promise<import("./lib/shared").IGeoLocation>;
+        distance: (from: {
+            latitude: number;
+            longitude: number;
+        }, to: {
+            latitude: number;
+            longitude: number;
+        }) => number;
+    };
     NUMBER: {
         format: (num: number, locale?: "EN" | "FA") => string;
         getTitle: (num: number) => string;
@@ -176,5 +186,5 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
 };
-export { IBank, ColorFormats } from './lib/shared';
+export { ColorFormats, IBank, IGeoLocation } from './lib/shared';
 //# sourceMappingURL=index.d.ts.map

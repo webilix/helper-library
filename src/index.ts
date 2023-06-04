@@ -4,6 +4,7 @@ import { RE } from './lib/re';
 import { BANK } from './lib/helpers/bank';
 import { COLOR } from './lib/helpers/color';
 import { DATE } from './lib/helpers/date';
+import { GEO } from './lib/helpers/geo';
 import { NUMBER } from './lib/helpers/number';
 import { PASSWORD } from './lib/helpers/password';
 import { PLATE } from './lib/helpers/plate';
@@ -17,6 +18,7 @@ export const Helper = {
     BANK,
     COLOR,
     DATE,
+    GEO,
     NUMBER,
     PASSWORD,
     PLATE,
@@ -24,4 +26,4 @@ export const Helper = {
     TIME,
 };
 
-export { IBank, ColorFormats } from './lib/shared';
+export { ColorFormats, IBank, IGeoLocation } from './lib/shared';
