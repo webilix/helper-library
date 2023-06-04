@@ -10,10 +10,8 @@ exports.GEO = {
                     return;
                 }
                 navigator.geolocation.getCurrentPosition((response) => resolve({
-                    accuracy: response.coords.accuracy,
                     latitude: response.coords.latitude,
                     longitude: response.coords.longitude,
-                    timestamp: response.timestamp,
                 }), (err) => reject(err.message));
             }
             catch (e) {

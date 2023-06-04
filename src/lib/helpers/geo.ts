@@ -12,10 +12,8 @@ export const GEO = {
                 navigator.geolocation.getCurrentPosition(
                     (response: GeolocationPosition) =>
                         resolve({
-                            accuracy: response.coords.accuracy,
                             latitude: response.coords.latitude,
                             longitude: response.coords.longitude,
-                            timestamp: response.timestamp,
                         }),
                     (err: GeolocationPositionError) => reject(err.message),
                 );

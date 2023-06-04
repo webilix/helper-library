@@ -14,10 +14,8 @@ export declare const parseRGB: (color: string) => number[];
 export declare const hslToHex: (h: number, s: number, l: number) => string;
 export declare const rgbToHsl: (r: number, g: number, b: number) => string;
 export interface IGeoLocation {
-    accuracy: number;
     latitude: number;
     longitude: number;
-    timestamp: number;
 }
 export declare const NumberTitles: string[][];
 export declare const PasswordChars: {

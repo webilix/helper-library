@@ -130,10 +130,8 @@ export const rgbToHsl = (r: number, g: number, b: number): string => {
 
 //#region GEO HELPER
 export interface IGeoLocation {
-    accuracy: number;
     latitude: number;
     longitude: number;
-    timestamp: number;
 }
 //#endregion
 
