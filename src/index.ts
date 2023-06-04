@@ -26,4 +26,4 @@ export const Helper = {
     TIME,
 };
 
-export { ColorFormats, IBank, IGeoLocation } from './lib/shared';
+export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';

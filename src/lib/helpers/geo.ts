@@ -1,8 +1,8 @@
-import { IGeoLocation } from '../shared';
+import { IGeoCoordinates } from '../shared';
 
 export const GEO = {
-    location: (): Promise<IGeoLocation> => {
-        return new Promise<IGeoLocation>((resolve, reject) => {
+    coordinates: (): Promise<IGeoCoordinates> => {
+        return new Promise<IGeoCoordinates>((resolve, reject) => {
             try {
                 if (!navigator || !navigator.geolocation) {
                     reject('Geolocation is not supported by this browser.');

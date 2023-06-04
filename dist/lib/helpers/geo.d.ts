@@ -1,6 +1,6 @@
-import { IGeoLocation } from '../shared';
+import { IGeoCoordinates } from '../shared';
 export declare const GEO: {
-    location: () => Promise<IGeoLocation>;
+    coordinates: () => Promise<IGeoCoordinates>;
     distance: (from: {
         latitude: number;
         longitude: number;

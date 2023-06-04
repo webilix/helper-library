@@ -137,7 +137,7 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
     GEO: {
-        location: () => Promise<import("./lib/shared").IGeoLocation>;
+        coordinates: () => Promise<import("./lib/shared").IGeoCoordinates>;
         distance: (from: {
             latitude: number;
             longitude: number;
@@ -186,5 +186,5 @@ export declare const Helper: {
         toString: (date: Date) => string;
     };
 };
-export { ColorFormats, IBank, IGeoLocation } from './lib/shared';
+export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';
 //# sourceMappingURL=index.d.ts.map

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GEO = void 0;
 exports.GEO = {
-    location: () => {
+    coordinates: () => {
         return new Promise((resolve, reject) => {
             try {
                 if (!navigator || !navigator.geolocation) {
