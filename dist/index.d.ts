@@ -206,7 +206,10 @@ export declare const Helper: {
             (plate: string): (string | null)[];
             (plate: string, join: string): (string | null)[];
         };
-        toString: (plate: string[], join?: string) => string | null;
+        toString: {
+            (plate: string[]): string | null;
+            (plate: string[], join: string): string | null;
+        };
     };
     STRING: {
         changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
