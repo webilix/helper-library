@@ -123,8 +123,14 @@ export declare const Helper: {
     };
     COLOR: {
         getFormat: (color: string) => import("./lib/shared").ColorFormats | null;
-        getGradient: (from: string, to: string, count: number, format?: import("./lib/shared").ColorFormats | undefined) => string[];
-        getShade: (color: string, count: number, format?: import("./lib/shared").ColorFormats | undefined) => string[];
+        getGradient: {
+            (from: string, to: string, count: number): string[];
+            (from: string, to: string, count: number, format: import("./lib/shared").ColorFormats): string[];
+        };
+        getShade: {
+            (color: string, count: number): string[];
+            (color: string, count: number, format: import("./lib/shared").ColorFormats): string[];
+        };
         toHEX: (color: string) => string | null;
         toHSL: (color: string) => string | null;
         toRGB: (color: string) => string | null;
