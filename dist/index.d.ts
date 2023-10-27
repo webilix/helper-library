@@ -156,7 +156,10 @@ export declare const Helper: {
             (from: Date, timezone: string): string;
             (from: Date, to: Date, timezone: string): string;
         };
-        toString: (date: Date) => string;
+        toString: {
+            (): string;
+            (date: Date): string;
+        };
     };
     GEO: {
         coordinates: () => Promise<import("./lib/shared").IGeoCoordinates>;
@@ -238,7 +241,10 @@ export declare const Helper: {
     };
     TIME: {
         getDuration: (second: number) => string;
-        toString: (date: Date) => string;
+        toString: {
+            (): string;
+            (date: Date): string;
+        };
     };
 };
 export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';

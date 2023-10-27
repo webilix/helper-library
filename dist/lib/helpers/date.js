@@ -42,8 +42,9 @@ function jalaliPeriod(from, arg1, arg2) {
     return jFrom + jTo;
 }
 function toString(date) {
-    if (!is_1.IS.date(date))
+    if (date && !is_1.IS.date(date))
         return '';
+    date = date || new Date();
     const y = date.getFullYear().toString();
     const m = (date.getMonth() + 1).toString().padStart(2, '0');
     const d = date.getDate().toString().padStart(2, '0');

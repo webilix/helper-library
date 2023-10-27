@@ -10,6 +10,7 @@ declare function jalaliPeriod(from: Date): string;
 declare function jalaliPeriod(from: Date, to: Date): string;
 declare function jalaliPeriod(from: Date, timezone: string): string;
 declare function jalaliPeriod(from: Date, to: Date, timezone: string): string;
+declare function toString(): string;
 declare function toString(date: Date): string;
 export declare const DATE: {
     getDays: typeof getDays;
