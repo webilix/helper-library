@@ -212,12 +212,27 @@ export declare const Helper: {
         };
     };
     STRING: {
-        changeNumbers: (str: string, changeTo?: "EN" | "FA") => string;
+        changeNumbers: {
+            (str: string): string;
+            (str: string, locale: "EN" | "FA"): string;
+        };
         escapeHTML: (str: string) => string;
-        getBankCardView: (bankCard: string, join?: string) => string;
-        getFileName: (name: string, ext: string, seperator?: string) => string;
-        getMobileView: (mobile: string, join?: string) => string;
-        getRandom: (length: number, type?: "numeric" | "alphabetic" | "alphanumeric") => string;
+        getBankCardView: {
+            (bankCard: string): string;
+            (bankCard: string, join: string): string;
+        };
+        getFileName: {
+            (name: string, ext: string): string;
+            (name: string, ext: string, join: string): string;
+        };
+        getMobileView: {
+            (mobile: string): string;
+            (mobile: string, join: string): string;
+        };
+        getRandom: {
+            (length: number): string;
+            (length: number, type: "numeric" | "alphabetic" | "alphanumeric"): string;
+        };
         hasPersian: (text: string) => boolean;
         toFileSize: (size: string) => number;
     };
