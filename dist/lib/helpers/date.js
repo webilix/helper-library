@@ -8,7 +8,7 @@ exports.DATE = {
     getDays: (from, to, timezone = 'Asia/Tehran') => {
         const jalali = (0, jalali_date_time_1.JalaliDateTime)({ timezone });
         from = jalali.periodDay(1, from).from;
-        to = jalali.periodDay(1, to).from;
+        to = jalali.periodDay(1, to || new Date()).from;
         const seconds = Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000);
         return Math.floor(seconds / (24 * 3600)) + 1;
     },

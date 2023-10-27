@@ -9,7 +9,7 @@ export const DATE = {
         const jalali = JalaliDateTime({ timezone });
 
         from = jalali.periodDay(1, from).from;
-        to = jalali.periodDay(1, to).from;
+        to = jalali.periodDay(1, to || new Date()).from;
         const seconds: number = Math.floor(Math.abs(from.getTime() - to.getTime()) / 1000);
         return Math.floor(seconds / (24 * 3600)) + 1;
     },
