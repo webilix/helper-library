@@ -1,6 +1,65 @@
 import { RE } from './re';
 import { plateLetters } from './shared';
 
+function arrayIn(values: any[], arr: any[]): boolean {
+    for (const v of values) if (!arr.includes(v)) return false;
+    return true;
+}
+
+function arrayUnique(arr: any[], value?: (v: any) => any): boolean {
+    return (
+        arr
+            .map((v: any) => (value ? value(v) : v))
+            .filter((v: any, index: number, self: string[]) => self.indexOf(v) === index).length === arr.length
+    );
+}
+
+function isStringBankCard(bankCard: string): boolean {
+    const numbers: string[] = bankCard.split('');
+
+    // Check for all unique numbers
+    const unique = numbers.filter((n, index: number, self: string[]) => self.indexOf(n) === index);
+    if (unique.length === 1) return false;
+
+    let check: number = 0;
+    numbers.forEach((n: string, index: number) => {
+        const charCheck: number = +n * (index % 2 === 0 ? 2 : 1);
+        check += charCheck > 9 ? charCheck - 9 : charCheck;
+    });
+
+    return check % 10 === 0;
+}
+
+function isStringNationalCode(nationalCode: string): boolean {
+    const numbers: string[] = nationalCode.split('');
+
+    // Check for all unique numbers
+    const unique = numbers.filter((n, index: number, self: string[]) => self.indexOf(n) === index);
+    if (unique.length === 1) return false;
+
+    let check = 0;
+    numbers.forEach((n: string, index: number) => {
+        if (index >= 9) return;
+        check += (10 - index) * +n;
+    });
+
+    check = check % 11;
+    check = check < 2 ? check : 11 - check;
+
+    return check === +numbers[9];
+}
+
+function isStringObjectId(objectId: string): boolean {
+    if (objectId.length === 12) {
+        const bytes = Buffer.from(objectId);
+        return bytes.byteLength === 12;
+    }
+
+    if (objectId.length === 24) return /^[0-9a-fA-F]{24}$/.test(objectId);
+
+    return false;
+}
+
 function isPlate(value: string[]): boolean;
 function isPlate(value: string): boolean;
 function isPlate(value: string, join: string): boolean;
@@ -23,38 +82,15 @@ function isPlate(value: any, join: string = '-'): boolean {
 export const IS = {
     //#region ARRAY
     ARRAY: {
-        in: (values: any[], arr: any[]): boolean => {
-            for (const v of values) if (!arr.includes(v)) return false;
-            return true;
-        },
-
-        unique: (arr: any[], value?: (v: any) => any): boolean =>
-            arr
-                .map((v: any) => (value ? value(v) : v))
-                .filter((v: any, index: number, self: string[]) => self.indexOf(v) === index).length === arr.length,
+        in: arrayIn,
+        unique: arrayUnique,
     },
-    //#region
+    //#endregion
 
     //#region STRING
     STRING: {
-        bankCard: (value: any): boolean => {
-            if (!IS.string(value)) return false;
-            if (value.length !== 16 || !IS.STRING.numeric(value)) return false;
-
-            const numbers: string[] = value.split('');
-
-            // Check for all unique numbers
-            const unique = numbers.filter((n, index: number, self: string[]) => self.indexOf(n) === index);
-            if (unique.length === 1) return false;
-
-            let check: number = 0;
-            numbers.forEach((n: string, index: number) => {
-                const charCheck: number = +n * (index % 2 === 0 ? 2 : 1);
-                check += charCheck > 9 ? charCheck - 9 : charCheck;
-            });
-
-            return check % 10 === 0;
-        },
+        bankCard: (value: any): boolean =>
+            IS.string(value) && value.length === 16 && IS.STRING.numeric(value) && isStringBankCard(value),
 
         color: (value: any): boolean =>
             IS.string(value) &&
@@ -74,42 +110,14 @@ export const IS = {
 
         mobile: (value: any): boolean => IS.string(value) && RE.MOBILE.get().test(value),
 
-        nationalCode: (value: any): boolean => {
-            if (!IS.string(value)) return false;
-            if (value.length !== 10 || !IS.STRING.numeric(value)) return false;
-
-            const numbers: string[] = value.split('');
-
-            // Check for all unique numbers
-            const unique = numbers.filter((n, index: number, self: string[]) => self.indexOf(n) === index);
-            if (unique.length === 1) return false;
-
-            let check = 0;
-            numbers.forEach((n: string, index: number) => {
-                if (index >= 9) return;
-                check += (10 - index) * +n;
-            });
-
-            check = check % 11;
-            check = check < 2 ? check : 11 - check;
-
-            return check === +numbers[9];
-        },
+        nationalCode: (value: any): boolean =>
+            IS.string(value) && value.length === 10 && IS.STRING.numeric(value) && isStringNationalCode(value),
 
         number: (value: any): boolean => !IS.empty(value) && IS.string(value) && IS.number(+value),
 
         numeric: (value: any): boolean => IS.string(value) && RE.NUMERIC.get().test(value),
 
-        objectId: (value: any): boolean => {
-            if (!IS.string(value)) return false;
-
-            if (value.length === 12) {
-                const bytes = Buffer.from(value);
-                return bytes.byteLength === 12;
-            } else if (value.length === 24) return /^[0-9a-fA-F]{24}$/.test(value);
-
-            return false;
-        },
+        objectId: (value: any): boolean => IS.string(value) && isStringObjectId(value),
 
         time: (value: any): boolean => IS.string(value) && RE.TIME.get().test(value),
 
@@ -122,11 +130,8 @@ export const IS = {
 
     boolean: (value: any): boolean => typeof value === 'boolean',
 
-    date: (value: any): boolean => {
-        if (Object.prototype.toString.call(value) !== '[object Date]') return false;
-        const date: Date = value;
-        return !isNaN(date.getTime());
-    },
+    date: (value: any): boolean =>
+        Object.prototype.toString.call(value) === '[object Date]' && !isNaN((value as Date).getTime()),
 
     empty: (value: any): boolean =>
         IS.null(value) ||

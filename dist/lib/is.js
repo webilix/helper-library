@@ -3,6 +3,55 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IS = void 0;
 const re_1 = require("./re");
 const shared_1 = require("./shared");
+function arrayIn(values, arr) {
+    for (const v of values)
+        if (!arr.includes(v))
+            return false;
+    return true;
+}
+function arrayUnique(arr, value) {
+    return (arr
+        .map((v) => (value ? value(v) : v))
+        .filter((v, index, self) => self.indexOf(v) === index).length === arr.length);
+}
+function isStringBankCard(bankCard) {
+    const numbers = bankCard.split('');
+    // Check for all unique numbers
+    const unique = numbers.filter((n, index, self) => self.indexOf(n) === index);
+    if (unique.length === 1)
+        return false;
+    let check = 0;
+    numbers.forEach((n, index) => {
+        const charCheck = +n * (index % 2 === 0 ? 2 : 1);
+        check += charCheck > 9 ? charCheck - 9 : charCheck;
+    });
+    return check % 10 === 0;
+}
+function isStringNationalCode(nationalCode) {
+    const numbers = nationalCode.split('');
+    // Check for all unique numbers
+    const unique = numbers.filter((n, index, self) => self.indexOf(n) === index);
+    if (unique.length === 1)
+        return false;
+    let check = 0;
+    numbers.forEach((n, index) => {
+        if (index >= 9)
+            return;
+        check += (10 - index) * +n;
+    });
+    check = check % 11;
+    check = check < 2 ? check : 11 - check;
+    return check === +numbers[9];
+}
+function isStringObjectId(objectId) {
+    if (objectId.length === 12) {
+        const bytes = Buffer.from(objectId);
+        return bytes.byteLength === 12;
+    }
+    if (objectId.length === 24)
+        return /^[0-9a-fA-F]{24}$/.test(objectId);
+    return false;
+}
 function isPlate(value, join = '-') {
     const plate = Array.isArray(value) ? value : exports.IS.string(value) ? value.split(join) : [];
     if (plate.length !== 4)
@@ -24,36 +73,13 @@ function isPlate(value, join = '-') {
 exports.IS = {
     //#region ARRAY
     ARRAY: {
-        in: (values, arr) => {
-            for (const v of values)
-                if (!arr.includes(v))
-                    return false;
-            return true;
-        },
-        unique: (arr, value) => arr
-            .map((v) => (value ? value(v) : v))
-            .filter((v, index, self) => self.indexOf(v) === index).length === arr.length,
+        in: arrayIn,
+        unique: arrayUnique,
     },
-    //#region
+    //#endregion
     //#region STRING
     STRING: {
-        bankCard: (value) => {
-            if (!exports.IS.string(value))
-                return false;
-            if (value.length !== 16 || !exports.IS.STRING.numeric(value))
-                return false;
-            const numbers = value.split('');
-            // Check for all unique numbers
-            const unique = numbers.filter((n, index, self) => self.indexOf(n) === index);
-            if (unique.length === 1)
-                return false;
-            let check = 0;
-            numbers.forEach((n, index) => {
-                const charCheck = +n * (index % 2 === 0 ? 2 : 1);
-                check += charCheck > 9 ? charCheck - 9 : charCheck;
-            });
-            return check % 10 === 0;
-        },
+        bankCard: (value) => exports.IS.string(value) && value.length === 16 && exports.IS.STRING.numeric(value) && isStringBankCard(value),
         color: (value) => exports.IS.string(value) &&
             (re_1.RE.HEX_COLOR.get().test(value) || re_1.RE.HSL_COLOR.get().test(value) || re_1.RE.RGB_COLOR.get().test(value)),
         date: (value) => exports.IS.string(value) && re_1.RE.DATE.get().test(value),
@@ -63,39 +89,10 @@ exports.IS = {
         ip4: (value) => exports.IS.string(value) && re_1.RE.IP4.get().test(value),
         jsonDate: (value) => exports.IS.string(value) && re_1.RE.JSON_DATE.get().test(value),
         mobile: (value) => exports.IS.string(value) && re_1.RE.MOBILE.get().test(value),
-        nationalCode: (value) => {
-            if (!exports.IS.string(value))
-                return false;
-            if (value.length !== 10 || !exports.IS.STRING.numeric(value))
-                return false;
-            const numbers = value.split('');
-            // Check for all unique numbers
-            const unique = numbers.filter((n, index, self) => self.indexOf(n) === index);
-            if (unique.length === 1)
-                return false;
-            let check = 0;
-            numbers.forEach((n, index) => {
-                if (index >= 9)
-                    return;
-                check += (10 - index) * +n;
-            });
-            check = check % 11;
-            check = check < 2 ? check : 11 - check;
-            return check === +numbers[9];
-        },
+        nationalCode: (value) => exports.IS.string(value) && value.length === 10 && exports.IS.STRING.numeric(value) && isStringNationalCode(value),
         number: (value) => !exports.IS.empty(value) && exports.IS.string(value) && exports.IS.number(+value),
         numeric: (value) => exports.IS.string(value) && re_1.RE.NUMERIC.get().test(value),
-        objectId: (value) => {
-            if (!exports.IS.string(value))
-                return false;
-            if (value.length === 12) {
-                const bytes = Buffer.from(value);
-                return bytes.byteLength === 12;
-            }
-            else if (value.length === 24)
-                return /^[0-9a-fA-F]{24}$/.test(value);
-            return false;
-        },
+        objectId: (value) => exports.IS.string(value) && isStringObjectId(value),
         time: (value) => exports.IS.string(value) && re_1.RE.TIME.get().test(value),
         url: (value) => exports.IS.string(value) && re_1.RE.URL.get(true).test(value),
     },
@@ -103,12 +100,7 @@ exports.IS = {
     //#region VALUE
     array: (value) => Array.isArray(value),
     boolean: (value) => typeof value === 'boolean',
-    date: (value) => {
-        if (Object.prototype.toString.call(value) !== '[object Date]')
-            return false;
-        const date = value;
-        return !isNaN(date.getTime());
-    },
+    date: (value) => Object.prototype.toString.call(value) === '[object Date]' && !isNaN(value.getTime()),
     empty: (value) => exports.IS.null(value) ||
         value === '' ||
         (exports.IS.array(value) && value.length === 0) ||

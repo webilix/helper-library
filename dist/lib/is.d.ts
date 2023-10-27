@@ -1,10 +1,12 @@
+declare function arrayIn(values: any[], arr: any[]): boolean;
+declare function arrayUnique(arr: any[], value?: (v: any) => any): boolean;
 declare function isPlate(value: string[]): boolean;
 declare function isPlate(value: string): boolean;
 declare function isPlate(value: string, join: string): boolean;
 export declare const IS: {
     ARRAY: {
-        in: (values: any[], arr: any[]) => boolean;
-        unique: (arr: any[], value?: ((v: any) => any) | undefined) => boolean;
+        in: typeof arrayIn;
+        unique: typeof arrayUnique;
     };
     STRING: {
         bankCard: (value: any) => boolean;
