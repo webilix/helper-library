@@ -136,10 +136,26 @@ export declare const Helper: {
         toRGB: (color: string) => string | null;
     };
     DATE: {
-        getDays: (from: Date, to?: Date | undefined, timezone?: string) => number;
-        getDuration: (from: Date, to?: Date | undefined) => string;
-        getSeconds: (from: Date, to?: Date | undefined) => number;
-        jalaliPeriod: (from: Date, to?: Date | undefined, timezone?: string) => string;
+        getDays: {
+            (from: Date): number;
+            (from: Date, to: Date): number;
+            (from: Date, timezone: string): number;
+            (from: Date, to: Date, timezone: string): number;
+        };
+        getDuration: {
+            (from: Date): string;
+            (from: Date, to: Date): string;
+        };
+        getSeconds: {
+            (from: Date): number;
+            (from: Date, to: Date): number;
+        };
+        jalaliPeriod: {
+            (from: Date): string;
+            (from: Date, to: Date): string;
+            (from: Date, timezone: string): string;
+            (from: Date, to: Date, timezone: string): string;
+        };
         toString: (date: Date) => string;
     };
     GEO: {

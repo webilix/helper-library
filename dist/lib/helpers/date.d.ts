@@ -1,8 +1,22 @@
+declare function getDays(from: Date): number;
+declare function getDays(from: Date, to: Date): number;
+declare function getDays(from: Date, timezone: string): number;
+declare function getDays(from: Date, to: Date, timezone: string): number;
+declare function getDuration(from: Date): string;
+declare function getDuration(from: Date, to: Date): string;
+declare function getSeconds(from: Date): number;
+declare function getSeconds(from: Date, to: Date): number;
+declare function jalaliPeriod(from: Date): string;
+declare function jalaliPeriod(from: Date, to: Date): string;
+declare function jalaliPeriod(from: Date, timezone: string): string;
+declare function jalaliPeriod(from: Date, to: Date, timezone: string): string;
+declare function toString(date: Date): string;
 export declare const DATE: {
-    getDays: (from: Date, to?: Date, timezone?: string) => number;
-    getDuration: (from: Date, to?: Date) => string;
-    getSeconds: (from: Date, to?: Date) => number;
-    jalaliPeriod: (from: Date, to?: Date, timezone?: string) => string;
-    toString: (date: Date) => string;
+    getDays: typeof getDays;
+    getDuration: typeof getDuration;
+    getSeconds: typeof getSeconds;
+    jalaliPeriod: typeof jalaliPeriod;
+    toString: typeof toString;
 };
+export {};
 //# sourceMappingURL=date.d.ts.map
