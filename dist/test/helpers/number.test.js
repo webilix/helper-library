@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const number_1 = require("../../lib/helpers/number");
 test('NUMBER: format', () => {
-    expect(number_1.NUMBER.format(1234567890)).toBe('۱,۲۳۴,۵۶۷,۸۹۰');
+    expect(number_1.NUMBER.format(1234567890)).toBe('۱،۲۳۴،۵۶۷،۸۹۰');
     expect(number_1.NUMBER.format(1234567890, 'EN')).toBe('1,234,567,890');
-    expect(number_1.NUMBER.format(-1234567.89)).toBe('-۱,۲۳۴,۵۶۷.۸۹');
+    expect(number_1.NUMBER.format(-1234567.89)).toBe('-۱،۲۳۴،۵۶۷.۸۹');
     expect(number_1.NUMBER.format(-1234567.89, 'EN')).toBe('-1,234,567.89');
 });
 test('NUMBER: getTitle', () => {
@@ -49,7 +49,7 @@ test('NUMBER: toFileSize', () => {
     ];
     tests.forEach(([n, fa, en]) => {
         expect(number_1.NUMBER.toFileSize(n)).toBe(fa);
-        expect(number_1.NUMBER.toFileSize(n, true)).toBe(en);
+        expect(number_1.NUMBER.toFileSize(n, 'EN')).toBe(en);
     });
 });
 //# sourceMappingURL=number.test.js.map

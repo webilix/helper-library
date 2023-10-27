@@ -169,11 +169,23 @@ export declare const Helper: {
         }) => number;
     };
     NUMBER: {
-        format: (num: number, locale?: "EN" | "FA") => string;
+        format: {
+            (num: number): string;
+            (num: number, locale: "EN" | "FA"): string;
+        };
         getTitle: (num: number) => string;
-        toEN: (num: string | number) => string;
-        toFA: (num: string | number) => string;
-        toFileSize: (size: number, english?: boolean) => string;
+        toEN: {
+            (num: number): string;
+            (num: string): string;
+        };
+        toFA: {
+            (num: number): string;
+            (num: string): string;
+        };
+        toFileSize: {
+            (size: number): string;
+            (size: number, locale: "EN" | "FA"): string;
+        };
     };
     PASSWORD: {
         generate: (length: number, exclude?: {

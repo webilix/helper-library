@@ -1,9 +1,9 @@
 import { NUMBER } from '../../lib/helpers/number';
 
 test('NUMBER: format', () => {
-    expect(NUMBER.format(1234567890)).toBe('۱,۲۳۴,۵۶۷,۸۹۰');
+    expect(NUMBER.format(1234567890)).toBe('۱،۲۳۴،۵۶۷،۸۹۰');
     expect(NUMBER.format(1234567890, 'EN')).toBe('1,234,567,890');
-    expect(NUMBER.format(-1234567.89)).toBe('-۱,۲۳۴,۵۶۷.۸۹');
+    expect(NUMBER.format(-1234567.89)).toBe('-۱،۲۳۴،۵۶۷.۸۹');
     expect(NUMBER.format(-1234567.89, 'EN')).toBe('-1,234,567.89');
 });
 
@@ -53,6 +53,6 @@ test('NUMBER: toFileSize', () => {
 
     tests.forEach(([n, fa, en]: [number, string, string]) => {
         expect(NUMBER.toFileSize(n)).toBe(fa);
-        expect(NUMBER.toFileSize(n, true)).toBe(en);
+        expect(NUMBER.toFileSize(n, 'EN')).toBe(en);
     });
 });
