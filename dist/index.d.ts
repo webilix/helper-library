@@ -188,12 +188,15 @@ export declare const Helper: {
         };
     };
     PASSWORD: {
-        generate: (length: number, exclude?: {
-            number?: boolean | undefined;
-            lower?: boolean | undefined;
-            upper?: boolean | undefined;
-            special?: boolean | undefined;
-        } | undefined) => string;
+        generate: {
+            (length: number): string;
+            (length: number, exclude: {
+                number?: boolean | undefined;
+                lower?: boolean | undefined;
+                upper?: boolean | undefined;
+                special?: boolean | undefined;
+            }): string;
+        };
         getStrength: (password: string) => number;
     };
     PLATE: {
