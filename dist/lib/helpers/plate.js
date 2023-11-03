@@ -4,7 +4,6 @@ exports.PLATE = void 0;
 const is_1 = require("../is");
 const shared_1 = require("../shared");
 function getPlate(plate, join = '-') {
-    console.log(plate, join);
     return is_1.IS.plate(plate, join) ? (Array.isArray(plate) ? plate : plate.split(join)) : [null, null, null, null];
 }
 function toString(plate, join = '-') {
