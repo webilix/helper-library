@@ -22,13 +22,13 @@
     },
     "homepage": "https://github.com/webilix/helper-library#readme",
     "devDependencies": {
-        "@types/jest": "^29.5.6",
+        "@types/jest": "^29.5.11",
         "@types/typescript": "^2.0.0",
         "jest": "^29.7.0",
         "rimraf": "^5.0.5",
-        "typescript": "^5.2.2"
+        "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@webilix/jalali-date-time": "^1.2.27"
+        "@webilix/jalali-date-time": "^1.2.28"
     }
 }
