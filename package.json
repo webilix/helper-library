@@ -1,6 +1,6 @@
 {
     "name": "@webilix/helper-library",
-    "version": "4.15.3",
+    "version": "4.15.4",
     "description": "JavaScript/TypeScript programming helper library.",
     "main": "./dist/index.js",
     "scripts": {
