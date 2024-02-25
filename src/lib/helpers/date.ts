@@ -41,14 +41,14 @@ function getMonths(from: Date, arg1?: any, arg2?: any): number {
     };
 
     const fDate = getDate(from);
-    const tDate = getDate(to || new Date());
+    const tDate = getDate(to);
     if (tDate.month < fDate.month) {
         tDate.month += 12;
         tDate.year--;
     }
 
-    let month: number = (fDate.day <= 15 ? 1 : 0) + (tDate.day >= 15 ? 1 : 0);
-    while (tDate.month-- !== fDate.month) month++;
+    let month: number = tDate.day >= 15 ? 1 : 0;
+    while (tDate.month-- > fDate.month) month++;
     while (tDate.year-- !== fDate.year) month += 12;
     return month > 0 ? month : 0;
 }

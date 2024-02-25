@@ -28,13 +28,13 @@ function getMonths(from, arg1, arg2) {
         return { year, month, day };
     };
     const fDate = getDate(from);
-    const tDate = getDate(to || new Date());
+    const tDate = getDate(to);
     if (tDate.month < fDate.month) {
         tDate.month += 12;
         tDate.year--;
     }
-    let month = (fDate.day <= 15 ? 1 : 0) + (tDate.day >= 15 ? 1 : 0);
-    while (tDate.month-- !== fDate.month)
+    let month = tDate.day >= 15 ? 1 : 0;
+    while (tDate.month-- > fDate.month)
         month++;
     while (tDate.year-- !== fDate.year)
         month += 12;
