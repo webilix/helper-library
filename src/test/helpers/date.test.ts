@@ -8,6 +8,13 @@ test('DATE: getDays', () => {
     expect(DATE.getDays(from, to)).toBe(2);
 });
 
+test('DATE: getMonths', () => {
+    expect(DATE.getMonths(new Date('2000-01-02'), new Date('2000-01-01'))).toBe(0);
+    expect(DATE.getMonths(new Date('2000-01-01'), new Date('2000-01-01'))).toBe(1);
+    expect(DATE.getMonths(new Date('2000-01-01'), new Date('2010-01-01'))).toBe(121);
+    expect(DATE.getMonths(new Date('2000-01-31'), new Date('2010-01-01'))).toBe(120);
+});
+
 test('DATE: getDuration', () => {
     const from: Date = new Date('2000-01-01');
     const to: Date = new Date('2000-01-02');

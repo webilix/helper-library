@@ -142,6 +142,12 @@ export declare const Helper: {
             (from: Date, timezone: string): number;
             (from: Date, to: Date, timezone: string): number;
         };
+        getMonths: {
+            (from: Date): number;
+            (from: Date, to: Date): number;
+            (from: Date, timezone: string): number;
+            (from: Date, to: Date, timezone: string): number;
+        };
         getDuration: {
             (from: Date): string;
             (from: Date, to: Date): string;

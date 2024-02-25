@@ -19,6 +19,40 @@ function getDays(from: Date, arg1?: any, arg2?: any): number {
     return Math.floor(seconds / (24 * 3600)) + 1;
 }
 
+function getMonths(from: Date): number;
+function getMonths(from: Date, to: Date): number;
+function getMonths(from: Date, timezone: string): number;
+function getMonths(from: Date, to: Date, timezone: string): number;
+function getMonths(from: Date, arg1?: any, arg2?: any): number {
+    const to: Date = arg1 && IS.date(arg1) ? arg1 : new Date();
+    if (from.getTime() > to.getTime()) return 0;
+
+    const timezone: string = arg1 && typeof arg1 === 'string' ? arg1 : arg2 || '';
+    const jalali = JalaliDateTime({ timezone });
+
+    const getDate = (date: Date): { year: number; month: number; day: number } => {
+        const [year, month, day]: number[] = jalali
+            .toString(date)
+            .substring(0, 10)
+            .split('-')
+            .map((s: string) => +s);
+
+        return { year, month, day };
+    };
+
+    const fDate = getDate(from);
+    const tDate = getDate(to || new Date());
+    if (tDate.month < fDate.month) {
+        tDate.month += 12;
+        tDate.year--;
+    }
+
+    let month: number = (fDate.day <= 15 ? 1 : 0) + (tDate.day >= 15 ? 1 : 0);
+    while (tDate.month-- !== fDate.month) month++;
+    while (tDate.year-- !== fDate.year) month += 12;
+    return month > 0 ? month : 0;
+}
+
 function getDuration(from: Date): string;
 function getDuration(from: Date, to: Date): string;
 function getDuration(from: Date, to?: Date): string {
@@ -77,6 +111,7 @@ function toString(date?: Date): string {
 
 export const DATE = {
     getDays: getDays,
+    getMonths: getMonths,
     getDuration: getDuration,
     getSeconds: getSeconds,
     jalaliPeriod: jalaliPeriod,

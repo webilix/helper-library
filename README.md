@@ -199,6 +199,7 @@ Helper.DATE.
 ```
 
 -   getDays
+-   getMonths
 -   getDuration
 -   getSeconds
 -   jalaliPeriod

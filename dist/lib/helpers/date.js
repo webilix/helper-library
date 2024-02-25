@@ -13,6 +13,33 @@ function getDays(from, arg1, arg2) {
     const seconds = Math.floor(Math.abs(fDate.getTime() - tDate.getTime()) / 1000);
     return Math.floor(seconds / (24 * 3600)) + 1;
 }
+function getMonths(from, arg1, arg2) {
+    const to = arg1 && is_1.IS.date(arg1) ? arg1 : new Date();
+    if (from.getTime() > to.getTime())
+        return 0;
+    const timezone = arg1 && typeof arg1 === 'string' ? arg1 : arg2 || '';
+    const jalali = (0, jalali_date_time_1.JalaliDateTime)({ timezone });
+    const getDate = (date) => {
+        const [year, month, day] = jalali
+            .toString(date)
+            .substring(0, 10)
+            .split('-')
+            .map((s) => +s);
+        return { year, month, day };
+    };
+    const fDate = getDate(from);
+    const tDate = getDate(to || new Date());
+    if (tDate.month < fDate.month) {
+        tDate.month += 12;
+        tDate.year--;
+    }
+    let month = (fDate.day <= 15 ? 1 : 0) + (tDate.day >= 15 ? 1 : 0);
+    while (tDate.month-- !== fDate.month)
+        month++;
+    while (tDate.year-- !== fDate.year)
+        month += 12;
+    return month > 0 ? month : 0;
+}
 function getDuration(from, to) {
     return time_1.TIME.getDuration(getSeconds(from, to || new Date()));
 }
@@ -52,6 +79,7 @@ function toString(date) {
 }
 exports.DATE = {
     getDays: getDays,
+    getMonths: getMonths,
     getDuration: getDuration,
     getSeconds: getSeconds,
     jalaliPeriod: jalaliPeriod,
