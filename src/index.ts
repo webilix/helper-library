@@ -11,6 +11,8 @@ import { PLATE } from './lib/helpers/plate';
 import { STRING } from './lib/helpers/string';
 import { TIME } from './lib/helpers/time';
 
+import { UNIT } from './lib/unit';
+
 export const Helper = {
     IS,
     RE,
@@ -24,6 +26,15 @@ export const Helper = {
     PLATE,
     STRING,
     TIME,
+
+    UNIT,
 };
 
+// SHARED DATA
 export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';
+
+// UNIT TYPES
+export { UnitArea } from './lib/unit/area';
+export { UnitLength } from './lib/unit/length';
+export { UnitVolume } from './lib/unit/volume';
+export { UnitWeight } from './lib/unit/weight';

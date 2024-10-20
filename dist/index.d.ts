@@ -252,6 +252,84 @@ export declare const Helper: {
             (date: Date): string;
         };
     };
+    UNIT: {
+        AREA: {
+            readonly list: import("./lib/unit/area").UnitArea[];
+            readonly options: {
+                id: import("./lib/unit/area").UnitArea;
+                title: string;
+            }[];
+            getTitle: (unit: import("./lib/unit/area").UnitArea) => string;
+            getRate: {
+                (from: import("./lib/unit/area").UnitArea): number;
+                (from: import("./lib/unit/area").UnitArea, to: import("./lib/unit/area").UnitArea): number;
+            };
+            convert: {
+                (value: number, from: import("./lib/unit/area").UnitArea): number;
+                (value: number, from: import("./lib/unit/area").UnitArea, to: import("./lib/unit/area").UnitArea): number;
+                (value: number, from: import("./lib/unit/area").UnitArea, decimal: number): number;
+                (value: number, from: import("./lib/unit/area").UnitArea, to: import("./lib/unit/area").UnitArea, decimal: number): number;
+            };
+        };
+        LENGTH: {
+            readonly list: import("./lib/unit/length").UnitLength[];
+            readonly options: {
+                id: import("./lib/unit/length").UnitLength;
+                title: string;
+            }[];
+            getTitle: (unit: import("./lib/unit/length").UnitLength) => string;
+            getRate: {
+                (from: import("./lib/unit/length").UnitLength): number;
+                (from: import("./lib/unit/length").UnitLength, to: import("./lib/unit/length").UnitLength): number;
+            };
+            convert: {
+                (value: number, from: import("./lib/unit/length").UnitLength): number;
+                (value: number, from: import("./lib/unit/length").UnitLength, to: import("./lib/unit/length").UnitLength): number;
+                (value: number, from: import("./lib/unit/length").UnitLength, decimal: number): number;
+                (value: number, from: import("./lib/unit/length").UnitLength, to: import("./lib/unit/length").UnitLength, decimal: number): number;
+            };
+        };
+        VOLUME: {
+            readonly list: import("./lib/unit/volume").UnitVolume[];
+            readonly options: {
+                id: import("./lib/unit/volume").UnitVolume;
+                title: string;
+            }[];
+            getTitle: (unit: import("./lib/unit/volume").UnitVolume) => string;
+            getRate: {
+                (from: import("./lib/unit/volume").UnitVolume): number;
+                (from: import("./lib/unit/volume").UnitVolume, to: import("./lib/unit/volume").UnitVolume): number;
+            };
+            convert: {
+                (value: number, from: import("./lib/unit/volume").UnitVolume): number;
+                (value: number, from: import("./lib/unit/volume").UnitVolume, to: import("./lib/unit/volume").UnitVolume): number;
+                (value: number, from: import("./lib/unit/volume").UnitVolume, decimal: number): number;
+                (value: number, from: import("./lib/unit/volume").UnitVolume, to: import("./lib/unit/volume").UnitVolume, decimal: number): number;
+            };
+        };
+        WEIGHT: {
+            readonly list: import("./lib/unit/weight").UnitWeight[];
+            readonly options: {
+                id: import("./lib/unit/weight").UnitWeight;
+                title: string;
+            }[];
+            getTitle: (unit: import("./lib/unit/weight").UnitWeight) => string;
+            getRate: {
+                (from: import("./lib/unit/weight").UnitWeight): number;
+                (from: import("./lib/unit/weight").UnitWeight, to: import("./lib/unit/weight").UnitWeight): number;
+            };
+            convert: {
+                (value: number, from: import("./lib/unit/weight").UnitWeight): number;
+                (value: number, from: import("./lib/unit/weight").UnitWeight, to: import("./lib/unit/weight").UnitWeight): number;
+                (value: number, from: import("./lib/unit/weight").UnitWeight, decimal: number): number;
+                (value: number, from: import("./lib/unit/weight").UnitWeight, to: import("./lib/unit/weight").UnitWeight, decimal: number): number;
+            };
+        };
+    };
 };
 export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';
+export { UnitArea } from './lib/unit/area';
+export { UnitLength } from './lib/unit/length';
+export { UnitVolume } from './lib/unit/volume';
+export { UnitWeight } from './lib/unit/weight';
 //# sourceMappingURL=index.d.ts.map

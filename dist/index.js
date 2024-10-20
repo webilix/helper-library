@@ -12,6 +12,7 @@ const password_1 = require("./lib/helpers/password");
 const plate_1 = require("./lib/helpers/plate");
 const string_1 = require("./lib/helpers/string");
 const time_1 = require("./lib/helpers/time");
+const unit_1 = require("./lib/unit");
 exports.Helper = {
     IS: is_1.IS,
     RE: re_1.RE,
@@ -24,5 +25,6 @@ exports.Helper = {
     PLATE: plate_1.PLATE,
     STRING: string_1.STRING,
     TIME: time_1.TIME,
+    UNIT: unit_1.UNIT,
 };
 //# sourceMappingURL=index.js.map
