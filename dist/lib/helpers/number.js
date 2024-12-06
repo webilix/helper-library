@@ -25,11 +25,11 @@ function getTitle(num) {
             if (num === 0)
                 return '';
             if (num < 20)
-                return shared_1.NumberTitles[0][num];
-            return join([shared_1.NumberTitles[1][Math.floor(num / 10) - 1], shared_1.NumberTitles[0][num % 10]], ' و ');
+                return shared_1.numberTitles[0][num];
+            return join([shared_1.numberTitles[1][Math.floor(num / 10) - 1], shared_1.numberTitles[0][num % 10]], ' و ');
         };
-        const title = num < 20 ? twoDigit(num) : join([shared_1.NumberTitles[2][Math.floor(num / 100)], twoDigit(num % 100)], ' و ');
-        const unit = shared_1.NumberTitles[3][index] || '';
+        const title = num < 20 ? twoDigit(num) : join([shared_1.numberTitles[2][Math.floor(num / 100)], twoDigit(num % 100)], ' و ');
+        const unit = shared_1.numberTitles[3][index] || '';
         return title ? `${title} ${unit}`.trim() : '';
     };
     let [int, dec] = num
@@ -49,7 +49,7 @@ function getTitle(num) {
     dec = dec || '';
     while (dec.substring(dec.length - 1) === '0')
         dec = dec.substring(0, dec.length - 1);
-    const decimal = !dec ? '' : title(+dec, 0) + ' ' + shared_1.NumberTitles[4][dec.length];
+    const decimal = !dec ? '' : title(+dec, 0) + ' ' + shared_1.numberTitles[4][dec.length];
     return join([integer, integer && decimal ? 'ممیز' : '', decimal], ' ');
 }
 function toEN(num) {

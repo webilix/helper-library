@@ -1,5 +1,5 @@
 import { IS } from '../is';
-import { NumberTitles } from '../shared';
+import { numberTitles } from '../shared';
 
 function format(num: number): string;
 function format(num: number, locale: 'EN' | 'FA'): string;
@@ -29,13 +29,13 @@ function getTitle(num: number): string {
         const twoDigit = (num: number): string => {
             if (num === 0) return '';
 
-            if (num < 20) return NumberTitles[0][num];
-            return join([NumberTitles[1][Math.floor(num / 10) - 1], NumberTitles[0][num % 10]], ' و ');
+            if (num < 20) return numberTitles[0][num];
+            return join([numberTitles[1][Math.floor(num / 10) - 1], numberTitles[0][num % 10]], ' و ');
         };
 
         const title: string =
-            num < 20 ? twoDigit(num) : join([NumberTitles[2][Math.floor(num / 100)], twoDigit(num % 100)], ' و ');
-        const unit: string = NumberTitles[3][index] || '';
+            num < 20 ? twoDigit(num) : join([numberTitles[2][Math.floor(num / 100)], twoDigit(num % 100)], ' و ');
+        const unit: string = numberTitles[3][index] || '';
 
         return title ? `${title} ${unit}`.trim() : '';
     };
@@ -57,7 +57,7 @@ function getTitle(num: number): string {
     // DECIMAL
     dec = dec || '';
     while (dec.substring(dec.length - 1) === '0') dec = dec.substring(0, dec.length - 1);
-    const decimal: string = !dec ? '' : title(+dec, 0) + ' ' + NumberTitles[4][dec.length];
+    const decimal: string = !dec ? '' : title(+dec, 0) + ' ' + numberTitles[4][dec.length];
 
     return join([integer, integer && decimal ? 'ممیز' : '', decimal], ' ');
 }

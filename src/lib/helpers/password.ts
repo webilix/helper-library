@@ -1,4 +1,4 @@
-import { PasswordChars } from '../shared';
+import { passwordChars } from '../shared';
 
 function generate(length: number): string;
 function generate(
@@ -16,16 +16,16 @@ function generate(
     const getRandomChar = (chars: string): string => chars[Math.floor(Math.random() * chars.length)];
 
     const password: string[] = [];
-    if (!exclude?.number) password.push(getRandomChar(PasswordChars.number));
-    if (!exclude?.lower) password.push(getRandomChar(PasswordChars.lower));
-    if (!exclude?.upper) password.push(getRandomChar(PasswordChars.upper));
-    if (!exclude?.special) password.push(getRandomChar(PasswordChars.special));
+    if (!exclude?.number) password.push(getRandomChar(passwordChars.number));
+    if (!exclude?.lower) password.push(getRandomChar(passwordChars.lower));
+    if (!exclude?.upper) password.push(getRandomChar(passwordChars.upper));
+    if (!exclude?.special) password.push(getRandomChar(passwordChars.special));
 
     const fullChars: string = [
-        !exclude?.number ? PasswordChars.number : '',
-        !exclude?.lower ? PasswordChars.lower : '',
-        !exclude?.upper ? PasswordChars.upper : '',
-        !exclude?.special ? PasswordChars.special : '',
+        !exclude?.number ? passwordChars.number : '',
+        !exclude?.lower ? passwordChars.lower : '',
+        !exclude?.upper ? passwordChars.upper : '',
+        !exclude?.special ? passwordChars.special : '',
     ].join('');
     while (password.length < length) password.push(getRandomChar(fullChars));
 
@@ -49,7 +49,7 @@ function getStrength(password: string): number {
         sequentialSymbol: 0,
     };
 
-    const chars = { letter: PasswordChars.lower, number: PasswordChars.number, symbol: PasswordChars.special };
+    const chars = { letter: passwordChars.lower, number: passwordChars.number, symbol: passwordChars.special };
     const aPassword = password.replace(/\s+/g, '').split(/\s*/);
 
     let lastCharType: null | 'U' | 'L' | 'N' | 'S' = null;

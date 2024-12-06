@@ -10,18 +10,18 @@ function generate(length, exclude) {
     const getRandomChar = (chars) => chars[Math.floor(Math.random() * chars.length)];
     const password = [];
     if (!(exclude === null || exclude === void 0 ? void 0 : exclude.number))
-        password.push(getRandomChar(shared_1.PasswordChars.number));
+        password.push(getRandomChar(shared_1.passwordChars.number));
     if (!(exclude === null || exclude === void 0 ? void 0 : exclude.lower))
-        password.push(getRandomChar(shared_1.PasswordChars.lower));
+        password.push(getRandomChar(shared_1.passwordChars.lower));
     if (!(exclude === null || exclude === void 0 ? void 0 : exclude.upper))
-        password.push(getRandomChar(shared_1.PasswordChars.upper));
+        password.push(getRandomChar(shared_1.passwordChars.upper));
     if (!(exclude === null || exclude === void 0 ? void 0 : exclude.special))
-        password.push(getRandomChar(shared_1.PasswordChars.special));
+        password.push(getRandomChar(shared_1.passwordChars.special));
     const fullChars = [
-        !(exclude === null || exclude === void 0 ? void 0 : exclude.number) ? shared_1.PasswordChars.number : '',
-        !(exclude === null || exclude === void 0 ? void 0 : exclude.lower) ? shared_1.PasswordChars.lower : '',
-        !(exclude === null || exclude === void 0 ? void 0 : exclude.upper) ? shared_1.PasswordChars.upper : '',
-        !(exclude === null || exclude === void 0 ? void 0 : exclude.special) ? shared_1.PasswordChars.special : '',
+        !(exclude === null || exclude === void 0 ? void 0 : exclude.number) ? shared_1.passwordChars.number : '',
+        !(exclude === null || exclude === void 0 ? void 0 : exclude.lower) ? shared_1.passwordChars.lower : '',
+        !(exclude === null || exclude === void 0 ? void 0 : exclude.upper) ? shared_1.passwordChars.upper : '',
+        !(exclude === null || exclude === void 0 ? void 0 : exclude.special) ? shared_1.passwordChars.special : '',
     ].join('');
     while (password.length < length)
         password.push(getRandomChar(fullChars));
@@ -43,7 +43,7 @@ function getStrength(password) {
         sequentialNumber: 0,
         sequentialSymbol: 0,
     };
-    const chars = { letter: shared_1.PasswordChars.lower, number: shared_1.PasswordChars.number, symbol: shared_1.PasswordChars.special };
+    const chars = { letter: shared_1.passwordChars.lower, number: shared_1.passwordChars.number, symbol: shared_1.passwordChars.special };
     const aPassword = password.replace(/\s+/g, '').split(/\s*/);
     let lastCharType = null;
     aPassword.forEach((character, index) => {
