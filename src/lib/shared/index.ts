@@ -5,3 +5,4 @@ export * from './number';
 export * from './password';
 export * from './plate';
 export * from './regex';
+export * from './state';

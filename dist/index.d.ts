@@ -220,6 +220,30 @@ export declare const Helper: {
             (plate: string[], join: string): string | null;
         };
     };
+    STATE: {
+        getList: () => import("./lib/shared").IState[];
+        findOneById: (id: string) => import("./lib/shared").IState | undefined;
+        findByTitle: (query: string) => import("./lib/shared").IState[];
+        findOneByTitle: (title: string) => import("./lib/shared").IState | undefined;
+        CITY: {
+            getList: {
+                (): import("./lib/shared").ICity[];
+                (stateId: string): import("./lib/shared").ICity[];
+            };
+            findOneById: {
+                (id: string): import("./lib/shared").ICity | undefined;
+                (id: string, stateId: string): import("./lib/shared").ICity | undefined;
+            };
+            findByTitle: {
+                (query: string): import("./lib/shared").ICity[];
+                (query: string, stateId: string): import("./lib/shared").ICity[];
+            };
+            findOneByTitle: {
+                (title: string): import("./lib/shared").ICity | undefined;
+                (title: string, stateId: string): import("./lib/shared").ICity | undefined;
+            };
+        };
+    };
     STRING: {
         changeNumbers: {
             (str: string): string;
@@ -327,7 +351,7 @@ export declare const Helper: {
         };
     };
 };
-export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';
+export { ColorFormats, IBank, ICity, IGeoCoordinates, IState } from './lib/shared';
 export { UnitArea } from './lib/unit/area';
 export { UnitLength } from './lib/unit/length';
 export { UnitVolume } from './lib/unit/volume';

@@ -10,6 +10,7 @@ const geo_1 = require("./lib/helpers/geo");
 const number_1 = require("./lib/helpers/number");
 const password_1 = require("./lib/helpers/password");
 const plate_1 = require("./lib/helpers/plate");
+const state_1 = require("./lib/helpers/state");
 const string_1 = require("./lib/helpers/string");
 const time_1 = require("./lib/helpers/time");
 const unit_1 = require("./lib/unit");
@@ -23,6 +24,7 @@ exports.Helper = {
     NUMBER: number_1.NUMBER,
     PASSWORD: password_1.PASSWORD,
     PLATE: plate_1.PLATE,
+    STATE: state_1.STATE,
     STRING: string_1.STRING,
     TIME: time_1.TIME,
     UNIT: unit_1.UNIT,

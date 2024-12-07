@@ -28,6 +28,7 @@ JavaScript/TypeScript helper library.
 -   [Number Helpers](#number-helpers)
 -   [Password Helpers](#password-helpers)
 -   [Plate Helpers](#plate-helpers)
+-   [State Helpers](#state-helpers)
 -   [String Helpers](#string-helpers)
 -   [Time Helpers](#time-helpers)
 
@@ -249,6 +250,21 @@ Helper.PLATE.
 -   letters
 -   getPlate
 -   toString
+
+### State Helpers
+
+```javascript
+Helper.STATE.
+```
+
+-   getList
+-   findOneById
+-   findByTitle
+-   findOneByTitle
+-   CITY.getList
+-   CITY.findOneById
+-   CITY.findByTitle
+-   CITY.findOneByTitle
 
 ### String Helpers
 

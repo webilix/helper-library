@@ -8,6 +8,7 @@ import { GEO } from './lib/helpers/geo';
 import { NUMBER } from './lib/helpers/number';
 import { PASSWORD } from './lib/helpers/password';
 import { PLATE } from './lib/helpers/plate';
+import { STATE } from './lib/helpers/state';
 import { STRING } from './lib/helpers/string';
 import { TIME } from './lib/helpers/time';
 
@@ -24,6 +25,7 @@ export const Helper = {
     NUMBER,
     PASSWORD,
     PLATE,
+    STATE,
     STRING,
     TIME,
 
@@ -31,7 +33,7 @@ export const Helper = {
 };
 
 // SHARED DATA
-export { ColorFormats, IBank, IGeoCoordinates } from './lib/shared';
+export { ColorFormats, IBank, ICity, IGeoCoordinates, IState } from './lib/shared';
 
 // UNIT TYPES
 export { UnitArea } from './lib/unit/area';
