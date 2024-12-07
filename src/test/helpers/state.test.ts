@@ -1,35 +1,41 @@
 import { STATE } from '../../lib/helpers/state';
 
-test('STATE: getList', () => {
-    expect(STATE.getList().length).toBe(31);
+test('STATE: states', () => {
+    expect(STATE.states.length).toBe(31);
 });
 
 test('STATE: findOneById', () => {
-    const result: boolean[] = STATE.getList().map((state) => !!STATE.findOneById(state.id));
+    const result: boolean[] = STATE.states.map((state) => !!STATE.findOneById(state.id));
     expect(result).not.toContain(false);
     expect(!!STATE.findOneById('استانی که وجود ندارد')).toBe(false);
 });
 
 test('STATE: findByTitle', () => {
-    const result: boolean[] = STATE.getList().map((state) => STATE.findByTitle(state.title).length !== 0);
+    const result: boolean[] = STATE.states.map((state) => STATE.findByTitle(state.title).length !== 0);
     expect(result).not.toContain(false);
     expect(STATE.findByTitle('استانی که وجود ندارد').length === 0).toBe(true);
 });
 
 test('STATE: findOneByTitle', () => {
-    const result: boolean[] = STATE.getList().map((state) => !!STATE.findOneByTitle(state.title));
+    const result: boolean[] = STATE.states.map((state) => !!STATE.findOneByTitle(state.title));
     expect(result).not.toContain(false);
     expect(!!STATE.findOneByTitle('استانی که وجود ندارد')).toBe(false);
 });
 
-test('STATE: CITY.getList', () => {
-    const count: number = STATE.getList().reduce((sum: number, s) => sum + s.cityCount, 0);
+test('STATE: CITY.cities', () => {
+    const count: number = STATE.states.reduce((sum: number, s) => sum + s.cityCount, 0);
 
-    expect(STATE.CITY.getList().length).toBe(count);
+    expect(STATE.cities.length).toBe(count);
+});
+
+test('STATE: CITY.findByState', () => {
+    const result: boolean[] = STATE.states.map((state) => STATE.CITY.findByState(state.id).length === state.cityCount);
+
+    expect(result).not.toContain(false);
 });
 
 test('STATE: CITY.findOneById', () => {
-    const cities = STATE.CITY.getList();
+    const cities = STATE.cities;
 
     const result: boolean[] = cities.map((city) => !!STATE.CITY.findOneById(city.id));
     expect(result).not.toContain(false);
@@ -41,7 +47,7 @@ test('STATE: CITY.findOneById', () => {
 });
 
 test('STATE: CITY.findByTitle', () => {
-    const cities = STATE.CITY.getList();
+    const cities = STATE.cities;
 
     const result: boolean[] = cities.map((city) => STATE.CITY.findByTitle(city.title).length !== 0);
     expect(result).not.toContain(false);
@@ -55,7 +61,7 @@ test('STATE: CITY.findByTitle', () => {
 });
 
 test('STATE: CITY.findOneByTitle', () => {
-    const cities = STATE.CITY.getList();
+    const cities = STATE.cities;
 
     const result: boolean[] = cities.map((city) => !!STATE.CITY.findOneByTitle(city.title));
     expect(result).not.toContain(false);

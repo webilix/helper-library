@@ -161,6 +161,6 @@ function getStrength(password: string): number {
 }
 
 export const PASSWORD = {
-    generate: generate,
-    getStrength: getStrength,
+    generate,
+    getStrength,
 };

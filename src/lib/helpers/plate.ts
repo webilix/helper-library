@@ -15,7 +15,10 @@ function toString(plate: string[], join: string = '-'): string | null {
 }
 
 export const PLATE = {
-    letters: plateLetters,
-    getPlate: getPlate,
-    toString: toString,
+    get letters(): string[] {
+        return plateLetters;
+    },
+
+    getPlate,
+    toString,
 };

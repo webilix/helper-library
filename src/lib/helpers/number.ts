@@ -112,9 +112,9 @@ function toFileSize(size: number, locale: 'EN' | 'FA' = 'FA'): string {
 }
 
 export const NUMBER = {
-    format: format,
-    getTitle: getTitle,
-    toEN: toEN,
-    toFA: toFA,
-    toFileSize: toFileSize,
+    format,
+    getTitle,
+    toEN,
+    toFA,
+    toFileSize,
 };

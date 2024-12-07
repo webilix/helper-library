@@ -78,11 +78,11 @@ function toString(date) {
     return `${y}-${m}-${d}`;
 }
 exports.DATE = {
-    getDays: getDays,
-    getMonths: getMonths,
-    getDuration: getDuration,
-    getSeconds: getSeconds,
-    jalaliPeriod: jalaliPeriod,
-    toString: toString,
+    getDays,
+    getMonths,
+    getDuration,
+    getSeconds,
+    jalaliPeriod,
+    toString,
 };
 //# sourceMappingURL=date.js.map

@@ -47,7 +47,7 @@ export const WEIGHT = {
         return options;
     },
 
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };

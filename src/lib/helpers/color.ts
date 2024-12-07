@@ -112,10 +112,10 @@ function toRGB(color: string): string | null {
 }
 
 export const COLOR = {
-    getFormat: getFormat,
-    getGradient: getGradient,
-    getShade: getShade,
-    toHEX: toHEX,
-    toHSL: toHSL,
-    toRGB: toRGB,
+    getFormat,
+    getGradient,
+    getShade,
+    toHEX,
+    toHSL,
+    toRGB,
 };

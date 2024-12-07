@@ -86,10 +86,10 @@ function toFileSize(size, locale = 'FA') {
     return `${value} ${title}`;
 }
 exports.NUMBER = {
-    format: format,
-    getTitle: getTitle,
-    toEN: toEN,
-    toFA: toFA,
-    toFileSize: toFileSize,
+    format,
+    getTitle,
+    toEN,
+    toFA,
+    toFileSize,
 };
 //# sourceMappingURL=number.js.map

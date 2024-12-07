@@ -4,7 +4,7 @@ declare function getPlate(plate: string, join: string): (string | null)[];
 declare function toString(plate: string[]): string | null;
 declare function toString(plate: string[], join: string): string | null;
 export declare const PLATE: {
-    letters: string[];
+    readonly letters: string[];
     getPlate: typeof getPlate;
     toString: typeof toString;
 };

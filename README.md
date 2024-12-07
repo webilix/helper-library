@@ -257,11 +257,12 @@ Helper.PLATE.
 Helper.STATE.
 ```
 
--   getList
+-   states
+-   cities
 -   findOneById
 -   findByTitle
 -   findOneByTitle
--   CITY.getList
+-   CITY.findByState
 -   CITY.findOneById
 -   CITY.findByTitle
 -   CITY.findOneByTitle

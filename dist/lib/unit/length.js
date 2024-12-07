@@ -35,8 +35,8 @@ exports.LENGTH = {
     get options() {
         return options;
     },
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };
 //# sourceMappingURL=length.js.map

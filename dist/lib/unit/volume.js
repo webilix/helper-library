@@ -31,8 +31,8 @@ exports.VOLUME = {
     get options() {
         return options;
     },
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };
 //# sourceMappingURL=volume.js.map

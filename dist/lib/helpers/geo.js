@@ -29,7 +29,7 @@ function distance(from, to) {
     return Math.round(R * c); // in metres
 }
 exports.GEO = {
-    coordinates: coordinates,
-    distance: distance,
+    coordinates,
+    distance,
 };
 //# sourceMappingURL=geo.js.map

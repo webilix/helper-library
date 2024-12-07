@@ -46,7 +46,7 @@ export const VOLUME = {
         return options;
     },
 
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };

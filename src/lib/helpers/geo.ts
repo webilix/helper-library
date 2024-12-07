@@ -36,6 +36,6 @@ function distance(from: { latitude: number; longitude: number }, to: { latitude:
 }
 
 export const GEO = {
-    coordinates: coordinates,
-    distance: distance,
+    coordinates,
+    distance,
 };

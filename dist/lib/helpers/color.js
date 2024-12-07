@@ -104,11 +104,11 @@ function toRGB(color) {
     }
 }
 exports.COLOR = {
-    getFormat: getFormat,
-    getGradient: getGradient,
-    getShade: getShade,
-    toHEX: toHEX,
-    toHSL: toHSL,
-    toRGB: toRGB,
+    getFormat,
+    getGradient,
+    getShade,
+    toHEX,
+    toHSL,
+    toRGB,
 };
 //# sourceMappingURL=color.js.map

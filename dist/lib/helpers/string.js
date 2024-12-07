@@ -83,13 +83,13 @@ function toFileSize(size) {
     return 0;
 }
 exports.STRING = {
-    changeNumbers: changeNumbers,
-    escapeHTML: escapeHTML,
-    getBankCardView: getBankCardView,
-    getFileName: getFileName,
-    getMobileView: getMobileView,
-    getRandom: getRandom,
-    hasPersian: hasPersian,
-    toFileSize: toFileSize,
+    changeNumbers,
+    escapeHTML,
+    getBankCardView,
+    getFileName,
+    getMobileView,
+    getRandom,
+    hasPersian,
+    toFileSize,
 };
 //# sourceMappingURL=string.js.map

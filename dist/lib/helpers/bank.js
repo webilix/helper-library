@@ -14,7 +14,7 @@ function getList() {
     return shared_1.bankList.map((l) => ({ id: l.id, title: l.title }));
 }
 exports.BANK = {
-    findCard: findCard,
-    getList: getList,
+    findCard,
+    getList,
 };
 //# sourceMappingURL=bank.js.map

@@ -32,8 +32,8 @@ exports.WEIGHT = {
     get options() {
         return options;
     },
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };
 //# sourceMappingURL=weight.js.map

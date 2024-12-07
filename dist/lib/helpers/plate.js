@@ -10,8 +10,10 @@ function toString(plate, join = '-') {
     return is_1.IS.plate(plate) ? plate.join(join) : null;
 }
 exports.PLATE = {
-    letters: shared_1.plateLetters,
-    getPlate: getPlate,
-    toString: toString,
+    get letters() {
+        return shared_1.plateLetters;
+    },
+    getPlate,
+    toString,
 };
 //# sourceMappingURL=plate.js.map

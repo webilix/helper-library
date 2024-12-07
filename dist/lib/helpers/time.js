@@ -23,7 +23,7 @@ function toString(date) {
     return `${h}:${m}:${s}`;
 }
 exports.TIME = {
-    getDuration: getDuration,
-    toString: toString,
+    getDuration,
+    toString,
 };
 //# sourceMappingURL=time.js.map

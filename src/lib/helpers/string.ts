@@ -102,12 +102,12 @@ function toFileSize(size: string): number {
 }
 
 export const STRING = {
-    changeNumbers: changeNumbers,
-    escapeHTML: escapeHTML,
-    getBankCardView: getBankCardView,
-    getFileName: getFileName,
-    getMobileView: getMobileView,
-    getRandom: getRandom,
-    hasPersian: hasPersian,
-    toFileSize: toFileSize,
+    changeNumbers,
+    escapeHTML,
+    getBankCardView,
+    getFileName,
+    getMobileView,
+    getRandom,
+    hasPersian,
+    toFileSize,
 };

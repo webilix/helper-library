@@ -4,8 +4,8 @@ import { VOLUME } from './volume';
 import { WEIGHT } from './weight';
 
 export const UNIT = {
-    AREA: AREA,
-    LENGTH: LENGTH,
-    VOLUME: VOLUME,
-    WEIGHT: WEIGHT,
+    AREA,
+    LENGTH,
+    VOLUME,
+    WEIGHT,
 };

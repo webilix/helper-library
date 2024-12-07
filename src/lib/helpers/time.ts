@@ -30,6 +30,6 @@ function toString(date?: Date): string {
 }
 
 export const TIME = {
-    getDuration: getDuration,
-    toString: toString,
+    getDuration,
+    toString,
 };

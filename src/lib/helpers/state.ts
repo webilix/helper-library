@@ -1,18 +1,13 @@
 import { cityList, ICity, IState, stateList } from '../shared';
 
 //#region STATE
-const getList = (): IState[] => stateList;
 const findOneById = (id: string): IState | undefined => stateList.find((state) => state.id === id);
 const findByTitle = (query: string): IState[] => stateList.filter((state) => state.title.includes(query));
 const findOneByTitle = (title: string): IState | undefined => stateList.find((state) => state.title === title);
 //#endregion
 
 //#region CITY
-function getCityList(): ICity[];
-function getCityList(stateId: string): ICity[];
-function getCityList(stateId?: string): ICity[] {
-    return cityList.filter((city) => !stateId || city.state.id === stateId);
-}
+const findByState = (stateId: string): ICity[] => cityList.filter((city) => city.state.id === stateId);
 
 function findOneCityById(id: string): ICity | undefined;
 function findOneCityById(id: string, stateId: string): ICity | undefined;
@@ -34,15 +29,22 @@ function findOneCityByTitle(title: string, stateId?: string): ICity | undefined 
 //#endregion
 
 export const STATE = {
+    get states(): IState[] {
+        return stateList;
+    },
+
+    get cities(): ICity[] {
+        return cityList;
+    },
+
     // STATE
-    getList,
     findOneById,
     findByTitle,
     findOneByTitle,
 
     // CITY
     CITY: {
-        getList: getCityList,
+        findByState: findByState,
         findOneById: findOneCityById,
         findByTitle: findCityByTitle,
         findOneByTitle: findOneCityByTitle,

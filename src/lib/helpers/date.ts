@@ -110,10 +110,10 @@ function toString(date?: Date): string {
 }
 
 export const DATE = {
-    getDays: getDays,
-    getMonths: getMonths,
-    getDuration: getDuration,
-    getSeconds: getSeconds,
-    jalaliPeriod: jalaliPeriod,
-    toString: toString,
+    getDays,
+    getMonths,
+    getDuration,
+    getSeconds,
+    jalaliPeriod,
+    toString,
 };

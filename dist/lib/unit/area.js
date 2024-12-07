@@ -35,8 +35,8 @@ exports.AREA = {
     get options() {
         return options;
     },
-    getTitle: getTitle,
-    getRate: getRate,
-    convert: convert,
+    getTitle,
+    getRate,
+    convert,
 };
 //# sourceMappingURL=area.js.map

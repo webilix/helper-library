@@ -209,7 +209,7 @@ export declare const Helper: {
         getStrength: (password: string) => number;
     };
     PLATE: {
-        letters: string[];
+        readonly letters: string[];
         getPlate: {
             (plate: string[]): (string | null)[];
             (plate: string): (string | null)[];
@@ -221,15 +221,13 @@ export declare const Helper: {
         };
     };
     STATE: {
-        getList: () => import("./lib/shared").IState[];
+        readonly states: import("./lib/shared").IState[];
+        readonly cities: import("./lib/shared").ICity[];
         findOneById: (id: string) => import("./lib/shared").IState | undefined;
         findByTitle: (query: string) => import("./lib/shared").IState[];
         findOneByTitle: (title: string) => import("./lib/shared").IState | undefined;
         CITY: {
-            getList: {
-                (): import("./lib/shared").ICity[];
-                (stateId: string): import("./lib/shared").ICity[];
-            };
+            findByState: (stateId: string) => import("./lib/shared").ICity[];
             findOneById: {
                 (id: string): import("./lib/shared").ICity | undefined;
                 (id: string, stateId: string): import("./lib/shared").ICity | undefined;

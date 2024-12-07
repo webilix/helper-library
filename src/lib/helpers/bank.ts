@@ -15,6 +15,6 @@ function getList(): IBank[] {
 }
 
 export const BANK = {
-    findCard: findCard,
-    getList: getList,
+    findCard,
+    getList,
 };

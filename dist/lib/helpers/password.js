@@ -149,7 +149,7 @@ function getStrength(password) {
     return score > 10 ? 10 : score < 0 ? 0 : score;
 }
 exports.PASSWORD = {
-    generate: generate,
-    getStrength: getStrength,
+    generate,
+    getStrength,
 };
 //# sourceMappingURL=password.js.map
