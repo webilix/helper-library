@@ -40,6 +40,19 @@ test(`IS: STRING.bankCard`, () => {
     });
 });
 
+test(`IS: STRING.bankSheba`, () => {
+    const tests: { value: string; result: boolean }[] = [
+        { value: '', result: false },
+        { value: '062960000000100324200001', result: false },
+        { value: 'IR062960000000100324200000', result: false },
+        { value: 'IR062960000000100324200001', result: true },
+    ];
+
+    tests.forEach((test) => {
+        expect(IS.STRING.bankSheba(test.value)).toBe(test.result);
+    });
+});
+
 test(`IS: STRING.color`, () => {
     const tests: { value: string; result: boolean }[] = [
         { value: '', result: false },

@@ -1,3 +1,5 @@
+import bigInteger from 'big-integer';
+
 import { RE } from './re';
 import { plateLetters } from './shared';
 
@@ -28,6 +30,11 @@ function isStringBankCard(bankCard: string): boolean {
     });
 
     return check % 10 === 0;
+}
+
+function isStringBankSheba(bankSheba: string): boolean {
+    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4)).replace('I', '18').replace('R', '27');
+    return RE.NUMERIC.get().test(sheba) && bigInteger(sheba).divmod(97).remainder.toJSNumber() === 1;
 }
 
 function isStringNationalCode(nationalCode: string): boolean {
@@ -91,6 +98,13 @@ export const IS = {
     STRING: {
         bankCard: (value: any): boolean =>
             IS.string(value) && value.length === 16 && IS.STRING.numeric(value) && isStringBankCard(value),
+
+        bankSheba: (value: any): boolean =>
+            IS.string(value) &&
+            value.length === 26 &&
+            value.toUpperCase().substring(0, 2) === 'IR' &&
+            IS.STRING.numeric(value.substring(2)) &&
+            isStringBankSheba(value),
 
         color: (value: any): boolean =>
             IS.string(value) &&

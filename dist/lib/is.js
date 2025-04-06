@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IS = void 0;
+const big_integer_1 = __importDefault(require("big-integer"));
 const re_1 = require("./re");
 const shared_1 = require("./shared");
 function arrayIn(values, arr) {
@@ -26,6 +30,10 @@ function isStringBankCard(bankCard) {
         check += charCheck > 9 ? charCheck - 9 : charCheck;
     });
     return check % 10 === 0;
+}
+function isStringBankSheba(bankSheba) {
+    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4)).replace('I', '18').replace('R', '27');
+    return re_1.RE.NUMERIC.get().test(sheba) && (0, big_integer_1.default)(sheba).divmod(97).remainder.toJSNumber() === 1;
 }
 function isStringNationalCode(nationalCode) {
     const numbers = nationalCode.split('');
@@ -80,6 +88,11 @@ exports.IS = {
     //#region STRING
     STRING: {
         bankCard: (value) => exports.IS.string(value) && value.length === 16 && exports.IS.STRING.numeric(value) && isStringBankCard(value),
+        bankSheba: (value) => exports.IS.string(value) &&
+            value.length === 26 &&
+            value.toUpperCase().substring(0, 2) === 'IR' &&
+            exports.IS.STRING.numeric(value.substring(2)) &&
+            isStringBankSheba(value),
         color: (value) => exports.IS.string(value) &&
             (re_1.RE.HEX_COLOR.get().test(value) || re_1.RE.HSL_COLOR.get().test(value) || re_1.RE.RGB_COLOR.get().test(value)),
         date: (value) => exports.IS.string(value) && re_1.RE.DATE.get().test(value),

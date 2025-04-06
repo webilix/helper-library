@@ -10,6 +10,7 @@ export declare const IS: {
     };
     STRING: {
         bankCard: (value: any) => boolean;
+        bankSheba: (value: any) => boolean;
         color: (value: any) => boolean;
         date: (value: any) => boolean;
         domain: (value: any) => boolean;

@@ -6,6 +6,7 @@ export declare const Helper: {
         };
         STRING: {
             bankCard: (value: any) => boolean;
+            bankSheba: (value: any) => boolean;
             color: (value: any) => boolean;
             date: (value: any) => boolean;
             domain: (value: any) => boolean;
