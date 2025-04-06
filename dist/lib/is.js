@@ -32,7 +32,10 @@ function isStringBankCard(bankCard) {
     return check % 10 === 0;
 }
 function isStringBankSheba(bankSheba) {
-    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4)).replace('I', '18').replace('R', '27');
+    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4))
+        .toUpperCase()
+        .replace('I', '18')
+        .replace('R', '27');
     return re_1.RE.NUMERIC.get().test(sheba) && (0, big_integer_1.default)(sheba).divmod(97).remainder.toJSNumber() === 1;
 }
 function isStringNationalCode(nationalCode) {

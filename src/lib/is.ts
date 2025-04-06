@@ -33,7 +33,10 @@ function isStringBankCard(bankCard: string): boolean {
 }
 
 function isStringBankSheba(bankSheba: string): boolean {
-    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4)).replace('I', '18').replace('R', '27');
+    const sheba = (bankSheba.substring(4) + bankSheba.substring(0, 4))
+        .toUpperCase()
+        .replace('I', '18')
+        .replace('R', '27');
     return RE.NUMERIC.get().test(sheba) && bigInteger(sheba).divmod(97).remainder.toJSNumber() === 1;
 }
 

@@ -45,6 +45,7 @@ test(`IS: STRING.bankSheba`, () => {
         { value: '', result: false },
         { value: '062960000000100324200001', result: false },
         { value: 'IR062960000000100324200000', result: false },
+        { value: 'ir062960000000100324200001', result: true },
         { value: 'IR062960000000100324200001', result: true },
     ];
 
