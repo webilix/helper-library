@@ -345,7 +345,7 @@ export declare const Helper: {
         };
     };
 };
-export { ColorFormats, IBank, ICity, IGeoCoordinates, IState } from './lib/shared';
+export { ColorFormats, IBank, ICity, IGeoCoordinates, IGeoRouteLength, IState } from './lib/shared';
 export { UnitArea } from './lib/unit/area';
 export { UnitLength } from './lib/unit/length';
 export { UnitVolume } from './lib/unit/volume';

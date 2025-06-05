@@ -33,7 +33,7 @@ export const Helper = {
 };
 
 // SHARED DATA
-export { ColorFormats, IBank, ICity, IGeoCoordinates, IState } from './lib/shared';
+export { ColorFormats, IBank, ICity, IGeoCoordinates, IGeoRouteLength, IState } from './lib/shared';
 
 // UNIT TYPES
 export { UnitArea } from './lib/unit/area';
