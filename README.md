@@ -219,6 +219,7 @@ Helper.GEO.
 
 -   location
 -   distance
+-   routeLength
 
 ### Number Helpers
 

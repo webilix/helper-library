@@ -170,13 +170,8 @@ export declare const Helper: {
     };
     GEO: {
         coordinates: () => Promise<import("./lib/shared").IGeoCoordinates>;
-        distance: (from: {
-            latitude: number;
-            longitude: number;
-        }, to: {
-            latitude: number;
-            longitude: number;
-        }) => number;
+        distance: (from: import("./lib/shared").IGeoCoordinates, to: import("./lib/shared").IGeoCoordinates) => number;
+        routeLength: (route: import("./lib/shared").IGeoCoordinates[]) => import("./lib/shared").IGeoRouteLength;
     };
     NUMBER: {
         format: {

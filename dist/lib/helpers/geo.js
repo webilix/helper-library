@@ -28,8 +28,23 @@ function distance(from, to) {
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return Math.round(R * c); // in metres
 }
+function routeLength(route) {
+    const parts = [];
+    route.forEach((coordinates, index) => {
+        if (index === 0)
+            return;
+        const from = route[index - 1];
+        const to = coordinates;
+        parts.push({ from, to, length: distance(from, to) });
+    });
+    return {
+        length: parts.reduce((sum, p) => sum + p.length, 0),
+        parts,
+    };
+}
 exports.GEO = {
     coordinates,
     distance,
+    routeLength,
 };
 //# sourceMappingURL=geo.js.map

@@ -1,4 +1,4 @@
-import { IGeoCoordinates } from '../shared';
+import { IGeoCoordinates, IGeoRouteLength } from '../shared';
 
 function coordinates(): Promise<IGeoCoordinates> {
     return new Promise<IGeoCoordinates>((resolve, reject) => {
@@ -22,7 +22,7 @@ function coordinates(): Promise<IGeoCoordinates> {
     });
 }
 
-function distance(from: { latitude: number; longitude: number }, to: { latitude: number; longitude: number }): number {
+function distance(from: IGeoCoordinates, to: IGeoCoordinates): number {
     const R = 6371e3; // metres
     const φ1 = (from.latitude * Math.PI) / 180; // φ, λ in radians
     const φ2 = (to.latitude * Math.PI) / 180;
@@ -35,7 +35,24 @@ function distance(from: { latitude: number; longitude: number }, to: { latitude:
     return Math.round(R * c); // in metres
 }
 
+function routeLength(route: IGeoCoordinates[]): IGeoRouteLength {
+    const parts: { from: IGeoCoordinates; to: IGeoCoordinates; length: number }[] = [];
+    route.forEach((coordinates, index: number) => {
+        if (index === 0) return;
+
+        const from: IGeoCoordinates = route[index - 1];
+        const to: IGeoCoordinates = coordinates;
+        parts.push({ from, to, length: distance(from, to) });
+    });
+
+    return {
+        length: parts.reduce((sum: number, p) => sum + p.length, 0),
+        parts,
+    };
+}
+
 export const GEO = {
     coordinates,
     distance,
+    routeLength,
 };
