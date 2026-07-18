@@ -1,4 +1,5 @@
 export type UnitLength = 'MT' | 'MM' | 'CM' | 'KM' | 'IN' | 'FT' | 'YD' | 'ML';
+declare const getTitle: (unit: UnitLength) => string;
 declare function getRate(from: UnitLength): number;
 declare function getRate(from: UnitLength, to: UnitLength): number;
 declare function convert(value: number, from: UnitLength): number;
@@ -11,7 +12,7 @@ export declare const LENGTH: {
         id: UnitLength;
         title: string;
     }[];
-    getTitle: (unit: UnitLength) => string;
+    getTitle: typeof getTitle;
     getRate: typeof getRate;
     convert: typeof convert;
 };

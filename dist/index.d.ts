@@ -176,7 +176,7 @@ export declare const Helper: {
     NUMBER: {
         format: {
             (num: number): string;
-            (num: number, locale: "EN" | "FA"): string;
+            (num: number, locale: 'EN' | 'FA'): string;
         };
         getTitle: (num: number) => string;
         toEN: {
@@ -189,7 +189,7 @@ export declare const Helper: {
         };
         toFileSize: {
             (size: number): string;
-            (size: number, locale: "EN" | "FA"): string;
+            (size: number, locale: 'EN' | 'FA'): string;
         };
     };
     PASSWORD: {
@@ -246,7 +246,7 @@ export declare const Helper: {
         };
         changeNumbers: {
             (str: string): string;
-            (str: string, locale: "EN" | "FA"): string;
+            (str: string, locale: 'EN' | 'FA'): string;
         };
         escapeHTML: (str: string) => string;
         getBankCardView: {
@@ -263,7 +263,7 @@ export declare const Helper: {
         };
         getRandom: {
             (length: number): string;
-            (length: number, type: "numeric" | "alphabetic" | "alphanumeric"): string;
+            (length: number, type: 'numeric' | 'alphabetic' | 'alphanumeric'): string;
         };
         hasPersian: (text: string) => boolean;
         toFileSize: (size: string) => number;

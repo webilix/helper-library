@@ -1,4 +1,5 @@
 export type UnitVolume = 'LT' | 'ML' | 'GL' | 'BR';
+declare const getTitle: (unit: UnitVolume) => string;
 declare function getRate(from: UnitVolume): number;
 declare function getRate(from: UnitVolume, to: UnitVolume): number;
 declare function convert(value: number, from: UnitVolume): number;
@@ -11,7 +12,7 @@ export declare const VOLUME: {
         id: UnitVolume;
         title: string;
     }[];
-    getTitle: (unit: UnitVolume) => string;
+    getTitle: typeof getTitle;
     getRate: typeof getRate;
     convert: typeof convert;
 };

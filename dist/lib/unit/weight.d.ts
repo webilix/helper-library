@@ -1,4 +1,5 @@
 export type UnitWeight = 'KG' | 'GR' | 'TN' | 'OZ' | 'LB';
+declare const getTitle: (unit: UnitWeight) => string;
 declare function getRate(from: UnitWeight): number;
 declare function getRate(from: UnitWeight, to: UnitWeight): number;
 declare function convert(value: number, from: UnitWeight): number;
@@ -11,7 +12,7 @@ export declare const WEIGHT: {
         id: UnitWeight;
         title: string;
     }[];
-    getTitle: (unit: UnitWeight) => string;
+    getTitle: typeof getTitle;
     getRate: typeof getRate;
     convert: typeof convert;
 };

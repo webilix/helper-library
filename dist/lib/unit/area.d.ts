@@ -1,4 +1,5 @@
 export type UnitArea = 'MT' | 'CM' | 'KM' | 'IN' | 'FT' | 'YD' | 'ML' | 'HT';
+declare const getTitle: (unit: UnitArea) => string;
 declare function getRate(from: UnitArea): number;
 declare function getRate(from: UnitArea, to: UnitArea): number;
 declare function convert(value: number, from: UnitArea): number;
@@ -11,7 +12,7 @@ export declare const AREA: {
         id: UnitArea;
         title: string;
     }[];
-    getTitle: (unit: UnitArea) => string;
+    getTitle: typeof getTitle;
     getRate: typeof getRate;
     convert: typeof convert;
 };
