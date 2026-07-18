@@ -17,6 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./bank"), exports);
 __exportStar(require("./color"), exports);
 __exportStar(require("./geo"), exports);
+__exportStar(require("./normalizer"), exports);
 __exportStar(require("./number"), exports);
 __exportStar(require("./password"), exports);
 __exportStar(require("./plate"), exports);

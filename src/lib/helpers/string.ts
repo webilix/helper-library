@@ -1,4 +1,37 @@
 import { IS } from '../is';
+import { Normalizer, NormalizerMap } from '../shared';
+
+function normalize(text: string): string;
+function normalize(text: string, ignore: Normalizer): string;
+function normalize(text: string, ignore: Normalizer[]): string;
+function normalize(text: string, ignore?: Normalizer | Normalizer[]): string {
+    const update = (text: string, map: { [key: string]: string }): string => {
+        Object.keys(map).forEach((key: string) => {
+            const search: string[] = map[key].split(' ').filter((s: string) => s !== '');
+
+            const regex: RegExp = new RegExp(`(${search.join('|')})`, 'gi');
+            text = text.replace(regex, key);
+        });
+
+        return text;
+    };
+
+    const ignoreList: Normalizer[] = !ignore ? [] : typeof ignore === 'string' ? [ignore] : ignore;
+
+    // MAPS
+    if (!ignoreList.includes('PERSIAN')) text = update(text, NormalizerMap.persian);
+    if (!ignoreList.includes('ENGLISH')) text = update(text, NormalizerMap.english);
+    if (!ignoreList.includes('ARABIC')) text = update(text, NormalizerMap.arabic);
+    if (!ignoreList.includes('NUMBER')) text = update(text, NormalizerMap.number);
+
+    // WHITESPACE
+    if (!ignoreList.includes('WHITE-SPACE')) while (text.indexOf('  ') !== -1) text = text.replace(/  /g, ' ');
+
+    // TRIM
+    if (!ignoreList.includes('TRIM')) text = text.trim();
+
+    return text;
+}
 
 function changeNumbers(str: string): string;
 function changeNumbers(str: string, locale: 'EN' | 'FA'): string;
@@ -102,6 +135,7 @@ function toFileSize(size: string): number {
 }
 
 export const STRING = {
+    normalize,
     changeNumbers,
     escapeHTML,
     getBankCardView,

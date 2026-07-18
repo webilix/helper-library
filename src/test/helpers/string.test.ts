@@ -1,5 +1,14 @@
 import { STRING } from '../../lib/helpers/string';
 
+test('STRING: normalize', () => {
+    expect(STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽')).toBe('1 2 3 4 5 6 7 8 9');
+    expect(STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', 'NUMBER')).toBe('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽');
+    expect(STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', ['NUMBER'])).toBe('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽');
+    expect(STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', ['PERSIAN', 'ENGLISH', 'ARABIC', 'WHITE-SPACE', 'TRIM'])).toBe(
+        '1 2 3 4 5 6 7 8 9',
+    );
+});
+
 test('STRING: changeNumbers', () => {
     expect(STRING.changeNumbers('0123456789', 'EN')).toBe('0123456789');
     expect(STRING.changeNumbers('0123456789', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');

@@ -2,6 +2,35 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.STRING = void 0;
 const is_1 = require("../is");
+const shared_1 = require("../shared");
+function normalize(text, ignore) {
+    const update = (text, map) => {
+        Object.keys(map).forEach((key) => {
+            const search = map[key].split(' ').filter((s) => s !== '');
+            const regex = new RegExp(`(${search.join('|')})`, 'gi');
+            text = text.replace(regex, key);
+        });
+        return text;
+    };
+    const ignoreList = !ignore ? [] : typeof ignore === 'string' ? [ignore] : ignore;
+    // MAPS
+    if (!ignoreList.includes('PERSIAN'))
+        text = update(text, shared_1.NormalizerMap.persian);
+    if (!ignoreList.includes('ENGLISH'))
+        text = update(text, shared_1.NormalizerMap.english);
+    if (!ignoreList.includes('ARABIC'))
+        text = update(text, shared_1.NormalizerMap.arabic);
+    if (!ignoreList.includes('NUMBER'))
+        text = update(text, shared_1.NormalizerMap.number);
+    // WHITESPACE
+    if (!ignoreList.includes('WHITE-SPACE'))
+        while (text.indexOf('  ') !== -1)
+            text = text.replace(/  /g, ' ');
+    // TRIM
+    if (!ignoreList.includes('TRIM'))
+        text = text.trim();
+    return text;
+}
 function changeNumbers(str, locale = 'FA') {
     const fa = '۰۱۲۳۴۵۶۷۸۹'.split('');
     const en = '0123456789'.split('');
@@ -83,6 +112,7 @@ function toFileSize(size) {
     return 0;
 }
 exports.STRING = {
+    normalize,
     changeNumbers,
     escapeHTML,
     getBankCardView,

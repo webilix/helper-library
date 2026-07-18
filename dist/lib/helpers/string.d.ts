@@ -1,3 +1,7 @@
+import { Normalizer } from '../shared';
+declare function normalize(text: string): string;
+declare function normalize(text: string, ignore: Normalizer): string;
+declare function normalize(text: string, ignore: Normalizer[]): string;
 declare function changeNumbers(str: string): string;
 declare function changeNumbers(str: string, locale: 'EN' | 'FA'): string;
 declare function escapeHTML(str: string): string;
@@ -12,6 +16,7 @@ declare function getRandom(length: number, type: 'numeric' | 'alphabetic' | 'alp
 declare function hasPersian(text: string): boolean;
 declare function toFileSize(size: string): number;
 export declare const STRING: {
+    normalize: typeof normalize;
     changeNumbers: typeof changeNumbers;
     escapeHTML: typeof escapeHTML;
     getBankCardView: typeof getBankCardView;

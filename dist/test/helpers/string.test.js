@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const string_1 = require("../../lib/helpers/string");
+test('STRING: normalize', () => {
+    expect(string_1.STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽')).toBe('1 2 3 4 5 6 7 8 9');
+    expect(string_1.STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', 'NUMBER')).toBe('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽');
+    expect(string_1.STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', ['NUMBER'])).toBe('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽');
+    expect(string_1.STRING.normalize('⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽', ['PERSIAN', 'ENGLISH', 'ARABIC', 'WHITE-SPACE', 'TRIM'])).toBe('1 2 3 4 5 6 7 8 9');
+});
 test('STRING: changeNumbers', () => {
     expect(string_1.STRING.changeNumbers('0123456789', 'EN')).toBe('0123456789');
     expect(string_1.STRING.changeNumbers('0123456789', 'FA')).toBe('۰۱۲۳۴۵۶۷۸۹');

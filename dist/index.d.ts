@@ -239,6 +239,11 @@ export declare const Helper: {
         };
     };
     STRING: {
+        normalize: {
+            (text: string): string;
+            (text: string, ignore: import("./lib/shared").Normalizer): string;
+            (text: string, ignore: import("./lib/shared").Normalizer[]): string;
+        };
         changeNumbers: {
             (str: string): string;
             (str: string, locale: "EN" | "FA"): string;
@@ -345,7 +350,7 @@ export declare const Helper: {
         };
     };
 };
-export { ColorFormats, IBank, ICity, IGeoCoordinates, IGeoRouteLength, IState } from './lib/shared';
+export { ColorFormats, IBank, ICity, IGeoCoordinates, IGeoRouteLength, IState, Normalizer } from './lib/shared';
 export { UnitArea } from './lib/unit/area';
 export { UnitLength } from './lib/unit/length';
 export { UnitVolume } from './lib/unit/volume';
