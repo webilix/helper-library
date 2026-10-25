@@ -13,6 +13,7 @@ export declare const IS: {
         bankSheba: (value: any) => boolean;
         color: (value: any) => boolean;
         date: (value: any) => boolean;
+        day: (value: any) => boolean;
         domain: (value: any) => boolean;
         email: (value: any) => boolean;
         hexColor: (value: any) => boolean;

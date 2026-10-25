@@ -9,6 +9,7 @@ export declare const Helper: {
             bankSheba: (value: any) => boolean;
             color: (value: any) => boolean;
             date: (value: any) => boolean;
+            day: (value: any) => boolean;
             domain: (value: any) => boolean;
             email: (value: any) => boolean;
             hexColor: (value: any) => boolean;
@@ -38,6 +39,12 @@ export declare const Helper: {
     };
     RE: {
         DATE: {
+            get: (fullLine?: boolean, flags?: string) => RegExp;
+            verify: (text: string) => boolean;
+            find: (text: string) => string[];
+            replace: (text: string, replaceWith?: string) => string;
+        };
+        DAY: {
             get: (fullLine?: boolean, flags?: string) => RegExp;
             verify: (text: string) => boolean;
             find: (text: string) => string[];

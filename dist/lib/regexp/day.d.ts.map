@@ -1,0 +1,1 @@
+{"version":3,"file":"day.d.ts","sourceRoot":"","sources":["../../../src/lib/regexp/day.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,GAAG;IACZ,GAAG,cAAa,OAAO,UAAiB,MAAM,KAAG,MAAM;IAEvD,MAAM,SAAS,MAAM,KAAG,OAAO;IAE/B,IAAI,SAAS,MAAM,KAAG,MAAM,EAAE;IAE9B,OAAO,SAAS,MAAM,gBAAe,MAAM,KAAQ,MAAM;CAC5D,CAAC"}

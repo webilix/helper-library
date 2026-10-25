@@ -115,6 +115,8 @@ export const IS = {
 
         date: (value: any): boolean => IS.string(value) && RE.DATE.get().test(value),
 
+        day: (value: any): boolean => IS.string(value) && RE.DAY.get().test(value),
+
         domain: (value: any): boolean => IS.string(value) && RE.DOMAIN.get().test(value),
 
         email: (value: any): boolean => IS.string(value) && RE.EMAIL.get().test(value.toLowerCase()),

@@ -99,6 +99,7 @@ exports.IS = {
         color: (value) => exports.IS.string(value) &&
             (re_1.RE.HEX_COLOR.get().test(value) || re_1.RE.HSL_COLOR.get().test(value) || re_1.RE.RGB_COLOR.get().test(value)),
         date: (value) => exports.IS.string(value) && re_1.RE.DATE.get().test(value),
+        day: (value) => exports.IS.string(value) && re_1.RE.DAY.get().test(value),
         domain: (value) => exports.IS.string(value) && re_1.RE.DOMAIN.get().test(value),
         email: (value) => exports.IS.string(value) && re_1.RE.EMAIL.get().test(value.toLowerCase()),
         hexColor: (value) => exports.IS.string(value) && re_1.RE.HEX_COLOR.get().test(value),

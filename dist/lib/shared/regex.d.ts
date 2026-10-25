@@ -2,6 +2,7 @@ export declare const reGet: (pattern: string, fullLine?: boolean, flags?: string
 export declare const reVerify: (pattern: string, text: string, flags?: string) => boolean;
 export declare const reFind: (pattern: string, text: string, flags?: string) => string[];
 export declare const reReplace: (pattern: string, text: string, replaceWith?: string, flags?: string) => string;
+export declare const regexpDay: string;
 export declare const regexpDate: string;
 export declare const regexpTime: string;
 export declare const regexpJsonDate: string;

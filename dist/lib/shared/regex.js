@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = void 0;
+exports.regexpRGBColor = exports.regexpHSLColor = exports.regexpHexColor = exports.regexpIP4 = exports.regexpUrl = exports.regexpDomain = exports.regexpPassword = exports.regexpUsername = exports.regexpNumeric = exports.regexpMobile = exports.regexpEmail = exports.regexpJsonDate = exports.regexpTime = exports.regexpDate = exports.regexpDay = exports.reReplace = exports.reFind = exports.reVerify = exports.reGet = void 0;
 //#region REGULAR EXPRESSION METHODS
 const reGet = (pattern, fullLine = true, flags) => fullLine ? new RegExp(`^${pattern}$`, flags) : new RegExp(pattern, flags);
 exports.reGet = reGet;
@@ -12,6 +12,7 @@ const reReplace = (pattern, text, replaceWith = '', flags) => text.replace((0, e
 exports.reReplace = reReplace;
 //#endregion
 //#region REGULAR EXPRESSIONS
+exports.regexpDay = `(0[1-6]-(0[1-9]|[12][0-9]|3[01])|0[7-9]-(0[1-9]|[12][0-9]|30)|(1[0-2])-(0[1-9]|[12][0-9]|30))`;
 exports.regexpDate = `[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])`;
 exports.regexpTime = `([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]`;
 exports.regexpJsonDate = exports.regexpDate + `T` + exports.regexpTime + `.[0-9][0-9][0-9]Z`;

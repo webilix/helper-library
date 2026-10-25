@@ -13,6 +13,8 @@ export const reReplace = (pattern: string, text: string, replaceWith: string = '
 //#endregion
 
 //#region REGULAR EXPRESSIONS
+export const regexpDay: string = `(0[1-6]-(0[1-9]|[12][0-9]|3[01])|0[7-9]-(0[1-9]|[12][0-9]|30)|(1[0-2])-(0[1-9]|[12][0-9]|30))`;
+
 export const regexpDate: string = `[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])`;
 
 export const regexpTime: string = `([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]`;

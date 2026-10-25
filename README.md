@@ -4,38 +4,38 @@ JavaScript/TypeScript helper library.
 
 ## Table of contents
 
--   [Installation](#installation)
--   [Usage](#usage)
--   [Tests](#tests)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
 
 ### Regular Expressions
 
--   [Regular Expression Types](#regular-expression-types)
--   [Regular Expression Methods](#regular-expressions-methods)
+- [Regular Expression Types](#regular-expression-types)
+- [Regular Expression Methods](#regular-expressions-methods)
 
 ### Validators
 
--   [IS Helpers](#is-helpers)
--   [IS ARRAY Helpers](#is-array-helpers)
--   [IS STRING Helpers](#is-string-helpers)
+- [IS Helpers](#is-helpers)
+- [IS ARRAY Helpers](#is-array-helpers)
+- [IS STRING Helpers](#is-string-helpers)
 
 ### Helpers
 
--   [Bank Helpers](#bank-helpers)
--   [Color Helpers](#color-helpers)
--   [Date Helpers](#date-helpers)
--   [Geo Helpers](#geo-helpers)
--   [Number Helpers](#number-helpers)
--   [Password Helpers](#password-helpers)
--   [Plate Helpers](#plate-helpers)
--   [State Helpers](#state-helpers)
--   [String Helpers](#string-helpers)
--   [Time Helpers](#time-helpers)
+- [Bank Helpers](#bank-helpers)
+- [Color Helpers](#color-helpers)
+- [Date Helpers](#date-helpers)
+- [Geo Helpers](#geo-helpers)
+- [Number Helpers](#number-helpers)
+- [Password Helpers](#password-helpers)
+- [Plate Helpers](#plate-helpers)
+- [State Helpers](#state-helpers)
+- [String Helpers](#string-helpers)
+- [Time Helpers](#time-helpers)
 
 ### Unit Helpers
 
--   [Types](#unit-types)
--   [Methods](#unit-methods)
+- [Types](#unit-types)
+- [Methods](#unit-methods)
 
 ## Installation
 
@@ -79,20 +79,21 @@ npm test
 Helper.RE.
 ```
 
--   DATE
--   DOMAIN
--   EMAIL
--   HEX_COLOR
--   HSL_COLOR
--   IP4
--   JSON_DATE
--   MOBILE
--   NUMERIC
--   PASSWORD
--   RGB_COLOR
--   TIME
--   URL
--   USERNAME
+- DATE
+- DAY
+- DOMAIN
+- EMAIL
+- HEX_COLOR
+- HSL_COLOR
+- IP4
+- JSON_DATE
+- MOBILE
+- NUMERIC
+- PASSWORD
+- RGB_COLOR
+- TIME
+- URL
+- USERNAME
 
 ### Regular Expression Methods
 
@@ -100,10 +101,10 @@ Helper.RE.
 Helper.RE.{TYPE}.
 ```
 
--   get
--   find
--   replace
--   verify
+- get
+- find
+- replace
+- verify
 
 <br>
 
@@ -121,15 +122,15 @@ Helper.RE.{TYPE}.
 Helper.IS.
 ```
 
--   array
--   boolean
--   date
--   empty
--   null
--   number
--   object
--   plate
--   string
+- array
+- boolean
+- date
+- empty
+- null
+- number
+- object
+- plate
+- string
 
 ### IS ARRAY Helpers
 
@@ -137,8 +138,8 @@ Helper.IS.
 Helper.IS.ARRAY.
 ```
 
--   in
--   unique
+- in
+- unique
 
 ### IS STRING Helpers
 
@@ -146,21 +147,22 @@ Helper.IS.ARRAY.
 Helper.IS.STRING.
 ```
 
--   bankCard
--   color
--   date
--   domain
--   email
--   hexColor
--   ip4
--   jsonDate
--   mobile
--   nationalCode
--   number
--   numeric
--   objectId
--   time
--   url
+- bankCard
+- color
+- date
+- day
+- domain
+- email
+- hexColor
+- ip4
+- jsonDate
+- mobile
+- nationalCode
+- number
+- numeric
+- objectId
+- time
+- url
 
 <br>
 
@@ -180,8 +182,8 @@ Helper.IS.STRING.
 Helper.BANK.
 ```
 
--   findCard
--   getList
+- findCard
+- getList
 
 ### Color Helpers
 
@@ -191,12 +193,12 @@ Helper.BANK.
 Helper.COLOR.
 ```
 
--   getFormat
--   getGradient
--   getShade
--   toHEX
--   toHSL
--   toRGB
+- getFormat
+- getGradient
+- getShade
+- toHEX
+- toHSL
+- toRGB
 
 ### Date Helpers
 
@@ -204,12 +206,12 @@ Helper.COLOR.
 Helper.DATE.
 ```
 
--   getDays
--   getMonths
--   getDuration
--   getSeconds
--   jalaliPeriod
--   toString
+- getDays
+- getMonths
+- getDuration
+- getSeconds
+- jalaliPeriod
+- toString
 
 ### Geo Helpers
 
@@ -217,9 +219,9 @@ Helper.DATE.
 Helper.GEO.
 ```
 
--   location
--   distance
--   routeLength
+- location
+- distance
+- routeLength
 
 ### Number Helpers
 
@@ -227,11 +229,11 @@ Helper.GEO.
 Helper.NUMBER.
 ```
 
--   format
--   getTitle
--   toEN
--   toFA
--   toFileSize
+- format
+- getTitle
+- toEN
+- toFA
+- toFileSize
 
 ### Password Helpers
 
@@ -239,8 +241,8 @@ Helper.NUMBER.
 Helper.PASSWORD.
 ```
 
--   generate
--   getStrength
+- generate
+- getStrength
 
 ### Plate Helpers
 
@@ -248,9 +250,9 @@ Helper.PASSWORD.
 Helper.PLATE.
 ```
 
--   letters
--   getPlate
--   toString
+- letters
+- getPlate
+- toString
 
 ### State Helpers
 
@@ -258,15 +260,15 @@ Helper.PLATE.
 Helper.STATE.
 ```
 
--   states
--   cities
--   findOneById
--   findByTitle
--   findOneByTitle
--   CITY.findByState
--   CITY.findOneById
--   CITY.findByTitle
--   CITY.findOneByTitle
+- states
+- cities
+- findOneById
+- findByTitle
+- findOneByTitle
+- CITY.findByState
+- CITY.findOneById
+- CITY.findByTitle
+- CITY.findOneByTitle
 
 ### String Helpers
 
@@ -274,14 +276,14 @@ Helper.STATE.
 Helper.STRING.
 ```
 
--   changeNumbers
--   escapeHTML
--   getBankCardView
--   getFileName
--   getMobileView
--   getRandom
--   hasPersian
--   toFileSize
+- changeNumbers
+- escapeHTML
+- getBankCardView
+- getFileName
+- getMobileView
+- getRandom
+- hasPersian
+- toFileSize
 
 ### Time Helpers
 
@@ -289,8 +291,8 @@ Helper.STRING.
 Helper.TIME.
 ```
 
--   getDuration
--   toString
+- getDuration
+- toString
 
 <br>
 
@@ -304,10 +306,10 @@ Helper.TIME.
 Helper.UNIT.
 ```
 
--   AREA
--   LENGTH
--   VOLUME
--   WEIGHT
+- AREA
+- LENGTH
+- VOLUME
+- WEIGHT
 
 <br>
 
@@ -317,8 +319,8 @@ Helper.UNIT.
 Helper.UNIT.{TYPE}.
 ```
 
--   list
--   options
--   getTitle
--   getRate
--   convert
+- list
+- options
+- getTitle
+- getRate
+- convert

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RE = void 0;
 const date_1 = require("./regexp/date");
+const day_1 = require("./regexp/day");
 const domain_1 = require("./regexp/domain");
 const email_1 = require("./regexp/email");
 const hex_color_1 = require("./regexp/hex-color");
@@ -17,6 +18,7 @@ const url_1 = require("./regexp/url");
 const username_1 = require("./regexp/username");
 exports.RE = {
     DATE: date_1.DATE,
+    DAY: day_1.DAY,
     DOMAIN: domain_1.DOMAIN,
     EMAIL: email_1.EMAIL,
     HEX_COLOR: hex_color_1.HEX_COLOR,

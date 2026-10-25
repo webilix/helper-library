@@ -5,6 +5,12 @@ export declare const RE: {
         find: (text: string) => string[];
         replace: (text: string, replaceWith?: string) => string;
     };
+    DAY: {
+        get: (fullLine?: boolean, flags?: string) => RegExp;
+        verify: (text: string) => boolean;
+        find: (text: string) => string[];
+        replace: (text: string, replaceWith?: string) => string;
+    };
     DOMAIN: {
         get: (fullLine?: boolean, flags?: string) => RegExp;
         verify: (text: string) => boolean;

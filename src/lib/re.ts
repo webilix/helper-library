@@ -1,4 +1,5 @@
 import { DATE } from './regexp/date';
+import { DAY } from './regexp/day';
 import { DOMAIN } from './regexp/domain';
 import { EMAIL } from './regexp/email';
 import { HEX_COLOR } from './regexp/hex-color';
@@ -15,6 +16,7 @@ import { USERNAME } from './regexp/username';
 
 export const RE = {
     DATE,
+    DAY,
     DOMAIN,
     EMAIL,
     HEX_COLOR,
