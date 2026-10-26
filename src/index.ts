@@ -4,6 +4,7 @@ import { RE } from './lib/re';
 import { BANK } from './lib/helpers/bank';
 import { COLOR } from './lib/helpers/color';
 import { DATE } from './lib/helpers/date';
+import { DAY } from './lib/helpers/day';
 import { GEO } from './lib/helpers/geo';
 import { NUMBER } from './lib/helpers/number';
 import { PASSWORD } from './lib/helpers/password';
@@ -21,6 +22,7 @@ export const Helper = {
     BANK,
     COLOR,
     DATE,
+    DAY,
     GEO,
     NUMBER,
     PASSWORD,

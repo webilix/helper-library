@@ -6,6 +6,7 @@ const re_1 = require("./lib/re");
 const bank_1 = require("./lib/helpers/bank");
 const color_1 = require("./lib/helpers/color");
 const date_1 = require("./lib/helpers/date");
+const day_1 = require("./lib/helpers/day");
 const geo_1 = require("./lib/helpers/geo");
 const number_1 = require("./lib/helpers/number");
 const password_1 = require("./lib/helpers/password");
@@ -20,6 +21,7 @@ exports.Helper = {
     BANK: bank_1.BANK,
     COLOR: color_1.COLOR,
     DATE: date_1.DATE,
+    DAY: day_1.DAY,
     GEO: geo_1.GEO,
     NUMBER: number_1.NUMBER,
     PASSWORD: password_1.PASSWORD,

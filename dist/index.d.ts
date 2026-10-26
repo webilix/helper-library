@@ -175,6 +175,9 @@ export declare const Helper: {
             (date: Date): string;
         };
     };
+    DAY: {
+        toTitle: (jalaliDay: string) => string;
+    };
     GEO: {
         coordinates: () => Promise<import("./lib/shared").IGeoCoordinates>;
         distance: (from: import("./lib/shared").IGeoCoordinates, to: import("./lib/shared").IGeoCoordinates) => number;

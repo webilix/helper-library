@@ -24,6 +24,7 @@ JavaScript/TypeScript helper library.
 - [Bank Helpers](#bank-helpers)
 - [Color Helpers](#color-helpers)
 - [Date Helpers](#date-helpers)
+- [Day Helpers](#day-helpers)
 - [Geo Helpers](#geo-helpers)
 - [Number Helpers](#number-helpers)
 - [Password Helpers](#password-helpers)
@@ -212,6 +213,14 @@ Helper.DATE.
 - getSeconds
 - jalaliPeriod
 - toString
+
+### Day Helpers
+
+```javascript
+Helper.DAY.
+```
+
+- toTitle
 
 ### Geo Helpers
 
